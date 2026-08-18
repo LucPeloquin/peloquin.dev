@@ -20,7 +20,7 @@ export default function Experience() {
             <header>
               <h3 className="text-2xl font-bold mb-4 text-primary">Sales Associate / OMNI</h3>
             </header>
-            <strong>Kohl's - Centennial</strong><br />
+            <strong>Kohl&apos;s - Centennial</strong><br />
             <p className="text-gray-300">
               May 2021 - July 2024<br />
               <br />

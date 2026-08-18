@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -52,7 +53,13 @@ export default function About() {
               <strong>OS:</strong> Windows, macOS, Linux
             </p>
             <div className="text-center mt-6">
-              <img src="/images/luc.png" alt="Jean-Luc Peloquin" className="mx-auto max-w-full h-auto rounded-lg border-4 border-primary" />
+              <Image
+                src="/images/luc.png"
+                alt="Jean-Luc Peloquin"
+                width={291}
+                height={291}
+                className="mx-auto max-w-full h-auto rounded-lg border-4 border-primary"
+              />
             </div>
           </motion.article>
 
@@ -84,7 +91,7 @@ export default function About() {
               UNLV Howard R. Hughes College of Engineering Scholarship (2021)<br />
               Gilman and Bartlett Scholarship (2022)<br />
               Ralph Dippner Scholarship (2023)<br />
-              3x Dean's List (FA 2020, SP 2021, SP 2023)
+              3x Dean&apos;s List (FA 2020, SP 2021, SP 2023)
             </p>
           </motion.article>
         </div>

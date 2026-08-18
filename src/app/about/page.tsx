@@ -7,12 +7,12 @@ export default function About() {
         <h2 className="text-2xl font-semibold mb-4">Background</h2>
         <p className="text-lg mb-4">
           I am a passionate data scientist and software developer with expertise in machine learning, 
-          data analysis, and web development. With several years of experience in the field, I've worked 
+          data analysis, and web development. With several years of experience in the field, I&apos;ve worked
           on projects ranging from predictive analytics to full-stack web applications.
         </p>
         <p className="text-lg mb-4">
           My academic background includes advanced degrees in Computer Science with a focus on 
-          artificial intelligence and data science. I'm constantly learning and exploring new 
+          artificial intelligence and data science. I&apos;m constantly learning and exploring new
           technologies to expand my knowledge and skill set.
         </p>
       </section>
@@ -44,7 +44,7 @@ export default function About() {
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Contact</h2>
         <p className="text-lg mb-4">
-          I'm always open to discussing new projects, opportunities, or just having a chat about 
+          I&apos;m always open to discussing new projects, opportunities, or just having a chat about
           data science and software development.
         </p>
         <div className="space-y-2">
