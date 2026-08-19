@@ -1,11 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Jean-Luc Peloquin',
-  description: 'Data Scientist and Software Developer Portfolio',
+  title: 'Aspen Search - Executive Search for Quantitative Finance & Tech',
+  description: 'Placing software engineers, quantitative researchers, and AI/ML scientists since 2006.',
 };
 
 export default function RootLayout({
@@ -15,11 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
