@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Jean-Luc Peloquin is a Las Vegas software engineer building interactive web experiences, computer-vision tools, and data products."
+    />
+    <meta name="theme-color" content="#f5f5f1" />
+    <link rel="preload" href="./brand/vct22/fonts/satoshi-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jean-Luc Peloquin — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Interactive systems, computer vision, and data products—built with precision."
+    />
+    <meta property="og:image" content="https://peloquin.dev/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jean-Luc Peloquin portfolio — interactive systems, computer vision, and data products" />
+    <meta property="og:url" content="https://peloquin.dev/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://peloquin.dev/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>Jean-Luc Peloquin — Software Engineer</title>
+    <script>
+      document.documentElement.classList.add("js", "booting");
+      try {
+        const savedTheme = localStorage.getItem("jl-theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = savedTheme || (systemDark ? "dark" : "light");
+      } catch (_) {}
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jean-Luc Peloquin",
+        "url": "https://peloquin.dev/",
+        "image": "https://peloquin.dev/images/jean-luc.webp",
+        "jobTitle": "Software Engineer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Las Vegas",
+          "addressRegion": "NV"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Nevada, Las Vegas"
+        },
+        "sameAs": [
+          "https://github.com/LucPeloquin",
+          "https://www.linkedin.com/in/jean-luc-peloquin-6688121a1/"
+        ]
+      }
+    </script>
+  </head>
+  <body data-brand-system>
+    <div class="boot-screen" data-boot-screen role="status" aria-label="Loading Jean-Luc Peloquin's portfolio">
+      <div class="boot-screen-frame" aria-hidden="true">
+        <div class="boot-screen-topline utility-text">
+          <span>JL / PORTFOLIO SYSTEM</span>
+          <span><i>BOOT</i> <b data-boot-counter>000</b></span>
+        </div>
+        <div class="boot-screen-mark">
+          <pre class="boot-screen-logo" data-boot-logo></pre>
+        </div>
+        <div class="boot-screen-progress"><span data-boot-progress></span></div>
+        <div class="boot-screen-footer utility-text">
+          <span data-boot-status>INITIALIZING ALPHA MARK</span>
+          <span>LAS VEGAS / NV</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__jlBootWatchdog = window.setTimeout(function () {
+        document.documentElement.classList.remove("booting");
+        document.querySelector("[data-boot-screen]")?.remove();
+      }, 5000);
+    </script>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand-mark" href="#top" aria-label="Jean-Luc Peloquin, home">
+        <img src="./logo-flat.png" width="360" height="360" alt="" />
+      </a>
+
+      <time class="header-clock" data-clock data-zone="America/Los_Angeles">
+        <span data-clock-time>--:--</span> <span data-clock-label>PST</span>
+      </time>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#principles">Approach</a>
+        <a href="#profile">Profile</a>
+      </nav>
+
+      <button class="theme-toggle icon-button" type="button" aria-label="Switch to dark theme" data-theme-toggle>
+        <span class="theme-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <button class="contact-trigger header-contact" type="button" data-contact-open>
+        <span>Contact</span><span aria-hidden="true">↗</span>
+      </button>
+
+      <button class="menu-trigger" type="button" aria-haspopup="dialog" data-menu-open>
+        <span>Menu</span><span class="menu-glyph" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-name grid-cell">
+            <h1 id="hero-title">
+              <span aria-hidden="true">FDE/SWE</span>
+              <span class="sr-only">Full-stack developer and software engineer</span>
+            </h1>
+          </div>
+
+          <figure class="artifact-stage grid-cell" data-artifact-stage>
+            <div class="halftone halftone-artifact" aria-hidden="true"></div>
+            <img class="artifact-poster" src="./logo-inverted.svg" width="512" height="512" alt="" aria-hidden="true" />
+            <canvas
+              id="artifact-canvas"
+              width="960"
+              height="720"
+              role="img"
+              aria-label="An interactive machined-metal engraved plaque of Jean-Luc's inverted square logo"
+            ></canvas>
+          </figure>
+
+          <div class="hero-surname grid-cell">
+            <img class="hero-scope" src="./images/hero-scope-3d.webp" width="1536" height="1024" alt="" aria-hidden="true" />
+            <p>Jean-Luc Peloquin</p>
+          </div>
+
+          <div class="hero-intro grid-cell hero-dark" data-reveal>
+            <p>
+              Building automation tools and full-stack software that modernize how businesses operate—from small teams to enterprise systems—by integrating AI, computer vision, and data products into dependable everyday workflows.
+            </p>
+            <button class="text-action contact-trigger" type="button" data-contact-open>
+              Start a conversation <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="hero-signal grid-cell" data-reveal>
+            <p class="signal-statement">
+              I turn messy inputs into useful, legible systems—then refine the details until they feel inevitable.
+            </p>
+            <p class="utility-text">Working across</p>
+            <div class="tech-loop" role="group" aria-label="Selected technologies">
+              <div>
+                <span>Python</span><span>Go</span><span>Rust</span><span>TypeScript</span><span>OpenCV</span><span>PHP</span><span>C++</span><span>SQL</span>
+                <span aria-hidden="true">Python</span><span aria-hidden="true">Go</span><span aria-hidden="true">Rust</span><span aria-hidden="true">TypeScript</span><span aria-hidden="true">OpenCV</span><span aria-hidden="true">PHP</span><span aria-hidden="true">C++</span><span aria-hidden="true">SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="scroll-cue utility-text" href="#about">Scroll to inspect <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="about section-rule" id="about" aria-labelledby="about-heading">
+        <div class="about-lede">
+          <div class="about-index" data-reveal>
+            <div class="section-label">
+              <span class="label-square" aria-hidden="true"></span>
+              <span>About Jean-Luc</span>
+            </div>
+            <p class="about-index-statement">Engineering the connective tissue between operations, intelligence, and interface.</p>
+            <ol class="about-index-list">
+              <li><span>01</span><strong>Automate</strong><small>Repeatable operations</small></li>
+              <li><span>02</span><strong>Integrate</strong><small>AI, vision, and data</small></li>
+              <li><span>03</span><strong>Modernize</strong><small>Full-stack systems</small></li>
+            </ol>
+            <p class="about-index-footer utility-text"><span>Small teams</span><span>→</span><span>Enterprise</span></p>
+          </div>
+          <div class="lede-copy" data-reveal>
+            <h2 id="about-heading">
+              I build the systems between an ambitious idea and dependable day-to-day operation.
+            </h2>
+            <p>
+              Jean-Luc designs and ships automation tools, full-stack software, AI integrations, computer-vision pipelines, and data products for organizations ranging from small teams to enterprise environments. He works across the stack so operations, intelligence, and the interface arrive as one coherent system.
+            </p>
+          </div>
+        </div>
+
+        <section class="github-activity" data-github-activity data-activity-state="loading" data-reveal aria-labelledby="github-activity-heading">
+          <div class="github-activity-copy">
+            <p class="utility-text">Source control / public work</p>
+            <h3 id="github-activity-heading">Recent GitHub activity</h3>
+            <p>A rolling view of public pushes—evidence of systems being built, tested, and refined over time.</p>
+            <a class="inline-link" href="https://github.com/LucPeloquin" target="_blank" rel="noopener noreferrer">
+              github.com/LucPeloquin <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="github-activity-visual">
+            <p class="github-activity-meta utility-text">
+              <span>20-week pulse</span><span data-github-activity-status>Connecting to GitHub</span>
+            </p>
+            <div class="github-activity-grid" data-github-activity-grid role="img" aria-label="Loading recent public GitHub push activity"></div>
+            <p class="github-activity-legend utility-text" aria-hidden="true">
+              <span>Less</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>More</span>
+            </p>
+          </div>
+        </section>
+
+        <div class="capabilities-intro section-heading-grid">
+          <h2 data-reveal>Built across<br />the stack.</h2>
+          <div data-reveal>
+            <p>
+              Product thinking is strongest when the data path, the interface, and the operating constraints are designed together.
+            </p>
+            <a class="inline-link" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <div class="capability-list" data-capability-list data-capability-render-state="loading">
+          <canvas class="capability-three-layer" data-capability-canvas aria-hidden="true"></canvas>
+          <article class="capability" data-reveal>
+            <p class="capability-number utility-text">01</p>
+            <div class="capability-visual visual-product" data-capability-stage="0" aria-hidden="true">
+              <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span>
+              <span class="trace t1"></span><span class="trace t2"></span><span class="trace t3"></span>
+            </div>
+            <div class="capability-copy">
+              <h3>Product engineering</h3>
+              <p>End-to-end web products with real workflows, state, data synchronization, authentication, and useful edge-case behavior.</p>
+              <ul>
+                <li>TypeScript &amp; React</li>
+                <li>PHP &amp; SQL</li>
+                <li>APIs &amp; automation</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="capability" data-reveal>
+            <p class="capability-number utility-text">02</p>
+            <div class="capability-visual visual-vision" data-capability-stage="1" aria-hidden="true">
+              <div class="vision-terminal">
+                <div class="vision-toolbar">
+                  <span class="vision-live"><i></i>Live capture</span>
+                  <span>CV_02 / FRAME 08421</span>
+                </div>
+
+                <div class="vision-frame">
+                  <svg class="vision-feed" viewBox="0 0 520 330" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                      <pattern id="vision-grid" width="26" height="26" patternUnits="userSpaceOnUse">
+                        <path d="M 26 0 L 0 0 0 26" class="vision-grid-line" />
+                      </pattern>
+                    </defs>
+
+                    <rect class="vision-field" width="520" height="330" />
+                    <rect class="vision-grid" width="520" height="330" fill="url(#vision-grid)" />
+                    <path class="vision-ground" d="M0 246 520 151V330H0Z" />
+                    <path class="vision-ground-line" d="M-20 299 540 196M55 330 536 244M184 330 524 278" />
+
+                    <g class="vision-score-region">
+                      <text x="22" y="24" class="vision-svg-label vision-accent-gold">OCR REGION 01</text>
+                      <rect x="22" y="32" width="64" height="45" class="vision-score-home" />
+                      <rect x="86" y="32" width="64" height="45" class="vision-score-away" />
+                      <text x="37" y="64" class="vision-score-value">13</text>
+                      <text x="101" y="64" class="vision-score-value">09</text>
+                      <path class="vision-ocr-box" d="M15 48V25h23M134 25h23v23M15 62v22h23M134 84h23V62" />
+                      <text x="22" y="97" class="vision-svg-meta">SCORE 13–09 / 99.1%</text>
+                    </g>
+
+                    <g class="vision-motion-field">
+                      <path d="M61 146 111 128M99 124l12 4-7 10" />
+                      <path d="M83 190 137 181M126 176l11 5-9 8" />
+                      <path d="M430 119 468 95M456 94l12 1-3 11" />
+                      <path d="M416 214 474 222M464 215l10 7-11 5" />
+                    </g>
+
+                    <g class="vision-subject-mask">
+                      <circle cx="305" cy="84" r="31" />
+                      <path d="M262 120 344 116 371 197 342 224 335 281 380 322H226l48-46-8-52-33-42Z" />
+                      <path d="M267 135 212 169 181 143M340 134l55 34 31-29" />
+                    </g>
+
+                    <g class="vision-subject">
+                      <circle cx="305" cy="84" r="23" class="vision-subject-light" />
+                      <path d="M271 122 338 118 356 193 330 216 279 210 249 165Z" class="vision-subject-mid" />
+                      <path d="M305 119 338 118 356 193 330 216 307 207Z" class="vision-subject-dark" />
+                      <path d="M268 137 216 171 185 146M340 135l51 35 32-29M288 207l-17 68-37 42M323 211l26 66 31 39" class="vision-limb" />
+                    </g>
+
+                    <g class="vision-pose">
+                      <path d="M305 84 305 122 268 137 216 171 185 146M305 122l35 13 51 35 32-29M305 122l-17 85-17 68-37 42M305 122l18 89 26 66 31 39" />
+                      <g class="vision-joints">
+                        <circle cx="305" cy="84" r="4" /><circle cx="305" cy="122" r="4" />
+                        <circle cx="268" cy="137" r="4" /><circle cx="216" cy="171" r="4" /><circle cx="185" cy="146" r="4" />
+                        <circle cx="340" cy="135" r="4" /><circle cx="391" cy="170" r="4" /><circle cx="423" cy="141" r="4" />
+                        <circle cx="288" cy="207" r="4" /><circle cx="271" cy="275" r="4" /><circle cx="234" cy="317" r="4" />
+                        <circle cx="323" cy="211" r="4" /><circle cx="349" cy="277" r="4" /><circle cx="380" cy="316" r="4" />
+                      </g>
+                    </g>
+
+                    <g class="vision-subject-box">
+                      <path class="vision-box-guide" d="M172 42H434V326H172Z" />
+                      <path class="vision-box-corners" d="M172 75V42h33M401 42h33v33M172 293v33h33M401 326h33v-33" />
+                      <rect x="172" y="25" width="124" height="17" class="vision-tag-bg" />
+                      <text x="180" y="37" class="vision-tag-text">PERSON_01  94.2%</text>
+                      <text x="441" y="57" class="vision-svg-meta">ID 07</text>
+                      <text x="441" y="70" class="vision-svg-meta">LOCK</text>
+                    </g>
+
+                    <g class="vision-reticle">
+                      <circle cx="305" cy="84" r="43" />
+                      <path d="M305 31v18M305 119v18M252 84h18M340 84h18" />
+                    </g>
+
+                    <text x="18" y="317" class="vision-svg-meta">FLOW +02.4 / −00.7</text>
+                    <text x="452" y="317" class="vision-svg-meta">60 FPS</text>
+                  </svg>
+                  <span class="vision-sweep"></span>
+                </div>
+
+                <div class="vision-output">
+                  <span>Detect → Track → Extract</span>
+                  <span><i></i>18.7 ms</span>
+                </div>
+              </div>
+            </div>
+            <div class="capability-copy">
+              <h3>Computer vision</h3>
+              <p>Turning live visual interfaces into structured information through detection, OCR, matching, and evaluation pipelines.</p>
+              <ul>
+                <li>YOLO &amp; OpenCV</li>
+                <li>OCR &amp; extraction</li>
+                <li>Real-time capture</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="capability" data-reveal>
+            <p class="capability-number utility-text">03</p>
+            <div class="capability-visual visual-image" data-capability-stage="2" aria-hidden="true">
+              <span class="image-half before"></span><span class="image-half after"></span><span class="split-handle">↔</span>
+            </div>
+            <div class="capability-copy">
+              <h3>Image &amp; data systems</h3>
+              <p>Adaptive processing that measures the source first, then applies the right enhancement, transformation, or analysis.</p>
+              <ul>
+                <li>Python &amp; NumPy</li>
+                <li>Segmentation</li>
+                <li>Parallel pipelines</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="capability" data-reveal>
+            <p class="capability-number utility-text">04</p>
+            <div class="capability-visual visual-interface" data-capability-stage="3" aria-hidden="true">
+              <span class="screen screen-top">INTERFACE</span><span class="screen screen-bottom">SYSTEM</span>
+              <span class="control-dot c1"></span><span class="control-dot c2"></span>
+            </div>
+            <div class="capability-copy">
+              <h3>Interactive systems</h3>
+              <p>Interfaces with a point of view—motion, sound, physical metaphors, and accessibility working as one interaction model.</p>
+              <ul>
+                <li>Motion &amp; state</li>
+                <li>Web audio</li>
+                <li>Accessible interaction</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="work section-rule" id="work" aria-labelledby="work-heading">
+        <div class="work-masthead">
+          <h2 id="work-heading" data-reveal>Work</h2>
+          <div class="halftone work-halftone" aria-hidden="true"><span class="scope-reticle"></span></div>
+          <p data-reveal>Selected systems, experiments, and evolving case studies.</p>
+        </div>
+
+        <div class="work-browser" data-reveal>
+          <div class="work-index" role="tablist" aria-label="Selected projects">
+            <button id="project-tab-0" type="button" role="tab" aria-selected="true" aria-controls="project-panel" data-project-tab="0">
+              <span>01</span><strong>VCT Fantasy</strong><small>Full-stack product</small>
+            </button>
+            <button id="project-tab-1" type="button" role="tab" aria-selected="false" aria-controls="project-panel" data-project-tab="1" tabindex="-1">
+              <span>02</span><strong>Broadcast Vision</strong><small>Computer vision</small>
+            </button>
+            <button id="project-tab-2" type="button" role="tab" aria-selected="false" aria-controls="project-panel" data-project-tab="2" tabindex="-1">
+              <span>03</span><strong>Fashion Enhancer</strong><small>Image processing</small>
+            </button>
+            <button id="project-tab-3" type="button" role="tab" aria-selected="false" aria-controls="project-panel" data-project-tab="3" tabindex="-1">
+              <span>04</span><strong>Portfolio OS</strong><small>Interactive web</small>
+            </button>
+            <button id="project-tab-4" type="button" role="tab" aria-selected="false" aria-controls="project-panel" data-project-tab="4" tabindex="-1">
+              <span>05</span><strong>Quick Save</strong><small>Browser extension</small>
+            </button>
+          </div>
+
+          <article class="project-panel" id="project-panel" role="tabpanel" aria-labelledby="project-tab-0" aria-live="polite">
+            <div class="project-copy">
+              <p class="utility-text" data-project-kicker>Full-stack product · 2026</p>
+              <h3 data-project-title>VCT Fantasy</h3>
+              <p data-project-description>
+                A multi-page fantasy product for professional VALORANT: authentication, constrained roster building, player projections, public teams, leaderboards, generated share cards, admin tooling, and scheduled VLR data sync.
+              </p>
+              <ul class="project-tags" data-project-tags>
+                <li>PHP</li><li>SQL</li><li>Data sync</li><li>Product systems</li>
+              </ul>
+              <a class="project-link" data-project-link href="https://github.com/LucPeloquin/VALORANTfantasy" target="_blank" rel="noopener noreferrer">
+                View repository <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="project-poster" data-work-visual-stage data-work-visual-state="loading">
+              <canvas
+                class="work-visual-canvas"
+                data-work-visual-canvas
+                tabindex="0"
+                role="img"
+                aria-label="Interactive 3D visualization: VCT Fantasy tactical roster network. Drag to orbit, pinch or scroll to zoom, or press R to reset the camera."
+              ></canvas>
+              <div class="work-visual-chrome" aria-hidden="true">
+                <p><span data-work-visual-project>VCT / FANTASY</span><span data-work-visual-status>INITIALIZING</span></p>
+                <p><span>DRAG / ORBIT</span><span>PINCH · WHEEL / ZOOM</span><span>R / RESET</span></p>
+              </div>
+              <div class="work-visual-fallback" data-work-visual-fallback aria-hidden="true">
+                <div class="poster poster-fantasy is-active" data-project-poster="0">
+                  <div class="fantasy-top"><span>VCT / FANTASY</span><span>LIVE DATA</span></div>
+                  <div class="fantasy-score"><strong>1,000,000</strong><small>ROSTER BUDGET</small></div>
+                  <div class="fantasy-roster">
+                    <span><i>01</i> DUELIST <b>234K</b></span><span><i>02</i> CONTROLLER <b>218K</b></span>
+                    <span><i>03</i> INITIATOR <b>204K</b></span><span><i>04</i> SENTINEL <b>192K</b></span>
+                    <span><i>05</i> FLEX <b>152K</b></span>
+                  </div>
+                </div>
+                <div class="poster poster-vision" data-project-poster="1" hidden>
+                  <div class="vision-hud"><span>12</span><b>ROUND 19</b><span>07</span></div>
+                  <div class="vision-scene"><i class="target target-one">PLAYER .96</i><i class="target target-two">WEAPON .91</i><i class="target target-three">TIMER .99</i></div>
+                  <div class="vision-log"><span>FRAME 01843</span><span>7 OBJECTS</span><span>24 FPS</span></div>
+                </div>
+                <div class="poster poster-fashion" data-project-poster="2" hidden>
+                  <div class="garment garment-before"><span>RAW</span><i></i></div>
+                  <div class="garment garment-after"><span>ENHANCED</span><i></i></div>
+                  <div class="fashion-controls"><span>CLAHE</span><b>78</b><span>DETAIL</span><b>64</b><span>BG MASK</span><b>ON</b></div>
+                </div>
+                <div class="poster poster-os" data-project-poster="3" hidden>
+                  <div class="device-screen top-screen"><span>JEAN-LUC</span><b>PORTFOLIO SYSTEM</b><small>Tap to start</small></div>
+                  <div class="device-hinge"><i></i><i></i><i></i></div>
+                  <div class="device-screen bottom-screen"><span>WORK</span><span>ABOUT</span><span>PLAY</span></div>
+                </div>
+                <div class="poster poster-save" data-project-poster="4" hidden>
+                  <div class="browser-bar"><i></i><i></i><i></i><span>media.example/image.jpg</span></div>
+                  <div class="save-media"><span>ALT</span><strong>+</strong><span>CLICK</span></div>
+                  <div class="save-toast"><i>↓</i><span><b>Saved</b>Downloads / QuickSave</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-controls">
+              <button type="button" aria-label="Previous project" data-project-prev>←</button>
+              <p class="utility-text"><span data-project-current>01</span> — 05</p>
+              <button type="button" aria-label="Next project" data-project-next>→</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="principles section-rule" id="principles" aria-labelledby="principles-heading">
+        <div class="principles-sidebar">
+          <div class="section-label">
+            <span class="label-square" aria-hidden="true"></span>
+            <span id="principles-heading">Working principles</span>
+          </div>
+          <div class="principle-controls">
+            <button type="button" aria-label="Previous principle" data-note-prev>←</button>
+            <button type="button" aria-label="Pause principles" aria-pressed="false" data-note-toggle>Pause</button>
+            <button type="button" aria-label="Next principle" data-note-next>→</button>
+          </div>
+          <div class="portrait-frame">
+            <img src="./images/jean-luc-current.webp" width="600" height="600" loading="lazy" alt="Jean-Luc Peloquin" />
+            <div class="halftone portrait-halftone" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="principle-stage" data-reveal>
+          <article class="principle-slide is-active" data-note-slide="0">
+            <p class="principle-mark" aria-hidden="true">⌁</p>
+            <h2>Measure the source before choosing the transformation.</h2>
+            <p>Good automation adapts to what is actually present. That applies to an image pipeline, a scraped data source, or a person trying to use an interface.</p>
+            <div class="principle-meta"><span>Principle</span><strong>Evidence before defaults</strong></div>
+          </article>
+          <article class="principle-slide" data-note-slide="1" hidden>
+            <p class="principle-mark" aria-hidden="true">⌁</p>
+            <h2>Make the interaction model part of the idea.</h2>
+            <p>A memorable interface is not decoration over a generic flow. Motion, sound, physical metaphor, and keyboard behavior should all explain the same system.</p>
+            <div class="principle-meta"><span>Principle</span><strong>Form carries meaning</strong></div>
+          </article>
+          <article class="principle-slide" data-note-slide="2" hidden>
+            <p class="principle-mark" aria-hidden="true">⌁</p>
+            <h2>Build the useful version, then keep sharpening.</h2>
+            <p>Ship a coherent path through the problem first. Instrument it, find the weak signal, and improve the part that changes the outcome—not the part that merely looks busy.</p>
+            <div class="principle-meta"><span>Principle</span><strong>One step at a time</strong></div>
+          </article>
+          <p class="principle-count utility-text"><span data-note-current>01</span> — 03</p>
+        </div>
+
+        <aside class="principle-context">
+          <p>Focus</p><strong>Clarity</strong>
+          <p>Method</p><strong>Iteration</strong>
+          <p>Standard</p><strong>Useful detail</strong>
+        </aside>
+      </section>
+
+      <section class="profile section-rule" id="profile" aria-labelledby="profile-heading">
+        <div class="profile-masthead">
+          <h2 id="profile-heading" data-reveal>Profile</h2>
+          <p data-reveal>One builder.<br />Broad signal.</p>
+        </div>
+
+        <div class="profile-grid">
+          <div class="section-label profile-label">
+            <span class="label-square" aria-hidden="true"></span>
+            <span>Who you’ll work with</span>
+          </div>
+          <div class="profile-story" data-reveal>
+            <p>
+              Jean-Luc brings an engineering foundation together with frontline technical support and operations experience. He is comfortable moving from ambiguous problem to working prototype, explaining the tradeoffs, and staying with the details that make a system dependable.
+            </p>
+            <p>
+              Outside the build, his interests in esports, competitive games, music, and fashion keep supplying new kinds of data and interaction problems to explore.
+            </p>
+          </div>
+          <figure class="profile-photo" data-reveal>
+            <img src="./images/jean-luc.webp" width="1400" height="1400" loading="lazy" alt="Portrait of Jean-Luc Peloquin in a navy suit" />
+            <figcaption class="utility-text">Jean-Luc Peloquin · Software engineer</figcaption>
+          </figure>
+          <div class="profile-details" data-reveal>
+            <article>
+              <p class="utility-text">Education</p>
+              <h3>B.S. Computer Science</h3>
+              <p>University of Nevada, Las Vegas · 2024 · 3.5 GPA</p>
+            </article>
+            <article>
+              <p class="utility-text">Practice</p>
+              <h3>Engineering + data</h3>
+              <p>Product systems, computer vision, automation, image processing, and interactive web experiences.</p>
+            </article>
+            <article>
+              <p class="utility-text">Toolbox</p>
+              <div class="skill-grid">
+                <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>PHP</span><span>C / C++ / C#</span><span>SQL</span><span>React</span><span>OpenCV</span><span>AWS</span><span>Git</span><span>Tableau</span><span>Power BI</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing section-rule" aria-labelledby="closing-heading">
+        <button class="closing-cta contact-trigger" type="button" data-contact-open>
+          <span id="closing-heading">Let’s</span>
+          <span>build</span>
+          <span>something</span>
+          <span>exact.</span>
+          <i aria-hidden="true">↗</i>
+        </button>
+        <div class="closing-meta">
+          <p class="utility-text">Available for thoughtful software, data, and interface work.</p>
+          <div class="dual-clock" role="group" aria-label="Current time in Las Vegas and New York">
+            <time data-clock data-zone="America/Los_Angeles"><span data-clock-time>--:--</span> <span data-clock-label>LAS VEGAS</span></time>
+            <time data-clock data-zone="America/New_York"><span data-clock-time>--:--</span> <span data-clock-label>NEW YORK</span></time>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Build useful things. Refine the signal.</p>
+      <nav aria-label="Footer navigation">
+        <a href="#about">About</a><a href="#work">Work</a><a href="#profile">Profile</a>
+      </nav>
+      <div class="footer-links">
+        <a href="https://github.com/LucPeloquin" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/jean-luc-peloquin-6688121a1/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="./privacy.html">Privacy</a>
+      </div>
+      <p class="utility-text">© <span data-year>2026</span> Jean-Luc Peloquin</p>
+    </footer>
+
+    <dialog class="site-menu" data-menu-dialog aria-labelledby="menu-title">
+      <div class="dialog-topline">
+        <p id="menu-title">Navigate</p>
+        <button type="button" aria-label="Close menu" data-menu-close>Close <span aria-hidden="true">×</span></button>
+      </div>
+      <nav aria-label="Mobile navigation">
+        <a href="#about" data-menu-link><span>01</span>About</a>
+        <a href="#work" data-menu-link><span>02</span>Work</a>
+        <a href="#principles" data-menu-link><span>03</span>Approach</a>
+        <a href="#profile" data-menu-link><span>04</span>Profile</a>
+        <button type="button" data-contact-open data-menu-link><span>05</span>Contact</button>
+      </nav>
+      <div class="menu-footer">
+        <time data-clock data-zone="America/Los_Angeles"><span data-clock-time>--:--</span> <span data-clock-label>LAS VEGAS</span></time>
+        <a href="https://github.com/LucPeloquin" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <button class="theme-toggle" type="button" data-theme-toggle>Toggle theme</button>
+      </div>
+    </dialog>
+
+    <dialog class="contact-drawer" data-contact-dialog aria-labelledby="contact-title">
+      <div class="dialog-topline contact-topline">
+        <button type="button" aria-label="Close contact panel" data-contact-close><span aria-hidden="true">×</span></button>
+        <p>Direct line</p>
+      </div>
+      <h2 id="contact-title">Contact</h2>
+      <div class="contact-rows">
+        <div class="contact-row">
+          <span>E:</span>
+          <a href="mailto:lucpeloquin77@gmail.com">lucpeloquin77@gmail.com</a>
+          <button type="button" data-copy-email aria-label="Copy email address">Copy</button>
+        </div>
+        <a class="contact-row" href="https://www.linkedin.com/in/jean-luc-peloquin-6688121a1/" target="_blank" rel="noopener noreferrer">
+          <span>IN:</span><strong>LinkedIn</strong><i aria-hidden="true">↗</i>
+        </a>
+        <a class="contact-row" href="https://github.com/LucPeloquin" target="_blank" rel="noopener noreferrer">
+          <span>GH:</span><strong>GitHub</strong><i aria-hidden="true">↗</i>
+        </a>
+      </div>
+      <div class="contact-clocks">
+        <time data-clock data-zone="America/Los_Angeles"><span class="clock-face" aria-hidden="true"></span><span><b>LAS VEGAS</b><small data-clock-time>--:--</small></span></time>
+        <time data-clock data-zone="America/New_York"><span class="clock-face" aria-hidden="true"></span><span><b>NEW YORK</b><small data-clock-time>--:--</small></span></time>
+      </div>
+      <div class="contact-pitch">
+        <p class="utility-text">Start with context</p>
+        <h3>What are you building—and where is the signal getting lost?</h3>
+      </div>
+      <a class="contact-email-cta" href="mailto:lucpeloquin77@gmail.com?subject=Project%20conversation">
+        Write an email <span aria-hidden="true">→</span>
+      </a>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast>Email copied</div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Privacy details for Jean-Luc Peloquin's portfolio." />
+    <meta name="theme-color" content="#f7f7f3" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>Privacy — Jean-Luc Peloquin</title>
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("jl-theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = savedTheme || (systemDark ? "dark" : "light");
+      } catch (_) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="legal-header">
+      <a class="brand-mark" href="./index.html" aria-label="Return to Jean-Luc Peloquin's portfolio">
+        <img src="./logo-flat.png" width="360" height="360" alt="" />
+      </a>
+      <a href="./index.html">← Portfolio</a>
+      <button class="theme-toggle icon-button" type="button" data-theme-toggle aria-label="Switch theme">
+        <span class="theme-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </header>
+
+    <main class="legal-page" id="main">
+      <div class="legal-title">
+        <p class="section-label"><span class="label-square" aria-hidden="true"></span>Site information</p>
+        <h1>Privacy</h1>
+        <p>Last updated August 12, 2026</p>
+      </div>
+      <div class="legal-copy">
+        <section>
+          <p class="utility-text">01 / The short version</p>
+          <h2>This portfolio does not run analytics, advertising, or a contact-form backend.</h2>
+          <p>You can browse the site without creating an account or sending personal information to this website.</p>
+        </section>
+        <section>
+          <p class="utility-text">02 / Local preferences</p>
+          <h2>Theme choice</h2>
+          <p>The light or dark theme you select is saved in your browser’s local storage under <code>jl-theme</code>. It stays on your device and can be removed by clearing this site’s stored data.</p>
+        </section>
+        <section>
+          <p class="utility-text">03 / Direct contact</p>
+          <h2>Email</h2>
+          <p>Email links open your own email application. Any message you choose to send is handled by your email provider and the recipient’s email provider, not by this website.</p>
+        </section>
+        <section>
+          <p class="utility-text">04 / External services</p>
+          <h2>Outbound links</h2>
+          <p>Project, GitHub, and LinkedIn links lead to third-party sites with their own privacy practices. The 3D object renders locally in your browser and does not upload device or interaction data.</p>
+        </section>
+        <section>
+          <p class="utility-text">05 / Questions</p>
+          <h2>Ask directly</h2>
+          <p>If you have a privacy question, email <a class="inline-text-link" href="mailto:lucpeloquin77@gmail.com">lucpeloquin77@gmail.com</a>.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="legal-footer">
+      <a href="./index.html">Jean-Luc Peloquin</a>
+      <p class="utility-text">© <span data-year>2026</span></p>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

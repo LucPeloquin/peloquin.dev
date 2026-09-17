@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "generatedAt": "deterministic",
+  "sourcePage": "https://suleymanyazki.com/project/vct22",
+  "usage": "Authorized local derivatives of the reference system primitives; runtime contains no remote reference-site requests.",
+  "files": [
+    {
+      "id": "satoshi-variable",
+      "type": "font",
+      "sourceUrl": "https://suleymanyazki.com/wp-content/themes/semplice7/assets/fonts/satoshi.woff2",
+      "transformation": "self-hosted local display face; runtime use is constrained to the site Latin/technical unicode range",
+      "output": "fonts/satoshi-variable.woff2",
+      "sourceSha256": "e739aff9b4d02c264341d6d4872edcda28e79373aeda936f659566a1cd3eb47f",
+      "outputSha256": "e739aff9b4d02c264341d6d4872edcda28e79373aeda936f659566a1cd3eb47f",
+      "bytes": 42588
+    },
+    {
+      "id": "fk-grotesk-semi-mono-regular",
+      "type": "font",
+      "sourceUrl": "https://suleymanyazki.com/wp-content/uploads/2026/05/FKGroteskSemiMono-Regular.otf",
+      "transformation": "self-hosted local label face; runtime use is constrained to the site Latin/technical unicode range",
+      "output": "fonts/fk-grotesk-semi-mono-regular.otf",
+      "sourceSha256": "a04ed9ac9afa2a00433816b2400dcff5d27980cbb598d6c2e136156ff98bd658",
+      "outputSha256": "a04ed9ac9afa2a00433816b2400dcff5d27980cbb598d6c2e136156ff98bd658",
+      "bytes": 135324
+    },
+    {
+      "id": "fk-grotesk-semi-mono-bold",
+      "type": "font",
+      "sourceUrl": "https://suleymanyazki.com/wp-content/uploads/2026/05/FKGroteskSemiMono-Bold.otf",
+      "transformation": "self-hosted local label face; runtime use is constrained to the site Latin/technical unicode range",
+      "output": "fonts/fk-grotesk-semi-mono-bold.otf",
+      "sourceSha256": "1bcd163e3263651e371d3dfd2d42bc8a3c1f3935d52c38fdbdb709025f11ef92",
+      "outputSha256": "1bcd163e3263651e371d3dfd2d42bc8a3c1f3935d52c38fdbdb709025f11ef92",
+      "bytes": 140272
+    },
+    {
+      "id": "reticle",
+      "type": "glyph",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
+      "output": "glyphs/reticle.svg",
+      "sourceSha256": null,
+      "outputSha256": "3226762683f066d7d544438356e6512dd647a3b39f2b24501d17ccf3f8624a52",
+      "bytes": 259
+    },
+    {
+      "id": "corner-brackets",
+      "type": "glyph",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
+      "output": "glyphs/corner-brackets.svg",
+      "sourceSha256": null,
+      "outputSha256": "8dcc8bda5cfbffa92940557ed4d5d92807937038c5847a2cc4b7e0c351d6e4a0",
+      "bytes": 173
+    },
+    {
+      "id": "radial-burst",
+      "type": "glyph",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
+      "output": "glyphs/radial-burst.svg",
+      "sourceSha256": null,
+      "outputSha256": "5b0e86072bc7895648964806b54c5883eb5defa52c70b39ccd1b84a06e5664f5",
+      "bytes": 794
+    },
+    {
+      "id": "segmented-cross",
+      "type": "glyph",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
+      "output": "glyphs/segmented-cross.svg",
+      "sourceSha256": null,
+      "outputSha256": "04102974d831913575ac37471bf480296225d05ca4344796cd2faff267389ad0",
+      "bytes": 275
+    },
+    {
+      "id": "orbital-loops",
+      "type": "glyph",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
+      "output": "glyphs/orbital-loops.svg",
+      "sourceSha256": null,
+      "outputSha256": "7d246aefcc82cc1a16120830db3cb0363fc01f479fbca0b20112674720247889",
+      "bytes": 360
+    },
+    {
+      "id": "horizon-sphere",
+      "type": "glyph",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
+      "output": "glyphs/horizon-sphere.svg",
+      "sourceSha256": null,
+      "outputSha256": "04c1fee3e2ef3ece97ac794dd5681c080521601e0cda2a4e18c96534937b4747",
+      "bytes": 261
+    },
+    {
+      "id": "inward-chevrons",
+      "type": "glyph",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
+      "output": "glyphs/inward-chevrons.svg",
+      "sourceSha256": null,
+      "outputSha256": "fecb4cbc0f2472fcdfe8aea94ed5e4580c147dec86b19e2f7cc311e00f78c4bc",
+      "bytes": 237
+    },
+    {
+      "id": "plus-marker",
+      "type": "glyph",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
+      "output": "glyphs/plus-marker.svg",
+      "sourceSha256": null,
+      "outputSha256": "e5331986d6173f596815bf9729df4cae5f868171c1c777ae911f50a7965b5e61",
+      "bytes": 291
+    },
+    {
+      "id": "light-diagonal",
+      "type": "light-mask",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "reconstructed as a text-free grayscale/vector light-only alpha treatment; no campaign imagery retained",
+      "output": "masks/light-diagonal.svg",
+      "sourceSha256": null,
+      "outputSha256": "5499d54ad6415bbedc8fea794b87cc658c9c503a1d5754577420293940103598",
+      "bytes": 1597
+    },
+    {
+      "id": "light-radial",
+      "type": "light-mask",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "reconstructed as a text-free grayscale/vector light-only alpha treatment; no campaign imagery retained",
+      "output": "masks/light-radial.svg",
+      "sourceSha256": null,
+      "outputSha256": "c95b3c99ba8ca35845cafe64dd096294b3402d953f67f2ec545c94fd13dcd541",
+      "bytes": 1432
+    },
+    {
+      "id": "light-convergence",
+      "type": "light-mask",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "reconstructed as a text-free grayscale/vector light-only alpha treatment; no campaign imagery retained",
+      "output": "masks/light-convergence.svg",
+      "sourceSha256": null,
+      "outputSha256": "81b6ff48f2bae57a3139833e221dbd613bc9bf8c69c4f2b13688a159c3f603f6",
+      "bytes": 1064
+    },
+    {
+      "id": "grain-purple",
+      "type": "light-mask",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "reconstructed as a text-free grayscale/vector light-only alpha treatment; no campaign imagery retained",
+      "output": "masks/grain-purple.svg",
+      "sourceSha256": null,
+      "outputSha256": "c48fd7506d8e022948f7d731eb8425633fb8eb7965f6453f62248385ddd16f96",
+      "bytes": 297
+    },
+    {
+      "id": "grain-red-gold",
+      "type": "light-mask",
+      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
+      "transformation": "reconstructed as a text-free grayscale/vector light-only alpha treatment; no campaign imagery retained",
+      "output": "masks/grain-red-gold.svg",
+      "sourceSha256": null,
+      "outputSha256": "e484192cd4e86d5ba90d4739d03ce27d1d0cfdacdded62fb3d8f6d3c4140dfbb",
+      "bytes": 297
+    }
+  ]
+}

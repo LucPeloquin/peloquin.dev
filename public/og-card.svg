@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.35" fill="#232323"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9d9d5"/>
+      <stop offset="1" stop-color="#f7f7f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#f7f7f3"/>
+  <rect x="700" width="500" height="630" fill="url(#fade)"/>
+  <path d="M700 0h500v630H700z" fill="url(#dots)" opacity=".33"/>
+  <path d="M703 0h497v630H703z" fill="#d9d9d5" opacity=".8" clip-path="polygon(0 0,100% 0,100% 23%,48% 100%,0 100%)"/>
+  <rect x="0" y="0" width="72" height="72" fill="#232323"/>
+  <path d="M15 56 31 16h9L26 56ZM38 16h9v31h13v9H38Z" fill="#f7f7f3"/>
+  <circle cx="33" cy="38" r="3.8" fill="#a1ffcb"/>
+  <text x="40" y="280" font-family="Arial, Helvetica, sans-serif" font-size="142" letter-spacing="-10" fill="#232323">Jean-Luc</text>
+  <text x="40" y="420" font-family="Arial, Helvetica, sans-serif" font-size="142" letter-spacing="-10" fill="#232323">Peloquin</text>
+  <text x="45" y="535" font-family="monospace" font-size="19" letter-spacing="1" fill="#232323">SOFTWARE ENGINEER · LAS VEGAS</text>
+  <g transform="translate(735 220) rotate(-7)">
+    <path d="M0 92 88 63l67 4 22 24-28 28-66-5Z" fill="#111418"/>
+    <path d="M145 69 408 61l32 16-28 17-267 9Z" fill="#b9954b"/>
+    <path d="m25 88-74 19-47 78 28 8 55-63 58-13Z" fill="#6b472f" stroke="#b9954b" stroke-width="12"/>
+    <path d="m-97 182 28 11-4 38-35-7Z" fill="#e7e1d4"/>
+    <rect x="48" y="116" width="50" height="72" rx="4" transform="rotate(12 48 116)" fill="#e7e1d4"/>
+    <rect x="65" y="33" width="130" height="22" rx="11" fill="#111418" stroke="#b9954b" stroke-width="7"/>
+    <rect x="86" y="6" width="6" height="36" fill="#ffb018" opacity=".8"/>
+    <rect x="112" y="2" width="6" height="40" fill="#ffb018" opacity=".8"/>
+    <rect x="138" y="7" width="6" height="35" fill="#ffb018" opacity=".8"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="629" fill="none" stroke="#232323"/>
+</svg>
