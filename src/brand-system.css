@@ -288,10 +288,19 @@ body[data-brand-system] .header-contact:focus-visible {
   background: var(--brand-gold);
 }
 
-/* Boot screen: preserve the pre-retheme ASCII startup treatment. */
+/* Boot screen: restore the original ASCII startup treatment. */
 
 body[data-brand-system] .boot-screen {
   --signal: #a1ffcb;
+  background: #111413;
+}
+
+body[data-brand-system] .boot-screen-mark::after {
+  box-shadow: 0 0 16px rgba(161, 255, 203, 0.52);
+}
+
+body[data-brand-system] .boot-screen-progress span {
+  box-shadow: 0 0 12px rgba(161, 255, 203, 0.42);
 }
 
 /* Hero */
