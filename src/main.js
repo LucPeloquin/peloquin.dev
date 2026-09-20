@@ -133,6 +133,28 @@ document.querySelectorAll("[data-year]").forEach((year) => {
   year.textContent = new Date().getFullYear();
 });
 
+const scrollProgress = document.querySelector("[data-scroll-progress]");
+let scrollProgressFrame = 0;
+
+function updateScrollProgress() {
+  scrollProgressFrame = 0;
+  if (!scrollProgress) return;
+  const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  const progress = maxScroll === 0 ? 1 : Math.min(1, Math.max(0, window.scrollY / maxScroll));
+  scrollProgress.style.setProperty("--scroll-progress", String(progress));
+  scrollProgress.setAttribute("aria-valuenow", String(Math.round(progress * 100)));
+}
+
+function requestScrollProgressUpdate() {
+  if (scrollProgressFrame) return;
+  scrollProgressFrame = window.requestAnimationFrame(updateScrollProgress);
+}
+
+window.addEventListener("scroll", requestScrollProgressUpdate, { passive: true });
+window.addEventListener("resize", requestScrollProgressUpdate, { passive: true });
+window.addEventListener("load", requestScrollProgressUpdate, { once: true });
+updateScrollProgress();
+
 function currentTheme() {
   return root.dataset.theme === "dark" ? "dark" : "light";
 }
