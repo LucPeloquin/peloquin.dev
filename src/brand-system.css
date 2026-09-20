@@ -944,3 +944,290 @@ body[data-brand-system] .footer-links {
     letter-spacing: 0.045em;
   }
 }
+
+/* Phone composition
+ *
+ * The desktop system is intentionally architectural. On a phone, that same
+ * rhythm needs shorter panels and a clearer reading order rather than stacked
+ * viewport-sized cells.
+ */
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 1rem;
+  }
+
+  body[data-brand-system] {
+    background-size: 100% 6rem;
+  }
+
+  body[data-brand-system] .hero-grid {
+    grid-template-rows: 220px 240px auto auto;
+  }
+
+  body[data-brand-system] .hero-name,
+  body[data-brand-system] .hero-intro,
+  body[data-brand-system] .hero-signal {
+    padding: var(--gutter);
+  }
+
+  body[data-brand-system] .hero-intro {
+    min-height: 290px;
+    gap: 2rem;
+  }
+
+  body[data-brand-system] .hero-signal {
+    min-height: 250px;
+    gap: 1.5rem;
+  }
+
+  body[data-brand-system] .hero-intro > p,
+  body[data-brand-system] .signal-statement {
+    font-size: clamp(1.22rem, 5.7vw, 1.45rem);
+    line-height: 1.32;
+  }
+
+  body[data-brand-system] .tech-loop > div {
+    gap: 1.35rem;
+    padding-block: 0.9rem 0;
+  }
+
+  body[data-brand-system] .about-index {
+    min-height: 510px;
+  }
+
+  body[data-brand-system] .about-index-statement {
+    max-width: 13ch;
+    font-size: clamp(2.25rem, 10.4vw, 3rem);
+    line-height: 1.02;
+  }
+
+  body[data-brand-system] .about-index-list li {
+    min-height: 92px;
+    padding: 0.7rem;
+  }
+
+  body[data-brand-system] .about-index-list strong {
+    font-size: 0.96rem;
+  }
+
+  body[data-brand-system] .lede-copy {
+    min-height: 0;
+    gap: 2rem;
+    padding: 2rem var(--gutter) 2.25rem;
+  }
+
+  body[data-brand-system] .lede-copy h2 {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  body[data-brand-system] .lede-copy > p {
+    margin-top: 0;
+  }
+
+  body[data-brand-system] .github-activity-copy {
+    grid-template-rows: auto auto auto auto;
+    min-height: 0;
+    gap: 1.5rem;
+    padding: 1.35rem var(--gutter);
+  }
+
+  body[data-brand-system] .github-activity-copy h3 {
+    font-size: clamp(2.8rem, 13vw, 3.5rem);
+  }
+
+  body[data-brand-system] .github-activity-copy > p:not(.utility-text) {
+    align-self: start;
+  }
+
+  body[data-brand-system] .github-activity-visual {
+    min-height: 300px;
+    padding: 1.25rem var(--gutter);
+  }
+
+  body[data-brand-system] .github-activity-grid {
+    min-height: 165px;
+  }
+
+  body[data-brand-system] .section-heading-grid h2 {
+    min-height: 240px;
+    font-size: clamp(4rem, 18vw, 5.2rem);
+  }
+
+  body[data-brand-system] .section-heading-grid > div {
+    min-height: 0;
+    gap: 2rem;
+    padding: 1.5rem var(--gutter);
+  }
+
+  body[data-brand-system] .section-heading-grid > div p {
+    font-size: 1.2rem;
+  }
+
+  body[data-brand-system] .capability {
+    grid-template-columns: 40px 1fr;
+  }
+
+  body[data-brand-system] .capability-number {
+    padding: 0.75rem 0.6rem;
+  }
+
+  body[data-brand-system] .capability-visual {
+    min-height: 240px;
+  }
+
+  body[data-brand-system] .capability-copy {
+    min-height: 0;
+    gap: 1.25rem;
+    padding: 1.35rem var(--gutter) 1.5rem;
+  }
+
+  body[data-brand-system] .capability-copy h3 {
+    font-size: clamp(2.35rem, 10.8vw, 3rem);
+  }
+
+  body[data-brand-system] .capability-copy > p {
+    align-self: start;
+    font-size: 1rem;
+  }
+
+  body[data-brand-system] .work-masthead {
+    grid-template-rows: 190px auto;
+  }
+
+  body[data-brand-system] .work-masthead h2 {
+    font-size: clamp(4.4rem, 20vw, 5.7rem);
+  }
+
+  body[data-brand-system] .work-index button {
+    flex-basis: 66vw;
+    min-height: 88px;
+  }
+
+  body[data-brand-system] .project-panel {
+    grid-template-rows: auto minmax(340px, 96vw) 58px;
+  }
+
+  body[data-brand-system] .project-copy {
+    min-height: 0;
+    gap: 1.25rem;
+    padding: 1.35rem var(--gutter) 1.5rem;
+  }
+
+  body[data-brand-system] .project-copy h3 {
+    margin-top: 1.5rem;
+    font-size: clamp(3rem, 14vw, 4.1rem);
+  }
+
+  body[data-brand-system] .project-copy > p:not(.utility-text) {
+    font-size: 1rem;
+  }
+
+  body[data-brand-system] .project-link {
+    margin-top: 1.25rem;
+  }
+
+  body[data-brand-system] .principles-sidebar {
+    grid-template-rows: 105px 56px 220px;
+  }
+
+  body[data-brand-system] .principle-stage {
+    min-height: 500px;
+    padding: 1.5rem var(--gutter);
+  }
+
+  body[data-brand-system] .principle-slide {
+    min-height: 450px;
+  }
+
+  body[data-brand-system] .principle-slide h2 {
+    margin-top: 1.75rem;
+    font-size: clamp(2.45rem, 10.6vw, 3.2rem);
+  }
+
+  body[data-brand-system] .principle-slide > p:not(.principle-mark) {
+    margin-top: 1.5rem;
+  }
+
+  body[data-brand-system] .profile-masthead {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  body[data-brand-system] .profile-masthead h2 {
+    min-height: 150px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    font-size: clamp(4.5rem, 21vw, 5.7rem);
+  }
+
+  body[data-brand-system] .profile-masthead > p {
+    min-height: 132px;
+    padding: var(--gutter);
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+  }
+
+  body[data-brand-system] .profile-grid {
+    grid-template-rows: auto auto 420px auto;
+  }
+
+  body[data-brand-system] .profile-label {
+    min-height: 88px;
+  }
+
+  body[data-brand-system] .profile-story {
+    min-height: 0;
+    gap: 1.5rem;
+    padding: 1.5rem var(--gutter) 1.75rem;
+  }
+
+  body[data-brand-system] .profile-photo {
+    min-height: 420px;
+  }
+
+  body[data-brand-system] .profile-details h3 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+  }
+
+  body[data-brand-system] .closing {
+    min-height: 590px;
+    padding: 1.25rem var(--gutter);
+  }
+
+  body[data-brand-system] .closing-meta {
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+  }
+
+  body[data-brand-system] .site-footer {
+    min-height: 300px;
+    gap: 2rem;
+    padding: 1.25rem var(--gutter);
+  }
+
+  body[data-brand-system] .menu-footer time {
+    flex-direction: column;
+    gap: 0.2rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 360px) {
+  body[data-brand-system] .hero-name {
+    padding-inline: 0.75rem;
+  }
+
+  body[data-brand-system] .hero-name h1 {
+    font-size: clamp(1.9rem, 9.6vw, 2.15rem);
+  }
+
+  body[data-brand-system] .hero-surname p {
+    padding-inline: 0.35em;
+    font-size: clamp(2.05rem, 10.25vw, 2.35rem);
+  }
+
+  body[data-brand-system] .hero-intro > p,
+  body[data-brand-system] .signal-statement {
+    font-size: 1.16rem;
+  }
+}
