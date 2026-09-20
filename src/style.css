@@ -965,104 +965,6 @@ html.booting body {
 
 .about-index-footer span:last-child { text-align: right; }
 
-.github-activity {
-  display: grid;
-  grid-template-columns: minmax(300px, 0.72fr) minmax(560px, 1.28fr);
-  min-height: 350px;
-  border-top: 1px solid var(--line);
-}
-
-.github-activity-copy,
-.github-activity-visual {
-  padding: var(--gutter);
-}
-
-.github-activity-copy {
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 1.25rem;
-  border-right: 1px solid var(--line);
-}
-
-.github-activity-copy h3 {
-  max-width: 8ch;
-  font-size: clamp(2.4rem, 4.1vw, 4.6rem);
-  font-weight: 440;
-  letter-spacing: -0.07em;
-  line-height: 0.94;
-}
-
-.github-activity-copy > p:not(.utility-text) {
-  max-width: 40ch;
-  align-self: center;
-  line-height: 1.4;
-}
-
-.github-activity-visual {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 1.25rem;
-  background: var(--panel);
-}
-
-.github-activity-meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.github-activity-grid {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(7, minmax(7px, 1fr));
-  grid-template-columns: repeat(20, minmax(7px, 1fr));
-  gap: clamp(3px, 0.42vw, 7px);
-  min-height: 190px;
-  align-self: center;
-}
-
-.github-activity-grid i,
-.github-activity-legend i {
-  display: block;
-  border: 1px solid rgba(var(--ink-rgb), 0.18);
-  background: rgba(var(--ink-rgb), 0.055);
-}
-
-.github-activity-grid i {
-  min-width: 0;
-  min-height: 0;
-  border-radius: 1px;
-  transition: background-color 300ms ease, border-color 300ms ease, transform 300ms var(--ease);
-}
-
-.github-activity-grid i[data-level="1"],
-.github-activity-legend i[data-level="1"] { background: color-mix(in srgb, var(--signal) 38%, var(--paper)); }
-.github-activity-grid i[data-level="2"],
-.github-activity-legend i[data-level="2"] { background: color-mix(in srgb, var(--signal) 64%, var(--paper)); }
-.github-activity-grid i[data-level="3"],
-.github-activity-legend i[data-level="3"] { background: color-mix(in srgb, var(--signal) 84%, var(--ink)); }
-.github-activity-grid i[data-level="4"],
-.github-activity-legend i[data-level="4"] { background: var(--ink); }
-
-.github-activity[data-activity-state="ready"] .github-activity-grid i[data-level]:hover { transform: translateY(-2px); }
-
-.github-activity-legend {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.35rem;
-}
-
-.github-activity-legend i {
-  width: 0.72rem;
-  height: 0.72rem;
-}
-
-.github-activity[data-activity-state="fallback"] .github-activity-grid {
-  opacity: 0.45;
-  filter: grayscale(1);
-}
-
 .capability-list {
   position: relative;
   isolation: isolate;
@@ -2943,10 +2845,6 @@ a.contact-row:hover { background: var(--signal); color: #181818; }
   .hero-intro { grid-column: 1; grid-row: 3; min-height: 300px; }
   .hero-signal { grid-column: 2; grid-row: 3; min-height: 300px; }
 
-  .github-activity {
-    grid-template-columns: minmax(250px, .75fr) minmax(0, 1.25fr);
-  }
-
   .capability { grid-template-columns: 66px 1fr 1fr; }
   .project-panel { grid-template-columns: minmax(285px, .85fr) 1.15fr; }
   .principles { grid-template-columns: minmax(240px, 31%) 1fr; }
@@ -3020,20 +2918,6 @@ a.contact-row:hover { background: var(--signal); color: #181818; }
   }
 
   .lede-copy h2 { font-size: clamp(2rem, 9.5vw, 3.2rem); }
-
-  .github-activity {
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
-
-  .github-activity-copy {
-    min-height: 370px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .github-activity-visual { min-height: 390px; }
-  .github-activity-grid { min-height: 220px; gap: 3px; }
 
   .section-heading-grid {
     grid-template-columns: 1fr;

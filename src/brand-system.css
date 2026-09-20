@@ -433,7 +433,6 @@ body[data-brand-system] .about-index::after {
 body[data-brand-system] .about-index-statement,
 body[data-brand-system] .lede-copy h2,
 body[data-brand-system] .section-heading-grid h2,
-body[data-brand-system] .github-activity-copy h3,
 body[data-brand-system] .principle-slide h2,
 body[data-brand-system] .profile-masthead h2,
 body[data-brand-system] .profile-masthead > p {
@@ -462,17 +461,6 @@ body[data-brand-system] .about-index-list strong {
 body[data-brand-system] .about-index-footer {
   background: var(--brand-gold);
   color: var(--brand-black);
-}
-
-body[data-brand-system] .github-activity-visual {
-  background-color: var(--panel);
-  background-image: none;
-  background-position: center;
-  background-size: cover;
-}
-
-body[data-brand-system] .github-activity-grid i[data-level="4"] {
-  background: var(--brand-black);
 }
 
 body[data-brand-system] .section-heading-grid {
@@ -844,7 +832,6 @@ body[data-brand-system] .hero-surname p,
 body[data-brand-system] .about-index-statement,
 body[data-brand-system] .lede-copy h2,
 body[data-brand-system] .section-heading-grid h2,
-body[data-brand-system] .github-activity-copy h3,
 body[data-brand-system] .capability-copy h3,
 body[data-brand-system] .work-masthead h2,
 body[data-brand-system] .project-copy h3,
@@ -865,7 +852,6 @@ body[data-brand-system] .hero-surname p {
 
 body[data-brand-system] .about-index-statement,
 body[data-brand-system] .lede-copy h2,
-body[data-brand-system] .github-activity-copy h3,
 body[data-brand-system] .capability-copy h3,
 body[data-brand-system] .project-copy h3,
 body[data-brand-system] .principle-slide h2 {
@@ -895,7 +881,6 @@ body[data-brand-system] .site-footer > p:first-child {
 }
 
 body[data-brand-system] .lede-copy > p,
-body[data-brand-system] .github-activity-copy > p:not(.utility-text),
 body[data-brand-system] .capability-copy > p,
 body[data-brand-system] .project-copy > p:not(.utility-text),
 body[data-brand-system] .principle-slide > p:not(.principle-mark),
@@ -1043,30 +1028,6 @@ body[data-brand-system] .hero-surname p {
 
   body[data-brand-system] .lede-copy > p {
     margin-top: 0;
-  }
-
-  body[data-brand-system] .github-activity-copy {
-    grid-template-rows: auto auto auto auto;
-    min-height: 0;
-    gap: 1.5rem;
-    padding: 1.35rem var(--gutter);
-  }
-
-  body[data-brand-system] .github-activity-copy h3 {
-    font-size: clamp(2.8rem, 13vw, 3.5rem);
-  }
-
-  body[data-brand-system] .github-activity-copy > p:not(.utility-text) {
-    align-self: start;
-  }
-
-  body[data-brand-system] .github-activity-visual {
-    min-height: 300px;
-    padding: 1.25rem var(--gutter);
-  }
-
-  body[data-brand-system] .github-activity-grid {
-    min-height: 165px;
   }
 
   body[data-brand-system] .section-heading-grid h2 {
