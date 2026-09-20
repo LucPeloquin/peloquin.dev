@@ -33,8 +33,8 @@ const REQUIRED_MARK_COMPONENTS = 3;
 const REQUIRED_NEGATIVE_COMPONENTS = 12;
 const REQUIRED_IOU = 0.99;
 const MAX_EDGE_DEVIATION = 1.5;
-const ASCII_COLUMNS = 64;
-const ASCII_ROWS = 40;
+const ASCII_COLUMNS = 96;
+const ASCII_ROWS = 60;
 const ASCII_PALETTE = " .:+#@";
 
 const EDGE_SEGMENTS = {
@@ -522,11 +522,11 @@ function createAsciiModule(source) {
       line += character;
     }
 
-    lines.push(line.trimEnd());
+    lines.push(line);
   }
 
   assert(lines.length === ASCII_ROWS, `ASCII logo must contain ${ASCII_ROWS} rows.`);
-  assert(lines.every((line) => line.length <= ASCII_COLUMNS), `ASCII logo exceeds ${ASCII_COLUMNS} columns.`);
+  assert(lines.every((line) => line.length === ASCII_COLUMNS), `ASCII logo must preserve ${ASCII_COLUMNS} columns, including margins.`);
   assert(visibleCharacters > 500, "ASCII logo contains too few visible characters.");
 
   return [

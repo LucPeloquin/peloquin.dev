@@ -291,11 +291,16 @@ html.booting body {
 .boot-screen-logo {
   margin: 0;
   color: #f1f1eb;
-  font-family: var(--mono);
-  font-size: clamp(5px, 1.3vw, 10px);
+  /* ASCII columns require equal glyph advances; never inherit the brand's SemiMono. */
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: min(8px, 1.45vw, 1.3vh);
   font-weight: 400;
+  font-variation-settings: normal;
+  font-kerning: none;
+  font-variant-ligatures: none;
   letter-spacing: 0;
-  line-height: 1;
+  /* 96 columns × 0.6em = 60 rows × 0.96em: preserve the square source. */
+  line-height: 0.96;
   opacity: 0;
   text-align: left;
   text-shadow: 0 0 14px rgba(241, 241, 235, 0.14);
