@@ -682,6 +682,34 @@ body[data-brand-system] .profile-masthead > p {
   color: var(--brand-black);
 }
 
+body[data-brand-system] .experience-intro h3,
+body[data-brand-system] .experience-proof strong,
+body[data-brand-system] .experience-role h4 {
+  font-family: var(--display);
+  font-variation-settings: "wght" 520;
+}
+
+body[data-brand-system] .experience-intro > p:last-child {
+  background: color-mix(in srgb, var(--brand-gold) 14%, var(--paper));
+}
+
+body[data-brand-system] .experience-proof article:nth-child(1) {
+  box-shadow: inset 0 3px var(--brand-gold);
+}
+
+body[data-brand-system] .experience-proof article:nth-child(2) {
+  box-shadow: inset 0 3px var(--brand-red);
+}
+
+body[data-brand-system] .experience-proof article:nth-child(3) {
+  box-shadow: inset 0 3px var(--brand-purple);
+}
+
+body[data-brand-system] .experience-list > li:nth-child(1) .experience-number { color: var(--brand-gold); }
+body[data-brand-system] .experience-list > li:nth-child(2) .experience-number { color: var(--brand-red); }
+body[data-brand-system] .experience-list > li:nth-child(3) .experience-number { color: var(--brand-purple); }
+body[data-brand-system] .experience-list > li:nth-child(4) .experience-number { color: var(--brand-gold); }
+
 body[data-brand-system] .profile-details article:nth-child(2) {
   box-shadow: inset 4px 0 var(--brand-red);
 }
