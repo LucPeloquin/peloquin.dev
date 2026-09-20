@@ -272,19 +272,46 @@ body[data-brand-system] .header-contact:focus-visible {
   background: var(--brand-gold);
 }
 
-/* Boot screen: restore the original ASCII startup treatment. */
+/* Boot screen: current portfolio palette, with gold as the primary signal. */
 
 body[data-brand-system] .boot-screen {
-  --signal: #a1ffcb;
-  background: #111413;
+  --signal: var(--brand-gold);
+  background: var(--brand-black);
+  color: var(--brand-white);
+}
+
+body[data-brand-system] .boot-screen-frame {
+  border-color: rgba(255, 255, 255, 0.58);
+}
+
+body[data-brand-system] .boot-screen-frame::before,
+body[data-brand-system] .boot-screen-frame::after {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body[data-brand-system] .boot-screen-topline,
+body[data-brand-system] .boot-screen-footer {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 body[data-brand-system] .boot-screen-mark::after {
-  box-shadow: 0 0 16px rgba(161, 255, 203, 0.52);
+  background: linear-gradient(90deg, var(--brand-red), var(--brand-gold) 42% 58%, var(--brand-purple));
+  box-shadow: 0 0 18px var(--brand-glow);
+}
+
+body[data-brand-system] .boot-screen-logo {
+  color: var(--brand-white);
+  text-shadow: 0 0 16px rgba(197, 177, 116, 0.2);
+}
+
+body[data-brand-system] .boot-screen-progress {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 body[data-brand-system] .boot-screen-progress span {
-  box-shadow: 0 0 12px rgba(161, 255, 203, 0.42);
+  background: linear-gradient(90deg, var(--brand-gold) 0 76%, var(--brand-red) 88%, var(--brand-purple));
+  box-shadow: 0 0 14px var(--brand-glow);
 }
 
 /* Hero */
