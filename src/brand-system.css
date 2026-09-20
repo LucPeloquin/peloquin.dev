@@ -945,6 +945,21 @@ body[data-brand-system] .footer-links {
   }
 }
 
+body[data-brand-system] .hero-name h1 {
+  display: grid;
+  font-size: clamp(4.4rem, 7.6vw, 7.8rem);
+  line-height: 0.84;
+  white-space: normal;
+}
+
+body[data-brand-system] .hero-name h1 span {
+  display: block;
+}
+
+body[data-brand-system] .hero-surname p {
+  white-space: nowrap;
+}
+
 /* Phone composition
  *
  * The desktop system is intentionally architectural. On a phone, that same
@@ -959,6 +974,11 @@ body[data-brand-system] .footer-links {
 
   body[data-brand-system] {
     background-size: 100% 6rem;
+  }
+
+  body[data-brand-system] .hero-name h1 {
+    font-size: clamp(2.2rem, 10vw, 2.75rem);
+    line-height: 0.9;
   }
 
   body[data-brand-system] .hero-grid {
@@ -1219,6 +1239,7 @@ body[data-brand-system] .footer-links {
 
   body[data-brand-system] .hero-name h1 {
     font-size: clamp(1.9rem, 9.6vw, 2.15rem);
+    line-height: 0.96;
   }
 
   body[data-brand-system] .hero-surname p {
