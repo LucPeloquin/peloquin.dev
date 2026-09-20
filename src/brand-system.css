@@ -826,3 +826,121 @@ body[data-brand-system] .brand-section-glyph {
     transition: none;
   }
 }
+
+/* Typography spacing
+ *
+ * Satoshi's compact proportions suit the broadcast system, but the original
+ * display tracking pushed several words into near-overlap. Keep the editorial
+ * tension while restoring visible counters, word shapes, and line rhythm.
+ */
+
+body[data-brand-system] {
+  letter-spacing: 0.008em;
+  line-height: 1.38;
+}
+
+body[data-brand-system] .hero-name h1,
+body[data-brand-system] .hero-surname p,
+body[data-brand-system] .about-index-statement,
+body[data-brand-system] .lede-copy h2,
+body[data-brand-system] .section-heading-grid h2,
+body[data-brand-system] .github-activity-copy h3,
+body[data-brand-system] .capability-copy h3,
+body[data-brand-system] .work-masthead h2,
+body[data-brand-system] .project-copy h3,
+body[data-brand-system] .principle-slide h2,
+body[data-brand-system] .profile-masthead h2,
+body[data-brand-system] .profile-masthead > p,
+body[data-brand-system] .closing-cta span {
+  letter-spacing: -0.045em;
+}
+
+body[data-brand-system] .hero-name h1 {
+  line-height: 0.9;
+}
+
+body[data-brand-system] .hero-surname p {
+  line-height: 0.86;
+}
+
+body[data-brand-system] .about-index-statement,
+body[data-brand-system] .lede-copy h2,
+body[data-brand-system] .github-activity-copy h3,
+body[data-brand-system] .capability-copy h3,
+body[data-brand-system] .project-copy h3,
+body[data-brand-system] .principle-slide h2 {
+  line-height: 1.04;
+}
+
+body[data-brand-system] .section-heading-grid h2,
+body[data-brand-system] .work-masthead h2,
+body[data-brand-system] .profile-masthead h2 {
+  line-height: 0.88;
+}
+
+body[data-brand-system] .profile-masthead > p {
+  line-height: 1.02;
+}
+
+body[data-brand-system] .closing-cta span {
+  line-height: 1.02;
+}
+
+body[data-brand-system] .hero-intro > p,
+body[data-brand-system] .signal-statement,
+body[data-brand-system] .section-heading-grid > div p,
+body[data-brand-system] .site-footer > p:first-child {
+  letter-spacing: -0.012em;
+  line-height: 1.28;
+}
+
+body[data-brand-system] .lede-copy > p,
+body[data-brand-system] .github-activity-copy > p:not(.utility-text),
+body[data-brand-system] .capability-copy > p,
+body[data-brand-system] .project-copy > p:not(.utility-text),
+body[data-brand-system] .principle-slide > p:not(.principle-mark),
+body[data-brand-system] .profile-story p,
+body[data-brand-system] .profile-details article > p:last-child,
+body[data-brand-system] .legal-copy section > p:last-child {
+  letter-spacing: 0.01em;
+  line-height: 1.52;
+}
+
+body[data-brand-system] .desktop-nav a,
+body[data-brand-system] .header-clock,
+body[data-brand-system] .header-contact,
+body[data-brand-system] .menu-trigger,
+body[data-brand-system] .utility-text,
+body[data-brand-system] .section-label,
+body[data-brand-system] .eyebrow,
+body[data-brand-system] .project-tags,
+body[data-brand-system] .capability-copy li,
+body[data-brand-system] .principle-meta,
+body[data-brand-system] .skill-grid,
+body[data-brand-system] .site-footer nav,
+body[data-brand-system] .footer-links {
+  letter-spacing: 0.085em;
+  line-height: 1.45;
+}
+
+@media (max-width: 760px) {
+  body[data-brand-system] .hero-name h1 {
+    font-size: clamp(2.2rem, 10vw, 2.75rem);
+    letter-spacing: -0.035em;
+    line-height: 0.94;
+    white-space: nowrap;
+  }
+
+  body[data-brand-system] .hero-surname p {
+    padding-inline: 0.3em;
+    font-size: clamp(2.45rem, 10.3vw, 3.2rem);
+    letter-spacing: -0.035em;
+    line-height: 0.94;
+  }
+
+  body[data-brand-system] .header-clock,
+  body[data-brand-system] .header-contact,
+  body[data-brand-system] .menu-trigger {
+    letter-spacing: 0.045em;
+  }
+}
