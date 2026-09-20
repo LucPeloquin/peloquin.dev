@@ -107,22 +107,6 @@ body[data-brand-system] .closing-cta span {
   animation: brand-light-drift 26s ease-in-out infinite alternate;
 }
 
-.brand-light-diagonal {
-  inset: -14% -5%;
-  opacity: 0.14;
-  transform: rotate(-5deg) scale(1.12);
-}
-
-.brand-light-convergence {
-  opacity: 0.12;
-  background-size: 120% 120%;
-}
-
-.brand-light-radial {
-  opacity: 0.1;
-  background-size: 110% 110%;
-}
-
 .brand-light-purple {
   background-size: 420px 420px;
   opacity: 0.16;
@@ -482,7 +466,7 @@ body[data-brand-system] .about-index-footer {
 
 body[data-brand-system] .github-activity-visual {
   background-color: var(--panel);
-  background-image: url("/brand/vct22/masks/light-radial.svg");
+  background-image: none;
   background-position: center;
   background-size: cover;
 }
@@ -531,7 +515,7 @@ body[data-brand-system] .capability-number::after {
 
 body[data-brand-system] .capability:nth-of-type(1) .capability-number::after { --capability-glyph: url("/brand/vct22/glyphs/reticle.svg"); }
 body[data-brand-system] .capability:nth-of-type(2) .capability-number::after { --capability-glyph: url("/brand/vct22/glyphs/horizon-sphere.svg"); }
-body[data-brand-system] .capability:nth-of-type(3) .capability-number::after { --capability-glyph: url("/brand/vct22/glyphs/radial-burst.svg"); }
+
 body[data-brand-system] .capability:nth-of-type(4) .capability-number::after { --capability-glyph: url("/brand/vct22/glyphs/segmented-cross.svg"); }
 
 body[data-brand-system] .capability:nth-of-type(3) .capability-number { border-top-color: var(--brand-red); }
@@ -557,10 +541,10 @@ body[data-theme="dark"] .capability-visual::after {
   mix-blend-mode: screen;
 }
 
-body[data-brand-system] .visual-product::after { --capability-mask: url("/brand/vct22/masks/light-radial.svg"); }
-body[data-brand-system] .visual-vision::after { --capability-mask: url("/brand/vct22/masks/light-convergence.svg"); }
-body[data-brand-system] .visual-image::after { --capability-mask: url("/brand/vct22/masks/light-diagonal.svg"); }
-body[data-brand-system] .visual-interface::after { --capability-mask: url("/brand/vct22/masks/light-radial.svg"); }
+body[data-brand-system] .visual-product::after { display: none; }
+body[data-brand-system] .visual-vision::after { display: none; }
+body[data-brand-system] .visual-image::after { display: none; }
+body[data-brand-system] .visual-interface::after { display: none; }
 
 body[data-brand-system] .capability-copy {
   background-color: color-mix(in srgb, var(--paper) 88%, transparent);
@@ -587,7 +571,7 @@ body[data-brand-system] .work-masthead h2 {
 
 body[data-brand-system] .work-halftone {
   background-color: color-mix(in srgb, var(--panel) 88%, var(--brand-purple));
-  background-image: url("/brand/vct22/masks/light-radial.svg");
+  background-image: none;
   background-position: center;
   background-size: cover;
 }
@@ -647,11 +631,10 @@ body[data-brand-system] .skill-grid span {
 
 body[data-brand-system] .project-poster::before {
   background-image:
-    url("/brand/vct22/masks/light-diagonal.svg"),
     linear-gradient(var(--work-stage-grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--work-stage-grid) 1px, transparent 1px);
-  background-position: center, 0 0, 0 0;
-  background-size: cover, 12.5% 12.5%, 12.5% 12.5%;
+  background-position: 0 0, 0 0;
+  background-size: 12.5% 12.5%, 12.5% 12.5%;
   opacity: 0.28;
 }
 
@@ -685,7 +668,7 @@ body[data-brand-system] .principle-mark {
 }
 
 body[data-brand-system] .profile-masthead {
-  background-image: url("/brand/vct22/masks/light-convergence.svg");
+  background-image: none;
   background-position: center;
   background-size: cover;
 }
@@ -710,7 +693,7 @@ body[data-brand-system] .profile-details article:nth-child(3) {
 
 body[data-brand-system] .closing {
   background-color: var(--brand-black);
-  background-image: url("/brand/vct22/masks/light-radial.svg");
+  background-image: none;
   background-position: center;
   background-size: cover;
   color: var(--brand-white);

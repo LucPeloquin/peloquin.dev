@@ -36,7 +36,7 @@ const systemSource = "https://suleymanyazki.com/project/vct22#graphic-system";
 const glyphs = {
   "reticle.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><g stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="32" r="19"/><circle cx="32" cy="32" r="9"/><path d="M32 0v64M0 32h64"/><path d="M32 6v9M32 49v9M6 32h9M49 32h9"/></g></svg>`,
   "corner-brackets.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><path d="M22 5H5v17M42 5h17v17M5 42v17h17M59 42v17H42" stroke="currentColor" stroke-width="2"/></svg>`,
-  "radial-burst.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="32" cy="32" r="7"/><circle cx="32" cy="32" r="18" stroke-dasharray="2 4"/>${Array.from({ length: 16 }, (_, index) => { const angle = (Math.PI * 2 * index) / 16; const x1 = 32 + Math.cos(angle) * 22; const y1 = 32 + Math.sin(angle) * 22; const x2 = 32 + Math.cos(angle) * 30; const y2 = 32 + Math.sin(angle) * 30; return `<path d="M${x1.toFixed(1)} ${y1.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}"/>`; }).join("")}</g><circle cx="32" cy="32" r="2.5" fill="currentColor"/></svg>`,
+
   "segmented-cross.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><g stroke="currentColor" stroke-width="2"><path d="M32 4v13M32 47v13M4 32h13M47 32h13"/><path d="m22 22 7 7M42 22l-7 7M22 42l7-7M42 42l-7-7"/></g><circle cx="32" cy="32" r="4" fill="currentColor"/></svg>`,
   "orbital-loops.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><g stroke="currentColor" stroke-width="1.25"><ellipse cx="32" cy="32" rx="25" ry="9"/><ellipse cx="32" cy="32" rx="25" ry="9" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="25" ry="9" transform="rotate(-60 32 32)"/><circle cx="32" cy="32" r="3" fill="currentColor"/></g></svg>`,
   "horizon-sphere.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><g stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="22" ry="9"/><path d="M10 32h44M32 10c-6 7-6 37 0 44M32 10c6 7 6 37 0 44"/></g></svg>`,
@@ -44,19 +44,12 @@ const glyphs = {
   "plus-marker.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><path d="M32 10v44M10 32h44" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="32" r="21" stroke="currentColor" stroke-width="1.5"/><path d="m23 32 6 6 12-14" stroke="currentColor" stroke-width="1.5"/></svg>`,
 };
 
-const radialLines = Array.from({ length: 28 }, (_, index) => {
-  const angle = (Math.PI * 2 * index) / 28;
-  const x1 = 800 + Math.cos(angle) * 110;
-  const y1 = 450 + Math.sin(angle) * 72;
-  const x2 = 800 + Math.cos(angle) * 700;
-  const y2 = 450 + Math.sin(angle) * 430;
-  return `<path d="M${x1.toFixed(1)} ${y1.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}"/>`;
-}).join("");
+
 
 const masks = {
-  "light-diagonal.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none"><defs><linearGradient id="g" x1="200" y1="70" x2="1320" y2="840" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0"/><stop offset=".5" stop-color="white" stop-opacity=".9"/><stop offset="1" stop-color="white" stop-opacity="0"/></linearGradient></defs><g stroke="url(#g)" stroke-linecap="round">${Array.from({ length: 26 }, (_, index) => { const y = 100 + index * 28; return `<path d="M${120 + index * 18} ${y}L${1040 + index * 18} ${Math.min(880, y + 420)}" stroke-width="${index % 3 === 0 ? 3 : 1}"/>`; }).join("")}</g></svg>`,
-  "light-radial.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none"><defs><radialGradient id="g"><stop stop-color="white" stop-opacity=".92"/><stop offset=".45" stop-color="white" stop-opacity=".22"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs><ellipse cx="800" cy="450" rx="580" ry="360" fill="url(#g)"/><g stroke="white" stroke-opacity=".54" stroke-linecap="round">${radialLines}</g></svg>`,
-  "light-convergence.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none"><defs><radialGradient id="a"><stop stop-color="white" stop-opacity=".8"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs><g stroke="white" stroke-opacity=".52" stroke-linecap="round"><path d="M0 100L800 450L1600 100"/><path d="M0 800L800 450L1600 800"/><path d="M170 450h1260"/>${Array.from({ length: 13 }, (_, index) => { const dx = 90 + index * 58; return `<path d="M${800 - dx} ${450 - dx * .44}L800 450L${800 + dx} ${450 - dx * .44}"/>`; }).join("")}</g><circle cx="800" cy="450" r="150" fill="url(#a)"/></svg>`,
+
+
+
   "grain-purple.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="3" seed="17"/><feColorMatrix values="0 0 0 0 0.435 0 0 0 0 0.29 0 0 0 0.8 0 0 0 .34 0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>`,
   "grain-red-gold.svg": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".68" numOctaves="3" seed="31"/><feColorMatrix values="0 0 0 0 0.62 0 0 0 0 0.24 0 0 0 0.10 0 0 0 .25 0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>`,
 };
@@ -168,7 +161,7 @@ async function checkAssets() {
   if (manifest.files.length !== sourceAssets.length + derivedAssets.length) {
     throw new Error(`Expected ${sourceAssets.length + derivedAssets.length} manifest entries, found ${manifest.files.length}.`);
   }
-  const expectedTypeCounts = { font: 3, glyph: 8, "light-mask": 5 };
+  const expectedTypeCounts = { font: 3, glyph: 7, "light-mask": 2 };
   for (const [type, expected] of Object.entries(expectedTypeCounts)) {
     const actual = manifest.files.filter((asset) => asset.type === type).length;
     if (actual !== expected) throw new Error(`Expected ${expected} ${type} assets, found ${actual}.`);

@@ -11,7 +11,7 @@ import {
   WORK_VISUAL_SOURCE_COMMIT,
 } from "../src/work-visual-states.js";
 
-const expectedIds = ["vct-fantasy", "broadcast-vision", "fashion-enhancer", "portfolio-os", "quick-save"];
+const expectedIds = ["vct-fantasy", "broadcast-vision", "fashion-enhancer", "portfolio-os", "quick-save", "gardeau"];
 
 function assertFiniteBuffer(buffer, label) {
   assert.ok(ArrayBuffer.isView(buffer), `${label} must be a typed array.`);
@@ -31,9 +31,9 @@ function assertEqualBuffers(first, second, label) {
 const firstBuild = buildWorkVisualStates();
 const secondBuild = buildWorkVisualStates();
 
-assert.equal(firstBuild.length, 5, "Exactly five work visual states are required.");
+assert.equal(firstBuild.length, expectedIds.length, "All work visual states are required.");
 assert.deepEqual(firstBuild.map((state) => state.id), expectedIds, "Work state order or IDs changed.");
-assert.equal(new Set(firstBuild.map((state) => state.id)).size, 5, "Work state IDs must be unique.");
+assert.equal(new Set(firstBuild.map((state) => state.id)).size, expectedIds.length, "Work state IDs must be unique.");
 
 firstBuild.forEach((state, stateIndex) => {
   const repeated = secondBuild[stateIndex];

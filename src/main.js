@@ -97,6 +97,13 @@ const projects = [
     tags: ["JavaScript", "Chrome APIs", "Manifest V3", "Privacy"],
     href: "https://github.com/LucPeloquin/InstaDL",
   },
+  {
+    kicker: "Business in development · Marketplace automation",
+    title: "Gardeau",
+    description:
+      "A business I’m building to help people find the resale listings they care about. Gardeau brings US and Japanese marketplaces into one monitoring workflow: saved searches, price and size filters, duplicate detection, and timely Discord or Telegram alerts. A Go backend, SQLite storage, browser automation, and a web dashboard power the product as it develops.",
+    tags: ["Go", "SQLite", "Browser automation", "Notifications"],
+  },
 ];
 
 function formatClock(zone) {
@@ -443,7 +450,9 @@ function renderProject(index, { focus = false } = {}) {
       return item;
     }),
   );
-  projectLink.href = project.href;
+  projectLink.hidden = !project.href;
+  if (project.href) projectLink.href = project.href;
+  else projectLink.removeAttribute("href");
   projectCurrent.textContent = String(activeProject + 1).padStart(2, "0");
 
   projectTabs.forEach((tab, tabIndex) => {

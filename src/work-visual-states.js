@@ -415,6 +415,44 @@ function createQuickSaveState() {
   };
 }
 
+function createGardeauState() {
+  const topology = new Float32Array(POINT_COUNT * 3);
+  const field = new Float32Array(FIELD_POINT_COUNT * 3);
+  const instances = createInstanceLayer();
+  // Listing cards enter from seven market feeds, pass through the filter,
+  // and fan into two notification channels. Shared buffers keep morphs continuous.
+  const path = (t, lane) => {
+    const spread = (lane / (FIELD_ROWS - 1) - 0.5) * 5.8;
+    const x = -3.6 + t * 7.2;
+    const y = t < 0.5 ? spread * (1 - t * 2) : (lane % 2 ? 1 : -1) * (t - 0.5) * 2.7;
+    return [x, y, Math.sin(t * Math.PI) * 0.55 + (lane % 3) * 0.06];
+  };
+  for (let i = 0; i < POINT_COUNT; i += 1) {
+    setVector(topology, i, ...path((i % 40) / 39, Math.floor(i / 40) * 4));
+  }
+  for (let row = 0; row < FIELD_ROWS; row += 1) {
+    for (let col = 0; col < FIELD_COLUMNS; col += 1) {
+      setVector(field, row * FIELD_COLUMNS + col, ...path(col / (FIELD_COLUMNS - 1), row));
+    }
+  }
+  for (let i = 0; i < 7; i += 1) {
+    setInstance(instances, i, {position: [-3.6, (i - 3) * 0.86, 0], scale: [1.0, 0.62, 0.18], tone: i % 3 === 0 ? 1 : 0});
+  }
+  // Three slim filter gates with a clear opening through their centers.
+  for (let i = 0; i < 3; i += 1) {
+    const x = -0.65 + i * 0.65;
+    setInstance(instances, 7 + i * 2, {position: [x, 0, -0.42], scale: [0.15, 3.5, 0.18], tone: 1});
+    setInstance(instances, 8 + i * 2, {position: [x, 0, 0.92], scale: [0.15, 3.5, 0.18], tone: 1});
+  }
+  for (let i = 0; i < 2; i += 1) {
+    setInstance(instances, 13 + i, {position: [3.6, (i ? 1 : -1) * 1.35, 0.12], scale: [1.25, 0.82, 0.22], tone: 2});
+  }
+  for (let i = 15; i < INSTANCE_COUNT; i += 1) {
+    setInstance(instances, i, {position: path((i - 14) / 17, (i * 7) % FIELD_ROWS), scale: [0.22, 0.14, 0.12], tone: 1});
+  }
+  return {id: "gardeau", label: "Gardeau marketplace listings passing through search filters into notification channels", camera: {position: [4, 4, 17], target: [0, 0, 0], fov: 40}, topology, field, instances};
+}
+
 export function buildWorkVisualStates() {
   return [
     createFantasyState(),
@@ -422,5 +460,6 @@ export function buildWorkVisualStates() {
     createFashionState(),
     createPortfolioState(),
     createQuickSaveState(),
+    createGardeauState(),
   ];
 }

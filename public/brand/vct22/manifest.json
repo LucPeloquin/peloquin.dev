@@ -55,16 +55,6 @@
       "bytes": 173
     },
     {
-      "id": "radial-burst",
-      "type": "glyph",
-      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
-      "transformation": "traced monochrome utility glyph derived from the reference graphic-system icon language",
-      "output": "glyphs/radial-burst.svg",
-      "sourceSha256": null,
-      "outputSha256": "5b0e86072bc7895648964806b54c5883eb5defa52c70b39ccd1b84a06e5664f5",
-      "bytes": 794
-    },
-    {
       "id": "segmented-cross",
       "type": "glyph",
       "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
@@ -113,36 +103,6 @@
       "sourceSha256": null,
       "outputSha256": "e5331986d6173f596815bf9729df4cae5f868171c1c777ae911f50a7965b5e61",
       "bytes": 291
-    },
-    {
-      "id": "light-diagonal",
-      "type": "light-mask",
-      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
-      "transformation": "reconstructed as a text-free grayscale/vector light-only alpha treatment; no campaign imagery retained",
-      "output": "masks/light-diagonal.svg",
-      "sourceSha256": null,
-      "outputSha256": "5499d54ad6415bbedc8fea794b87cc658c9c503a1d5754577420293940103598",
-      "bytes": 1597
-    },
-    {
-      "id": "light-radial",
-      "type": "light-mask",
-      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
-      "transformation": "reconstructed as a text-free grayscale/vector light-only alpha treatment; no campaign imagery retained",
-      "output": "masks/light-radial.svg",
-      "sourceSha256": null,
-      "outputSha256": "c95b3c99ba8ca35845cafe64dd096294b3402d953f67f2ec545c94fd13dcd541",
-      "bytes": 1432
-    },
-    {
-      "id": "light-convergence",
-      "type": "light-mask",
-      "sourceUrl": "https://suleymanyazki.com/project/vct22#graphic-system",
-      "transformation": "reconstructed as a text-free grayscale/vector light-only alpha treatment; no campaign imagery retained",
-      "output": "masks/light-convergence.svg",
-      "sourceSha256": null,
-      "outputSha256": "81b6ff48f2bae57a3139833e221dbd613bc9bf8c69c4f2b13688a159c3f603f6",
-      "bytes": 1064
     },
     {
       "id": "grain-purple",

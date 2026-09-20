@@ -1,24 +1,25 @@
 const BRAND_ROOT = "/brand/vct22";
 
 const sectionTreatments = new Map([
-  ["top", { pattern: "light-convergence", glyph: ["reticle", "radial-burst"] }],
-  ["about", { pattern: "light-radial", glyph: "horizon-sphere" }],
-  ["work", { pattern: "light-diagonal", glyph: "corner-brackets" }],
+  ["top", { pattern: null, glyph: "reticle" }],
+  ["about", { pattern: null, glyph: "horizon-sphere" }],
+  ["work", { pattern: null, glyph: "corner-brackets" }],
   ["principles", { pattern: "grain-purple", glyph: "orbital-loops" }],
-  ["profile", { pattern: "light-convergence", glyph: ["segmented-cross", "plus-marker"] }],
-  ["closing", { pattern: "light-radial", glyph: "inward-chevrons" }],
+  ["profile", { pattern: null, glyph: ["segmented-cross", "plus-marker"] }],
+  ["closing", { pattern: null, glyph: "inward-chevrons" }],
 ]);
 
 function addSectionTreatment(section, id, treatment) {
-  if (!section || section.querySelector(".brand-light-field")) return;
+  if (!section || section.dataset.brandSection) return;
   section.classList.add("brand-section");
   section.dataset.brandSection = id;
 
   const light = document.createElement("span");
-  light.className = `brand-light-field brand-light-${treatment.pattern.replace("light-", "").replace("grain-", "")}`;
-  light.setAttribute("aria-hidden", "true");
-  light.style.setProperty("--brand-light-image", `url(${BRAND_ROOT}/masks/${treatment.pattern}.svg)`);
-
+  if (treatment.pattern) {
+    light.className = `brand-light-field brand-light-${treatment.pattern.replace("light-", "").replace("grain-", "")}`;
+    light.setAttribute("aria-hidden", "true");
+    light.style.setProperty("--brand-light-image", `url(${BRAND_ROOT}/masks/${treatment.pattern}.svg)`);
+  }
   const glyphNames = Array.isArray(treatment.glyph) ? treatment.glyph : [treatment.glyph];
   const glyphs = glyphNames.map((name, index) => {
     const glyph = document.createElement("span");
@@ -28,7 +29,7 @@ function addSectionTreatment(section, id, treatment) {
     return glyph;
   });
 
-  section.prepend(light, ...glyphs);
+  section.prepend(...(treatment.pattern ? [light] : []), ...glyphs);
 }
 
 export function initBrandSystem(root = document.body, { reducedMotion = false, theme = "light" } = {}) {

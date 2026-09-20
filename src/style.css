@@ -2178,6 +2178,16 @@ html.booting body {
 .browser-bar i { width: 8px; height: 8px; border: 1px solid #222; border-radius: 50%; }
 .browser-bar span { flex: 1; margin-left: .5rem; padding: .3rem .55rem; background: #e8e8e4; font-family: var(--mono); font-size: .52rem; }
 .save-media { display: flex; align-items: center; justify-content: center; gap: 1.2rem; border-inline: 1px solid #222; background-image: radial-gradient(#777 0 .7px, transparent 1px); background-size: 6px 6px; }
+
+.project-link[hidden] { display: none; }
+.poster-gardeau { padding: clamp(1.2rem, 3vw, 2.5rem); background: var(--paper); color: var(--ink); font-family: var(--mono); }
+.gardeau-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; font-size: .65rem; }
+.gardeau-sources { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+.gardeau-sources span { padding: .5rem; border: 1px solid var(--soft-line); font-size: .6rem; }
+.gardeau-filter { display: grid; gap: 1rem; margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--gold); }
+.gardeau-filter strong { font-family: var(--sans); font-size: clamp(1.6rem, 3vw, 2.8rem); letter-spacing: -.05em; }
+.gardeau-filter small, .gardeau-filter span, .gardeau-alert { font-size: .65rem; }
+.gardeau-alert { display: grid; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--soft-line); }
 .save-media span { padding: .8rem 1rem; border: 1px solid #222; background: var(--signal); font-family: var(--mono); }
 .save-media strong { font-size: 2rem; font-weight: 420; }
 .save-toast { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #242424; color: white; }
