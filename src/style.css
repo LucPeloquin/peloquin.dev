@@ -2260,163 +2260,87 @@ button.project-link {
   line-height: 0.92;
 }
 
-.experience-ledger {
-  border-top: 1px solid var(--line);
-}
-
-.experience-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, .64fr);
-  grid-template-rows: auto 1fr;
-  min-height: 390px;
-}
-
-.experience-intro > * {
-  padding: var(--gutter);
-}
-
-.experience-intro > .utility-text {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: start;
-}
-
-.experience-intro h3 {
-  grid-column: 1;
-  grid-row: 2;
-  align-self: end;
-  max-width: 10ch;
-  font-size: clamp(4.4rem, 9.8vw, 10.4rem);
-  font-weight: 460;
-  letter-spacing: -.065em;
-  line-height: .82;
-}
-
-.experience-intro > p:last-child {
-  grid-column: 2;
-  grid-row: 1 / 3;
-  display: flex;
-  align-items: flex-end;
-  border-left: 1px solid var(--line);
-  font-size: clamp(1.3rem, 2.25vw, 2.5rem);
-  letter-spacing: -.035em;
-  line-height: 1.08;
-}
-
-.experience-proof {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-}
-
-.experience-proof article {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 1.4rem;
-  min-height: 245px;
-  padding: var(--gutter);
-  border-right: 1px solid var(--line);
-}
-
-.experience-proof article:last-child { border-right: 0; }
-
-.experience-proof strong {
-  align-self: start;
-  font-size: clamp(4.7rem, 9.5vw, 9rem);
-  font-weight: 460;
-  letter-spacing: -.075em;
-  line-height: .8;
-}
-
-.experience-proof p {
-  max-width: 34ch;
-  line-height: 1.4;
-}
-
-.experience-list {
-  list-style: none;
-  border-top: 1px solid var(--line);
-}
-
-.experience-list > li {
-  display: grid;
-  grid-template-columns: 60px minmax(230px, .9fr) minmax(300px, 1.25fr) minmax(150px, .5fr);
-  grid-template-rows: auto auto;
-  min-height: 210px;
-  border-bottom: 1px solid var(--line);
-}
-
-.experience-list > li:last-child { border-bottom: 0; }
-
-.experience-number,
-.experience-role,
-.experience-summary,
-.experience-list time {
-  padding: var(--gutter);
-  border-right: 1px solid var(--line);
-}
-
-.experience-number {
-  grid-column: 1;
-  grid-row: 1 / 3;
-}
-
-.experience-role {
-  grid-column: 2;
-  grid-row: 1 / 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.experience-role h4 {
-  max-width: 18ch;
-  font-size: clamp(1.75rem, 2.8vw, 3.2rem);
-  font-weight: 520;
-  letter-spacing: -.045em;
-  line-height: 1;
-}
-
-.experience-role p,
-.experience-tags {
-  font-family: var(--mono);
-  font-size: .65rem;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-.experience-summary {
-  grid-column: 3;
-  grid-row: 1;
-  line-height: 1.5;
-}
-
-.experience-list time {
-  grid-column: 4;
-  grid-row: 1;
-  text-align: right;
-  border-right: 0;
-}
-
-.experience-tags {
-  grid-column: 3 / 5;
-  grid-row: 2;
+/* Career evidence stays compact; the full professional record follows Projects. */
+.career-highlights-heading {
   display: flex;
   flex-wrap: wrap;
-  align-items: end;
-  gap: .45rem;
-  padding: 0 var(--gutter) var(--gutter);
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem var(--gutter);
 }
-
-.experience-tags li {
-  padding: .46rem .62rem;
-  border: 1px solid var(--soft-line);
+.career-highlights-heading h2 { font-weight: 400; }
+.career-highlight-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.career-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8rem;
+  padding: 1.5rem var(--gutter);
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  background: var(--paper);
+  transition: background 180ms ease;
 }
+.career-highlight:last-child { border-right: 0; }
+.career-highlight:hover { background: color-mix(in srgb, var(--signal) 12%, var(--paper)); }
+.career-highlight strong { font-size: clamp(2.4rem, 4.5vw, 4.8rem); font-weight: 500; letter-spacing: -.065em; line-height: 1; }
+.career-highlight p { max-width: 23ch; line-height: 1.4; }
+.career-highlight > span { display: flex; justify-content: space-between; gap: .8rem; width: 100%; margin-top: auto; padding-top: 1rem; font-family: var(--mono); font-size: .62rem; line-height: 1.5; }
+.career-highlight i { font-size: 1.1rem; font-style: normal; }
+.experience-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .8fr);
+  grid-template-rows: auto 1fr;
+  min-height: 240px;
+}
+.experience-intro > * { padding: var(--gutter); }
+.experience-intro > .utility-text { grid-column: 1; grid-row: 1; }
+.experience-intro h2 { grid-column: 1; grid-row: 2; align-self: end; font-size: clamp(3rem, 7vw, 7.5rem); font-weight: 460; letter-spacing: -.065em; line-height: 1; }
+.experience-intro > p:last-child { grid-column: 2; grid-row: 1 / 3; display: flex; align-items: flex-end; border-left: 1px solid var(--line); font-size: clamp(1.15rem, 1.8vw, 1.7rem); line-height: 1.4; }
+.employment-list { list-style: none; }
+.employment-card { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); border-top: 1px solid var(--line); scroll-margin-top: 90px; }
+.employment-meta, .employment-body { min-width: 0; padding: clamp(1.5rem, 3vw, 3rem) var(--gutter); }
+.employment-meta { border-right: 1px solid var(--line); }
+.employment-meta h3 { margin: 1.3rem 0 1rem; font-size: clamp(1.75rem, 3vw, 3rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.05; }
+.employment-affiliates { max-width: 30ch; margin: -.3rem 0 1.2rem; font-size: 1.1rem; line-height: 1.4; }
+.employment-title { margin-bottom: 1.1rem; font-weight: 600; line-height: 1.4; }
+.employment-dates { font-size: .9rem; line-height: 1.7; }
+.employment-status, .employment-location { margin-top: .7rem; font-size: .8rem; line-height: 1.6; color: var(--muted); }
+.employment-summary { max-width: 62ch; font-size: clamp(1.12rem, 1.6vw, 1.45rem); line-height: 1.45; }
+.employment-highlights, .employment-detail-list { display: grid; gap: 1rem; margin: 1.5rem 0; padding-left: 1.2rem; list-style: disc; line-height: 1.6; }
+.employment-highlights strong { font-weight: 650; }
+.employment-role-record { margin-top: 1.7rem; }
+.employment-role-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; }
+.employment-role-heading h4 { font-size: 1.05rem; font-weight: 650; }
+.employment-role-heading p { font-family: var(--mono); font-size: .65rem; line-height: 1.5; }
+.employment-role-record .employment-highlights { margin-top: .75rem; }
+.content-details { border-top: 1px solid var(--soft-line); }
+.content-details summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; cursor: pointer; font-size: .9rem; list-style: none; }
+.content-details summary::-webkit-details-marker { display: none; }
+.content-details summary::after { content: '+'; font-size: 1.3rem; line-height: 1; }
+.content-details[open] > summary::after { content: '−'; }
+.content-details summary:hover { text-decoration: underline; text-underline-offset: .25em; }
+.employment-detail-list { margin-top: .5rem; }
+.employment-tools { display: flex; flex-wrap: wrap; gap: .45rem; padding-top: .5rem; list-style: none; }
+.employment-tools li { padding: .45rem .6rem; border: 1px solid var(--soft-line); font-family: var(--mono); font-size: .62rem; line-height: 1.5; }
+.academic-recognition { margin-top: 1.5rem; }
+.recognition-list { display: grid; gap: 1rem; padding: .4rem 0 .8rem; list-style: none; }
+.recognition-list li { display: grid; gap: .25rem; font-size: .85rem; line-height: 1.5; }
+.recognition-list strong { font-weight: 550; }
+.recognition-list span { font-family: var(--mono); font-size: .7rem; }
+.toolbox { border-top: 1px solid var(--line); }
+.toolbox-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.5rem var(--gutter); }
+.toolbox-heading h3 { font-size: 2rem; font-weight: 500; letter-spacing: -.04em; }
+.toolbox-heading p { max-width: 50ch; font-size: .95rem; line-height: 1.5; }
+.toolbox-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.toolbox-group { padding: 1.5rem var(--gutter); border-top: 1px solid var(--line); border-right: 1px solid var(--line); }
+.toolbox-group:nth-child(3n) { border-right: 0; }
+.toolbox-group h4 { font-family: var(--mono); font-size: .72rem; font-weight: 400; line-height: 1.5; text-transform: uppercase; letter-spacing: .06em; }
 
 .profile-grid {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: auto minmax(570px, 44vw);
+  grid-template-rows: auto minmax(570px, auto);
   border-top: 1px solid var(--line);
 }
 
@@ -2430,7 +2354,7 @@ button.project-link {
   grid-column: 2 / 5;
   grid-row: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   gap: var(--gutter);
   min-height: 225px;
   padding: var(--gutter);
@@ -2442,7 +2366,7 @@ button.project-link {
   line-height: 1.42;
 }
 
-.profile-story p:first-child { grid-column: 1 / 3; }
+.profile-story p:first-child { grid-column: 1; }
 
 .profile-photo {
   position: relative;
@@ -2482,7 +2406,7 @@ button.project-link {
   grid-column: 3 / 5;
   grid-row: 2;
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto;
   border-top: 1px solid var(--line);
 }
 
@@ -2493,16 +2417,17 @@ button.project-link {
 
 .profile-details article:last-child { border-bottom: 0; }
 .profile-details h3 { margin-top: .8rem; font-size: clamp(1.8rem, 3vw, 3.4rem); font-weight: 440; letter-spacing: -.055em; }
-.profile-details article > p:last-child { max-width: 55ch; margin-top: .7rem; line-height: 1.4; }
+.profile-details article > p:not(.utility-text) { max-width: 55ch; margin-top: .7rem; line-height: 1.4; }
 
 .skill-grid {
   display: flex;
   flex-wrap: wrap;
   gap: .35rem;
   margin-top: 1rem;
+  list-style: none;
 }
 
-.skill-grid span {
+.skill-grid :is(span, li) {
   padding: .48rem .64rem;
   border: 1px solid var(--soft-line);
   font-family: var(--mono);
@@ -3147,86 +3072,21 @@ a.contact-row:hover { background: var(--signal); color: #181818; }
   .profile-masthead h2 { display: flex; align-items: flex-end; font-size: clamp(4.7rem, 22vw, 6.6rem); }
   .profile-masthead > p { font-size: clamp(1.55rem, 7vw, 2.1rem); }
 
-  .experience-intro {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    min-height: 0;
-  }
-
-  .experience-intro > .utility-text,
-  .experience-intro h3,
-  .experience-intro > p:last-child {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .experience-intro h3 {
-    min-height: 260px;
-    padding-top: 3rem;
-    font-size: clamp(4rem, 18vw, 5.4rem);
-  }
-
-  .experience-intro > p:last-child {
-    min-height: 230px;
-    border-top: 1px solid var(--line);
-    border-left: 0;
-    font-size: clamp(1.45rem, 7vw, 2rem);
-  }
-
-  .experience-proof {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-proof article {
-    min-height: 220px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .experience-proof article:last-child { border-bottom: 0; }
-
-  .experience-list > li {
-    grid-template-columns: 40px 1fr;
-    grid-template-rows: auto auto auto auto;
-    min-height: 0;
-  }
-
-  .experience-number {
-    grid-column: 1;
-    grid-row: 1 / 5;
-  }
-
-  .experience-role {
-    grid-column: 2;
-    grid-row: 1;
-    gap: 2rem;
-    min-height: 220px;
-    border-right: 0;
-  }
-
-  .experience-role h4 {
-    font-size: clamp(2rem, 10vw, 3rem);
-  }
-
-  .experience-summary {
-    grid-column: 2;
-    grid-row: 2;
-    border-top: 1px solid var(--line);
-    border-right: 0;
-  }
-
-  .experience-list time {
-    grid-column: 2;
-    grid-row: 3;
-    padding-top: .2rem;
-    text-align: left;
-  }
-
-  .experience-tags {
-    grid-column: 2;
-    grid-row: 4;
-    padding-top: .45rem;
-  }
+  .career-highlight-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .career-highlight { padding: 1.2rem var(--gutter); }
+  .career-highlight:nth-child(even) { border-right: 0; }
+  .career-highlight strong { font-size: clamp(1.9rem, 7.5vw, 3.5rem); }
+  .career-highlight p { font-size: .9rem; }
+  .experience-intro { grid-template-columns: 1fr; min-height: 0; }
+  .experience-intro h2 { padding-top: .5rem; padding-bottom: 1.5rem; font-size: clamp(2.7rem, 10vw, 4.5rem); }
+  .experience-intro > p:last-child { grid-column: 1; grid-row: 3; border-left: 0; border-top: 1px solid var(--line); padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .employment-card { grid-template-columns: 1fr; }
+  .employment-meta { border-right: 0; border-bottom: 1px solid var(--soft-line); }
+  .employment-meta h3 { max-width: 20ch; }
+  .employment-summary { font-size: 1.15rem; }
+  .toolbox-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .toolbox-group:nth-child(3n) { border-right: 1px solid var(--line); }
+  .toolbox-group:nth-child(even) { border-right: 0; }
 
   .profile-grid {
     grid-template-columns: 1fr;
@@ -3296,3 +3156,8 @@ a.contact-row:hover { background: var(--signal); color: #181818; }
 .garment-after i { background: linear-gradient(100deg, #15191b, #41464a 45%, #171b1d 60%); }
 .garment i::before { position: absolute; top: 23%; bottom: 6%; left: 51%; width: 2px; background: #c4c9cc; content: ""; transform: rotate(-12deg); }
 .garment i::after { position: absolute; top: 6%; left: 26%; width: 48%; height: 35%; background: #62676a; clip-path: polygon(18% 0, 48% 25%, 82% 0, 100% 30%, 63% 100%, 50% 41%, 29% 95%, 0 28%); content: ""; }
+
+@media (max-width: 480px) {
+  .toolbox-grid { grid-template-columns: 1fr; }
+  .toolbox-group, .toolbox-group:nth-child(3n) { border-right: 0; }
+}

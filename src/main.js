@@ -89,6 +89,17 @@ const projects = [
     tags: ["Rust", "TypeScript", "PostgreSQL", "Local inference"],
   },
   {
+    kicker: "Team project · December 2023",
+    title: "Automatic Music Transcription",
+    description:
+      "A team project we completed in December 2023 to turn audio into musical notation. We combined MT3 and ScoreTransformer processing with a JUCE interface for selecting files and handling MusicXML and MIDI output.",
+    focus: "We collaborated on the application as a team, connecting audio processing, model output, and a usable transcription workflow.",
+    image: "./images/projects/music-transcription.svg",
+    imageAlt: "Illustrative team-project pipeline: audio input passes through MT3 to MIDI, then ScoreTransformer to MusicXML notation, with a JUCE interface for files and output.",
+    caption: "Audio → MIDI → notation · illustrative pipeline",
+    tags: ["Python", "TensorFlow", "NumPy / Librosa", "C++ / JUCE", "MusicXML / MIDI"],
+  },
+  {
     visualIndex: 2,
     kicker: "Adaptive image processing · 2024",
     title: "Archive Fashion Upscaler",
@@ -404,13 +415,15 @@ let workVisualController;
 let workVisualLoading = false;
 
 function setProjectView(showStudy) {
-  const hasImage = Boolean(projects[activeProject].image);
-  const showImage = hasImage && !showStudy;
+  const project = projects[activeProject];
+  const hasImage = Boolean(project.image);
+  const hasStudy = Number.isInteger(project.visualIndex);
+  const showImage = hasImage && (!hasStudy || !showStudy);
   workVisualStage.dataset.projectView = showImage ? "image" : "study";
   projectEvidence.hidden = !showImage;
   workVisualCanvas.hidden = showImage;
-  projectViewToggle.hidden = !hasImage;
-  projectViewToggle.setAttribute("aria-pressed", String(hasImage && showStudy));
+  projectViewToggle.hidden = !hasImage || !hasStudy;
+  projectViewToggle.setAttribute("aria-pressed", String(hasImage && hasStudy && showStudy));
   projectViewToggle.textContent = showImage ? "Explore 3D study" : "View project image";
 }
 
@@ -451,13 +464,16 @@ function renderProject(index, { focus = false } = {}) {
     tab.tabIndex = selected ? 0 : -1;
   });
 
-  projectPosters.forEach((poster, posterIndex) => {
-    const selected = posterIndex === project.visualIndex;
+  projectPosters.forEach((poster) => {
+    const selected = Number(poster.dataset.projectPoster) === project.visualIndex;
     poster.hidden = !selected;
     poster.classList.toggle("is-active", selected);
   });
 
-  workVisualController?.setProject(project.visualIndex);
+  if (Number.isInteger(project.visualIndex)) {
+    if (workVisualController) workVisualController.setProject(project.visualIndex);
+    else if (workVisualStage.dataset.workVisualState !== "fallback") loadWorkVisual();
+  }
   brandSystem.setActiveSection("work");
 
   const activeTab = projectTabs[activeProject];
@@ -498,10 +514,13 @@ document.querySelector("[data-project-next]")?.addEventListener("click", () => r
 
 async function loadWorkVisual() {
   if (!workVisualCanvas || !workVisualStage || workVisualController || workVisualLoading) return;
+  if (!Number.isInteger(projects[activeProject].visualIndex)) return;
   workVisualLoading = true;
   workVisualStage.dataset.workVisualState = "loading";
   try {
     const { initWorkVisual } = await import("./work-visual.js");
+    // A project may change while the renderer chunk is being fetched.
+    if (!Number.isInteger(projects[activeProject].visualIndex)) return;
     workVisualController = initWorkVisual(workVisualCanvas, workVisualStage, {
       initialProject: projects[activeProject].visualIndex,
       reducedMotion: prefersReducedMotion.matches,

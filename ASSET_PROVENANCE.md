@@ -5,6 +5,7 @@
 - `public/images/jean-luc.webp` is an optimized derivative of the portrait already tracked in this repository as `images/luc.jpg`.
 - `public/images/jean-luc-current.webp` is an optimized derivative of `images/image.png`.
 - `public/images/projects/vct-fantasy-roster.svg` is an original interface mockup authored for the portfolio. All five player identities, silhouettes, prices, and projections are fictional demonstration data; it is labeled as a preview rather than a capture of live competition. No real player likeness or third-party portrait is used.
+- `public/images/projects/music-transcription.svg` is an original illustrative audio → MIDI → notation pipeline authored for the December 2023 team project. It is not an application screenshot, recording, or claim about transcription accuracy. It is a static project image with no mapped 3D scene.
 - `public/images/projects/broadcast-vision.webp` is an optimized derivative of [`image.png` in LucPeloquin/VCT-UI](https://github.com/LucPeloquin/VCT-UI/blob/bfa891fed0f2bb0f0312b3c061339b963f06226b/image.png). It is presented as an annotated broadcast research frame, not a claim of live model output. Broadcast/game imagery and marks belong to their respective owners.
 - `public/logo-flat.png` is the square logo supplied for this redesign and is used as the flat header mark.
 - `assets/source/tour-de-force-inverted.png` is the authoritative 512×512 inverted mark supplied for the engraved plaque. Its alpha channel is the sole source of the generated logo geometry.

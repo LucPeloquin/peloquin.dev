@@ -12,6 +12,9 @@ A responsive personal portfolio for Jean-Luc Peloquin, built as a precise editor
 - Live 20-week public GitHub push-activity view with an accessible, network-safe fallback
 - Responsive light/dark editorial layout with a live Las Vegas clock
 - Accessible mobile navigation and contact dialogs with native focus trapping and Escape handling
+- Eight projects, including a team music-transcription entry with an original illustrative audio/MIDI/notation diagram and image-only rendering
+- Employer-attributed career highlights and a dedicated Experience section with corrected chronology, visible outcomes, and native detail expanders
+- Personal background, grouped technical toolbox, and expandable academic recognition
 - Work-first navigation, concise project build notes, a fictional VCT Fantasy roster preview and a VALORANT Barracks Vision research image, optional 3D studies, and a user-pausable principles carousel
 - Self-hosted open-source fonts, optimized WebP portraits, and deterministic ASCII/SVG/GLB logo assets
 - Self-hosted VCT22-inspired display/semimono typography, eight utility glyphs, and five text-free light/grain masks tracked by a deterministic local manifest
@@ -68,7 +71,7 @@ src/main.js             Page interactions and UI state
 src/artifact.js         GLB loading, lighting, and plaque interaction
 src/capability-visuals.js  Shared four-scene Three.js capability renderer
 src/work-visual.js      Shared Three.js renderer, controls, morphing, and lifecycle
-src/work-visual-states.js  Deterministic five-project procedural scene definitions
+src/work-visual-states.js  Deterministic seven-scene procedural definitions
 scripts/logo-model.mjs  Deterministic alpha-to-ASCII/SVG/GLB generator and validator
 scripts/vct22-assets.mjs  Deterministic local font/glyph/light-mask manifest generator and validator
 scripts/check-work-visuals.mjs  Procedural scene and attribution validator

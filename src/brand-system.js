@@ -2,8 +2,10 @@ const BRAND_ROOT = "/brand/vct22";
 
 const sectionTreatments = new Map([
   ["top", { pattern: null, glyph: "reticle" }],
+  ["career-highlights", { pattern: null, glyph: [] }],
   ["about", { pattern: null, glyph: "horizon-sphere" }],
   ["work", { pattern: null, glyph: [] }],
+  ["experience", { pattern: null, glyph: [] }],
   ["principles", { pattern: null, glyph: "orbital-loops" }],
   ["profile", { pattern: null, glyph: ["segmented-cross", "plus-marker"] }],
   ["closing", { pattern: null, glyph: "inward-chevrons" }],
@@ -35,7 +37,6 @@ function addSectionTreatment(section, id, treatment) {
 export function initBrandSystem(root = document.body, { reducedMotion = false, theme = "light" } = {}) {
   const scope = root?.querySelector ? root : document.body;
   const sections = [...scope.querySelectorAll("main > section")];
-  const observedSections = [];
   let updateActiveSection;
   let disposed = false;
   let activeSection = "top";
@@ -83,37 +84,26 @@ export function initBrandSystem(root = document.body, { reducedMotion = false, t
   document.addEventListener("visibilitychange", onVisibilityChange, { passive: true });
   setActiveSection("top");
 
-  if ("IntersectionObserver" in window && !reducedMotion) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        const visibleId = visible?.target?.dataset?.brandSection || visible?.target?.id;
-        if (visibleId) setActiveSection(visibleId);
-      },
-      { rootMargin: "-18% 0px -55%", threshold: [0.08, 0.3, 0.6] },
-    );
-    sections.forEach((section) => {
-      observer.observe(section);
-      observedSections.push(section);
+  // Track the section at the reading position even when long role details are
+  // expanded, and keep navigation useful when reduced motion is enabled.
+  let activeSectionFrame = 0;
+  const readActiveSection = () => {
+    activeSectionFrame = 0;
+    const marker = Math.min(window.innerHeight * 0.34, 240);
+    const visible = sections.find((section) => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= marker && rect.bottom > marker;
     });
-    scope.__jlBrandObserver = observer;
-  } else if (!reducedMotion) {
-    updateActiveSection = () => {
-      const marker = window.innerHeight * 0.34;
-      const visible = sections
-        .map((section) => ({ section, rect: section.getBoundingClientRect() }))
-        .filter(({ rect }) => rect.top <= marker && rect.bottom >= marker)
-        .sort((a, b) => Math.abs(a.rect.top - marker) - Math.abs(b.rect.top - marker))[0];
-      const visibleId = visible?.section?.dataset?.brandSection || visible?.section?.id;
-      if (visibleId) setActiveSection(visibleId);
-    };
-    window.addEventListener("scroll", updateActiveSection, { passive: true });
-    window.addEventListener("resize", updateActiveSection, { passive: true });
-    window.addEventListener("hashchange", updateActiveSection, { passive: true });
-    updateActiveSection();
-  }
+    const visibleId = visible?.dataset?.brandSection || visible?.id;
+    if (visibleId && visibleId !== activeSection) setActiveSection(visibleId);
+  };
+  updateActiveSection = () => {
+    if (!activeSectionFrame) activeSectionFrame = requestAnimationFrame(readActiveSection);
+  };
+  window.addEventListener("scroll", updateActiveSection, { passive: true });
+  window.addEventListener("resize", updateActiveSection, { passive: true });
+  window.addEventListener("hashchange", updateActiveSection, { passive: true });
+  updateActiveSection();
 
   setTheme(theme);
 
@@ -123,6 +113,7 @@ export function initBrandSystem(root = document.body, { reducedMotion = false, t
     dispose() {
       if (disposed) return;
       disposed = true;
+      if (activeSectionFrame) cancelAnimationFrame(activeSectionFrame);
       document.removeEventListener("visibilitychange", onVisibilityChange);
       if (updateActiveSection) {
         window.removeEventListener("scroll", updateActiveSection);
@@ -130,9 +121,7 @@ export function initBrandSystem(root = document.body, { reducedMotion = false, t
         window.removeEventListener("hashchange", updateActiveSection);
       }
       sectionLinks.forEach((link) => link.removeEventListener("click", onSectionLinkClick));
-      scope.__jlBrandObserver?.disconnect();
-      delete scope.__jlBrandObserver;
-      observedSections.forEach((section) => {
+      sections.forEach((section) => {
         section.querySelector(".brand-light-field")?.remove();
         section.querySelectorAll(".brand-section-glyph").forEach((glyph) => glyph.remove());
         delete section.dataset.brandSection;

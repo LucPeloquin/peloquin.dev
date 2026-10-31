@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" role="img" aria-labelledby="title desc">
+<title id="title">Automatic Music Transcription — illustrative team-project pipeline</title>
+<desc id="desc">A conceptual diagram showing audio input, MT3 processing, MIDI, ScoreTransformer, and MusicXML notation. JUCE provides the interface for file selection and output. Team project, December 2023.</desc>
+<defs>
+ <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#202624"/><stop offset="1" stop-color="#111715"/></linearGradient>
+ <linearGradient id="signal" x2="1"><stop stop-color="#c5b174"/><stop offset="1" stop-color="#e1d5ab"/></linearGradient>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="#c5b174" stroke-width="1.5"/></marker>
+</defs>
+<rect width="1440" height="1000" rx="12" fill="url(#paper)"/>
+<g font-family="Arial, Helvetica, sans-serif">
+ <text x="64" y="81" font-size="20" fill="#c5b174" letter-spacing="3">TEAM PROJECT / DECEMBER 2023</text>
+ <text x="60" y="157" font-size="59" font-weight="600" letter-spacing="-2" fill="#f5f5ef">From sound to a score.</text>
+ <text x="64" y="205" font-size="25" fill="#b8bfb8">Automatic Music Transcription</text>
+ <path d="M64 252H1376" stroke="#637069" stroke-opacity=".6"/>
+ <g transform="translate(64 306)">
+  <rect width="365" height="352" rx="8" fill="#1c2520" stroke="#526158"/>
+  <text x="24" y="42" font-size="18" fill="#c5b174" letter-spacing="2">01 / AUDIO INPUT</text>
+  <path d="M25 169h315" stroke="#66786b" stroke-width="1"/>
+  <g stroke="url(#signal)" stroke-width="5" stroke-linecap="round">
+   <path d="M35 158v22M48 149v40M61 164v12M74 142v54M87 125v88M100 110v118M113 138v62M126 92v154M139 121v96M152 141v56M165 119v100M178 75v188M191 99v140M204 132v74M217 144v50M230 111v116M243 133v72M256 147v44M269 128v82M282 153v32M295 146v46M308 158v22M321 163v12"/>
+  </g>
+  <text x="24" y="301" font-size="30" fill="#f0f2eb">Listen</text>
+ </g>
+ <g transform="translate(537 306)">
+  <rect width="365" height="352" rx="8" fill="#1c2520" stroke="#526158"/>
+  <text x="24" y="42" font-size="18" fill="#c5b174" letter-spacing="2">02 / MIDI</text>
+  <g stroke="#506057" stroke-opacity=".65"><path d="M24 101h317M24 132h317M24 163h317M24 194h317M24 225h317"/></g>
+  <g fill="#c5b174"><rect x="36" y="182" width="60" height="14" rx="3"/><rect x="98" y="151" width="44" height="14" rx="3"/><rect x="143" y="120" width="68" height="14" rx="3"/><rect x="212" y="151" width="45" height="14" rx="3"/><rect x="258" y="89" width="68" height="14" rx="3"/></g>
+  <text x="24" y="301" font-size="30" fill="#f0f2eb">Represent</text>
+ </g>
+ <g transform="translate(1011 306)">
+  <rect width="365" height="352" rx="8" fill="#1c2520" stroke="#526158"/>
+  <text x="24" y="42" font-size="18" fill="#c5b174" letter-spacing="2">03 / NOTATION</text>
+  <g stroke="#7b897e" stroke-width="1.5"><path d="M25 112h315M25 135h315M25 158h315M25 181h315M25 204h315"/></g>
+  <g fill="#e0d4ab" stroke="#e0d4ab" stroke-width="3"><ellipse cx="76" cy="181" rx="11" ry="7" transform="rotate(-20 76 181)"/><path d="M86 177v-71"/><ellipse cx="140" cy="158" rx="11" ry="7" transform="rotate(-20 140 158)"/><path d="M150 154V83"/><ellipse cx="204" cy="135" rx="11" ry="7" transform="rotate(-20 204 135)"/><path d="M214 131V60"/><ellipse cx="268" cy="158" rx="11" ry="7" transform="rotate(-20 268 158)"/><path d="M278 154V83"/></g>
+  <text x="24" y="301" font-size="30" fill="#f0f2eb">Read</text>
+ </g>
+ <g fill="#d9c993" font-size="18" text-anchor="middle">
+  <text x="483" y="440">MT3</text><path d="M449 477h68" stroke="#c5b174" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="956" y="433"><tspan x="956">Score</tspan><tspan x="956" dy="25">Transformer</tspan></text><path d="M921 477h68" stroke="#c5b174" stroke-width="2" marker-end="url(#arrow)"/>
+ </g>
+ <rect x="64" y="714" width="1312" height="116" rx="8" fill="#c5b174"/>
+ <text x="88" y="762" font-size="20" font-weight="700" fill="#151d18" letter-spacing="2">JUCE / C++ INTERFACE</text>
+ <text x="88" y="800" font-size="25" fill="#151d18">Select audio files · Handle MusicXML and MIDI output</text>
+ <text x="64" y="917" font-size="19" fill="#abb6ac">Python · TensorFlow · NumPy · Librosa · C++ · JUCE</text>
+ <text x="1376" y="917" text-anchor="end" font-size="17" fill="#c5b174" letter-spacing="2">ILLUSTRATIVE PIPELINE</text>
+</g>
+</svg>
