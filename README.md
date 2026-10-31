@@ -8,7 +8,7 @@ A responsive personal portfolio for Jean-Luc Peloquin, built as a precise editor
 - Terminal-style startup screen with a deterministic 64×40 ASCII rendition of that same authoritative logo mask
 - Enhanced silver/graphite 3D relief of the supplied eye mark behind the full hero name
 - One lazy-loaded Three.js capability renderer that scissor-renders four original automation, vision, data, and interface scenes through a shared WebGL context
-- One lazy-loaded Three.js Selected Work canvas that morphs between five deterministic project scenes, with full orbit/zoom controls, adaptive themes, reduced-motion rendering, and CSS fallbacks
+- One lazy-loaded Three.js Selected Work canvas with seven deterministic project scenes, an original procedural biker jacket, orbit/zoom controls, adaptive themes, reduced-motion rendering, and CSS fallbacks
 - Live 20-week public GitHub push-activity view with an accessible, network-safe fallback
 - Responsive light/dark editorial layout with a live Las Vegas clock
 - Accessible mobile navigation and contact dialogs with native focus trapping and Escape handling

@@ -2,6 +2,8 @@
 
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { Box3, Vector3 } from "three";
+import { createBikerJacket } from "../src/work-jacket.js";
 import {
   buildWorkVisualStates,
   FIELD_POINT_COUNT,
@@ -11,7 +13,7 @@ import {
   WORK_VISUAL_SOURCE_COMMIT,
 } from "../src/work-visual-states.js";
 
-const expectedIds = ["vct-fantasy", "valorant-barracks-vision", "fashion-enhancer", "portfolio-os", "quick-save", "gardeau"];
+const expectedIds = ["vct-fantasy", "valorant-barracks-vision", "archive-fashion-upscaler", "portfolio-os", "quick-save", "gardeau", "vagabot"];
 
 function assertFiniteBuffer(buffer, label) {
   assert.ok(ArrayBuffer.isView(buffer), `${label} must be a typed array.`);
@@ -30,6 +32,26 @@ function assertEqualBuffers(first, second, label) {
 
 const firstBuild = buildWorkVisualStates();
 const secondBuild = buildWorkVisualStates();
+
+// Validate the new solid garment independently of the shared point/line buffers.
+const jacket = createBikerJacket("light");
+const jacketSize = new Box3().setFromObject(jacket.group).getSize(new Vector3());
+assert.ok(jacketSize.x > 4 && jacketSize.y > 4 && jacketSize.z < 1.5, "Jacket must retain its full sleeve silhouette and shallow garment depth.");
+const garmentGeometries = new Set();
+jacket.group.traverse((object) => {
+  if (!object.isMesh) return;
+  garmentGeometries.add(object.geometry);
+  for (const name of ["position", "normal"]) {
+    const attribute = object.geometry.getAttribute(name);
+    assert.ok(attribute?.count > 0, `Jacket mesh is missing ${name}.`);
+    for (const value of attribute.array) assert.ok(Number.isFinite(value), `Jacket ${name} contains an invalid value.`);
+  }
+});
+let disposedGarmentGeometries = 0;
+garmentGeometries.forEach((geometry) => geometry.addEventListener("dispose", () => { disposedGarmentGeometries += 1; }));
+jacket.setTheme("dark");
+jacket.dispose();
+assert.equal(disposedGarmentGeometries, garmentGeometries.size, "Jacket must release every allocated geometry.");
 
 assert.equal(firstBuild.length, expectedIds.length, "All work visual states are required.");
 assert.deepEqual(firstBuild.map((state) => state.id), expectedIds, "Work state order or IDs changed.");
@@ -76,15 +98,16 @@ firstBuild.forEach((state, stateIndex) => {
 assert.equal(TOPOLOGY_EDGES.length % 2, 0, "Topology edge pairs are malformed.");
 for (const index of TOPOLOGY_EDGES) assert.ok(index < POINT_COUNT, `Topology edge index ${index} is out of bounds.`);
 
-const [rendererSource, stateSource, notices, provenance, packageJson] = await Promise.all([
+const [rendererSource, stateSource, notices, provenance, packageJson, jacketSource] = await Promise.all([
   readFile(new URL("../src/work-visual.js", import.meta.url), "utf8"),
   readFile(new URL("../src/work-visual-states.js", import.meta.url), "utf8"),
   readFile(new URL("../THIRD_PARTY_NOTICES.md", import.meta.url), "utf8"),
   readFile(new URL("../ASSET_PROVENANCE.md", import.meta.url), "utf8"),
   readFile(new URL("../package.json", import.meta.url), "utf8"),
+  readFile(new URL("../src/work-jacket.js", import.meta.url), "utf8"),
 ]);
 
-const visualSource = `${rendererSource}\n${stateSource}`;
+const visualSource = `${rendererSource}\n${stateSource}\n${jacketSource}`;
 assert.equal((rendererSource.match(/new WebGLRenderer/g) ?? []).length, 1, "The Work renderer must create exactly one WebGL context.");
 assert.match(rendererSource, /MORPH_DURATION\s*=\s*800/, "The authored 800ms morph duration is missing.");
 for (const method of ["setProject", "setTheme", "resetCamera", "dispose"]) {

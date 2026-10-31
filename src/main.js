@@ -71,11 +71,29 @@ const projects = [
     href: "https://github.com/LucPeloquin/VCT-UI",
   },
   {
+    visualIndex: 5,
+    kicker: "Marketplace Automation",
+    title: "Gardeau",
+    description:
+      "A marketplace-monitoring product I’m developing for resale shoppers. It brings US and Japanese listings into saved searches, filters by price and size, removes duplicates, and sends matches to Discord or Telegram.",
+    focus: "Turning repeated marketplace searches into one monitoring workflow. The product is in development; contact me to discuss it.",
+    tags: ["Go", "SQLite", "Browser automation", "Notifications"],
+  },
+  {
+    visualIndex: 6,
+    kicker: "Persistent Local AI",
+    title: "Vagabot",
+    description:
+      "A persistent local AI companion to Gardeau. It combines local translation and visual matching with saved marketplace watches and Discord alerts, supporting the research and monitoring behind the product.",
+    focus: "Built to run continuously, with local models and PostgreSQL-backed jobs that carry work between scans.",
+    tags: ["Rust", "TypeScript", "PostgreSQL", "Local inference"],
+  },
+  {
     visualIndex: 2,
     kicker: "Adaptive image processing · 2024",
-    title: "Fashion Enhancer",
+    title: "Archive Fashion Upscaler",
     description:
-      "A desktop and batch-processing tool that chooses an enhancement path for each fashion image. It combines noise reduction, upscaling, color correction, sharpening, and background removal with a final quality assessment.",
+      "A desktop and batch-processing tool for restoring and upscaling archived fashion imagery. It combines noise reduction, upscaling, color correction, sharpening, and background removal with a final quality assessment.",
     focus: "Adapting the processing steps to each image instead of applying one preset to an entire batch.",
     tags: ["Python", "OpenCV", "U2Net", "Parallel processing"],
     href: "https://github.com/LucPeloquin/Automatic-Enhancement-of-Fashion-Imagery",
@@ -99,15 +117,6 @@ const projects = [
     focus: "Reducing a repeated browser task to one action while keeping the result visible.",
     tags: ["JavaScript", "Chrome APIs", "Manifest V3", "Privacy"],
     href: "https://github.com/LucPeloquin/InstaDL",
-  },
-  {
-    visualIndex: 5,
-    kicker: "Business in development · Marketplace automation",
-    title: "Gardeau",
-    description:
-      "A marketplace-monitoring product I’m developing for resale shoppers. It brings US and Japanese listings into saved searches, filters by price and size, removes duplicates, and sends matches to Discord or Telegram.",
-    focus: "Turning repeated marketplace searches into one monitoring workflow. The product is in development; contact me to discuss it.",
-    tags: ["Go", "SQLite", "Browser automation", "Notifications"],
   },
   {
     visualIndex: 0,
@@ -413,6 +422,7 @@ function renderProject(index, { focus = false } = {}) {
   projectDescription.textContent = project.description;
   projectFocus.textContent = project.focus;
   projectInquiry.hidden = Boolean(project.href);
+  projectInquiry.firstChild.textContent = `Ask about ${project.title} `;
   if (project.image) {
     projectImage.src = project.image;
     projectImage.alt = project.imageAlt;
@@ -500,8 +510,6 @@ async function loadWorkVisual() {
   } catch (error) {
     console.error("Selected Work 3D visual failed to initialize", error);
     workVisualStage.dataset.workVisualState = "fallback";
-    const status = workVisualStage.querySelector("[data-work-visual-status]");
-    if (status) status.textContent = "CSS / FALLBACK";
   } finally {
     workVisualLoading = false;
   }

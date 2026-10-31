@@ -41,6 +41,7 @@ import {
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+import { createBikerJacket } from "./work-jacket.js";
 import {
   buildWorkVisualStates,
   FIELD_COLUMNS,
@@ -139,24 +140,8 @@ function interpolateInstanceLayer(target, from, to, amount) {
   interpolateBuffer(target.tones, from.tones, to.tones, amount);
 }
 
-function updateStageCopy(stage, state, renderState) {
-  const project = stage.querySelector("[data-work-visual-project]");
-  const status = stage.querySelector("[data-work-visual-status]");
-  if (project) project.textContent = state.id.replaceAll("-", " / ").toUpperCase();
-  if (status) {
-    status.textContent = {
-      loading: "INITIALIZING",
-      ready: "WEBGL / ACTIVE",
-      paused: "WEBGL / PAUSED",
-      static: "WEBGL / STATIC",
-      fallback: "CSS / FALLBACK",
-    }[renderState] ?? "WEBGL";
-  }
-}
-
-function showFallback(stage, state) {
+function showFallback(stage) {
   stage.dataset.workVisualState = "fallback";
-  updateStageCopy(stage, state, "fallback");
 }
 
 export function initWorkVisual(canvas, stage, {
@@ -168,12 +153,12 @@ export function initWorkVisual(canvas, stage, {
   let activeIndex = MathUtils.euclideanModulo(initialProject, states.length);
   let activeState = states[activeIndex];
   stage.dataset.workVisualState = "loading";
-  updateStageCopy(stage, activeState, "loading");
 
   let renderer;
   let environmentTexture;
   let environmentScene;
   let pmremGenerator;
+  let jacketVisual;
 
   try {
     renderer = new WebGLRenderer({
@@ -198,6 +183,8 @@ export function initWorkVisual(canvas, stage, {
 
     const world = new Group();
     scene.add(world);
+    jacketVisual = createBikerJacket(theme);
+    world.add(jacketVisual.group);
 
     const palette = clonePalette(theme);
     const paletteFrom = clonePalette(theme);
@@ -352,7 +339,6 @@ export function initWorkVisual(canvas, stage, {
       else if (reducedMotion) renderState = "static";
       else if (!stageVisible || canvas.hidden || document.hidden) renderState = "paused";
       stage.dataset.workVisualState = renderState;
-      updateStageCopy(stage, activeState, renderState);
       notifyActivity();
     }
 
@@ -407,6 +393,10 @@ export function initWorkVisual(canvas, stage, {
     }
 
     function writeSceneBuffers() {
+      const showingJacket = activeState.id === "archive-fashion-upscaler";
+      jacketVisual.group.visible = showingJacket;
+      coreLight.visible = !showingJacket;
+      points.visible = topologyLines.visible = fieldLines.visible = instances.visible = !showingJacket;
       writeTopologyBuffers();
       writeFieldBuffer();
       writeInstanceBuffer();
@@ -469,7 +459,6 @@ export function initWorkVisual(canvas, stage, {
       if (progress === 1) {
         morphing = false;
         activeState = targetState;
-        updateStageCopy(stage, activeState, stage.dataset.workVisualState);
       }
     }
 
@@ -530,7 +519,6 @@ export function initWorkVisual(canvas, stage, {
       activeState = nextState;
       targetState = nextState;
       setCanvasLabel(nextState);
-      updateStageCopy(stage, nextState, stage.dataset.workVisualState);
 
       if (reducedMotion) {
         currentTopology.set(nextState.topology);
@@ -554,6 +542,7 @@ export function initWorkVisual(canvas, stage, {
 
     function setTheme(nextTheme) {
       const normalized = nextTheme === "dark" ? "dark" : "light";
+      jacketVisual.setTheme(normalized);
       copyPalette(paletteFrom, palette);
       copyPalette(paletteTo, clonePalette(normalized));
       themeTransitionStart = reducedMotion ? -Infinity : performance.now();
@@ -616,7 +605,7 @@ export function initWorkVisual(canvas, stage, {
       contextAvailable = false;
       if (frameId) cancelAnimationFrame(frameId);
       frameId = 0;
-      showFallback(stage, activeState);
+      showFallback(stage);
       notifyActivity();
     }
 
@@ -674,6 +663,7 @@ export function initWorkVisual(canvas, stage, {
       fieldMaterial.dispose();
       instanceGeometry.dispose();
       instanceMaterial.dispose();
+      jacketVisual.dispose();
       environmentTexture.dispose();
       pmremGenerator.dispose();
       environmentScene.dispose();
@@ -682,11 +672,12 @@ export function initWorkVisual(canvas, stage, {
 
     return { setProject, setTheme, resetCamera, dispose };
   } catch (error) {
+    jacketVisual?.dispose();
     environmentTexture?.dispose();
     pmremGenerator?.dispose();
     environmentScene?.dispose();
     renderer?.dispose();
-    showFallback(stage, activeState);
+    showFallback(stage);
     throw error;
   }
 }

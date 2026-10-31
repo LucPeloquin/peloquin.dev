@@ -265,9 +265,9 @@ function createFashionState() {
   }
 
   return {
-    id: "fashion-enhancer",
-    label: "Fashion Enhancer segmented cloth field",
-    camera: { position: [7.8, 3.4, 11.5], target: [0, 0, 0], fov: 34 },
+    id: "archive-fashion-upscaler",
+    label: "Archive Fashion Upscaler black leather biker jacket with asymmetric lapels, silver zips, and a waist belt",
+    camera: { position: [2.7, 1.3, 12.5], target: [0, 0.15, 0.15], fov: 32 },
     topology,
     field,
     instances,
@@ -453,6 +453,42 @@ function createGardeauState() {
   return {id: "gardeau", label: "Gardeau marketplace listings passing through search filters into notification channels", camera: {position: [4, 4, 17], target: [0, 0, 0], fov: 40}, topology, field, instances};
 }
 
+function createVagabotState() {
+  const topology = new Float32Array(POINT_COUNT * 3);
+  const field = new Float32Array(FIELD_POINT_COUNT * 3);
+  const instances = createInstanceLayer();
+  // A local inference core linked to durable memory and repeating job paths.
+  for (let i = 0; i < POINT_COUNT; i += 1) {
+    const angle = (i / POINT_COUNT) * TAU * 4;
+    const radius = 2.7 + Math.sin(i * 0.43) * 0.2;
+    setVector(topology, i, Math.cos(angle) * radius, -0.2 + (i % 24) * 0.07, Math.sin(angle) * radius);
+  }
+  for (let row = 0; row < FIELD_ROWS; row += 1) {
+    for (let col = 0; col < FIELD_COLUMNS; col += 1) {
+      const t = col / (FIELD_COLUMNS - 1);
+      const angle = t * TAU + row * 0.055;
+      const radius = 1.55 + row * 0.055;
+      setVector(field, row * FIELD_COLUMNS + col, Math.cos(angle) * radius, 0.1 + Math.sin(t * TAU * 2 + row * 0.1) * 0.2, Math.sin(angle) * radius);
+    }
+  }
+  setInstance(instances, 0, { position: [0, -0.65, 0], scale: [6.2, 0.18, 6.2], tone: 0 });
+  setInstance(instances, 1, { position: [0, 0.1, 0], scale: [1.75, 1.25, 1.75], tone: 0 });
+  setInstance(instances, 2, { position: [0, 0.82, 0], scale: [1.55, 0.15, 1.55], tone: 1 });
+  for (let i = 0; i < 12; i += 1) {
+    const side = Math.floor(i / 3);
+    const slot = (i % 3 - 1) * 0.48;
+    const angle = side * Math.PI / 2;
+    setInstance(instances, 3 + i, { position: [Math.cos(angle) * 1.12 + Math.sin(angle) * slot, -0.1, Math.sin(angle) * 1.12 + Math.cos(angle) * slot], rotation: [0, -angle, 0], scale: [0.5, 0.12, 0.17], tone: 1 });
+  }
+  for (let i = 15; i < INSTANCE_COUNT; i += 1) {
+    const node = Math.floor((i - 15) / 3);
+    const level = (i - 15) % 3;
+    const angle = node / 5 * TAU;
+    setInstance(instances, i, { position: [Math.cos(angle) * 2.7, -0.2 + level * 0.27, Math.sin(angle) * 2.7], rotation: [0, -angle, 0], scale: [0.7, 0.17, 0.72], tone: level === 2 ? 2 : 0 });
+  }
+  return { id: "vagabot", label: "Vagabot local AI inference core connected to persistent memory and recurring watch jobs", camera: { position: [8.5, 6.5, 10.8], target: [0, 0.1, 0], fov: 34 }, topology, field, instances };
+}
+
 export function buildWorkVisualStates() {
   return [
     createFantasyState(),
@@ -461,5 +497,6 @@ export function buildWorkVisualStates() {
     createPortfolioState(),
     createQuickSaveState(),
     createGardeauState(),
+    createVagabotState(),
   ];
 }
