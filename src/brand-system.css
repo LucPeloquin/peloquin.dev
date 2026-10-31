@@ -265,11 +265,13 @@ body[data-brand-system] .menu-trigger {
 
 body[data-brand-system] .header-contact {
   background: var(--brand-black);
+  color: var(--brand-white);
 }
 
 body[data-brand-system] .header-contact:hover,
 body[data-brand-system] .header-contact:focus-visible {
   background: var(--brand-gold);
+  color: var(--brand-black);
 }
 
 /* Boot screen: current portfolio palette, with gold as the primary signal. */
@@ -401,8 +403,8 @@ body[data-brand-system] .hero-signal::before {
 }
 
 body[data-brand-system] .hero-signal {
-  background-image: url("/brand/vct22/masks/grain-red-gold.svg");
-  background-size: 460px 460px;
+  background: var(--brand-gold);
+  color: var(--brand-black);
 }
 
 body[data-brand-system] .hero-signal .tech-loop {
@@ -419,12 +421,10 @@ body[data-brand-system] .hero-signal .tech-loop span:nth-child(5n) {
 
 /* Editorial section rhythm */
 
-body[data-brand-system] .about-lede,
-body[data-brand-system] .section-heading-grid,
-body[data-brand-system] .principles,
-body[data-brand-system] .profile-masthead {
-  min-height: calc(100svh - var(--header-height));
-}
+body[data-brand-system] .about-lede { min-height: 480px; }
+body[data-brand-system] .section-heading-grid { min-height: 230px; }
+body[data-brand-system] .principles { min-height: 600px; }
+body[data-brand-system] .profile-masthead { min-height: 260px; }
 
 body[data-brand-system] .section-label {
   font-size: 0.6rem;
@@ -577,6 +577,7 @@ body[data-brand-system] .capability-copy li {
 /* Selected Work */
 
 body[data-brand-system] .work-masthead {
+  grid-template-rows: 220px auto;
   background-image: none;
 }
 
@@ -634,8 +635,7 @@ body[data-brand-system] .work-index button[aria-selected="true"]::after {
 }
 
 body[data-brand-system] .work-index button[aria-selected="true"] {
-  background-image: url("/brand/vct22/masks/grain-purple.svg");
-  background-size: 360px 360px;
+  background-image: none;
 }
 
 body[data-brand-system] .work-index button:hover:not([aria-selected="true"]) {
@@ -680,8 +680,7 @@ body[data-brand-system] .principles {
 
 body[data-brand-system] .principle-context {
   background-color: var(--brand-black);
-  background-image: url("/brand/vct22/masks/grain-purple.svg");
-  background-size: 420px 420px;
+  background-image: none;
 }
 
 body[data-brand-system] .principle-slide h2 {
@@ -769,8 +768,7 @@ body[data-brand-system] .closing-cta:hover span:nth-child(4) {
 body[data-brand-system] .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   background-color: var(--brand-black);
-  background-image: url("/brand/vct22/masks/grain-red-gold.svg");
-  background-size: 460px 460px;
+  background-image: none;
 }
 
 body[data-brand-system] .site-footer a:hover,
@@ -1053,7 +1051,7 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .about-index {
-    min-height: 510px;
+    min-height: 350px;
   }
 
   body[data-brand-system] .about-index-statement {
@@ -1086,8 +1084,8 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .section-heading-grid h2 {
-    min-height: 240px;
-    font-size: clamp(4rem, 18vw, 5.2rem);
+    min-height: 140px;
+    font-size: clamp(3rem, 14vw, 4rem);
   }
 
   body[data-brand-system] .section-heading-grid > div {
@@ -1128,7 +1126,7 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .work-masthead {
-    grid-template-rows: 190px auto;
+    grid-template-rows: 140px auto;
   }
 
   body[data-brand-system] .work-masthead h2 {
@@ -1136,12 +1134,12 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .work-index button {
-    flex-basis: 66vw;
+    flex-basis: 58vw;
     min-height: 88px;
   }
 
   body[data-brand-system] .project-panel {
-    grid-template-rows: auto minmax(340px, 96vw) 58px;
+    grid-template-rows: auto minmax(340px, 90vw) 58px;
   }
 
   body[data-brand-system] .project-copy {
@@ -1168,12 +1166,12 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .principle-stage {
-    min-height: 500px;
+    min-height: 430px;
     padding: 1.5rem var(--gutter);
   }
 
   body[data-brand-system] .principle-slide {
-    min-height: 450px;
+    min-height: 380px;
   }
 
   body[data-brand-system] .principle-slide h2 {
@@ -1191,14 +1189,14 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .profile-masthead h2 {
-    min-height: 150px;
+    min-height: 130px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
     font-size: clamp(4.5rem, 21vw, 5.7rem);
   }
 
   body[data-brand-system] .profile-masthead > p {
-    min-height: 132px;
+    min-height: 100px;
     padding: var(--gutter);
     font-size: clamp(1.8rem, 8vw, 2.3rem);
   }

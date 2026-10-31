@@ -10,9 +10,9 @@ A responsive personal portfolio for Jean-Luc Peloquin, built as a precise editor
 - One lazy-loaded Three.js capability renderer that scissor-renders four original automation, vision, data, and interface scenes through a shared WebGL context
 - One lazy-loaded Three.js Selected Work canvas that morphs between five deterministic project scenes, with full orbit/zoom controls, adaptive themes, reduced-motion rendering, and CSS fallbacks
 - Live 20-week public GitHub push-activity view with an accessible, network-safe fallback
-- Responsive light/dark editorial layout with live Las Vegas and New York clocks
+- Responsive light/dark editorial layout with a live Las Vegas clock
 - Accessible mobile navigation and contact dialogs with native focus trapping and Escape handling
-- Selectable project case studies and an autoplaying, user-pausable principles carousel
+- Work-first navigation, concise project build notes, real VCT Fantasy and Broadcast Vision images, optional 3D studies, and a user-pausable principles carousel
 - Self-hosted open-source fonts, optimized WebP portraits, and deterministic ASCII/SVG/GLB logo assets
 - Self-hosted VCT22-inspired display/semimono typography, eight utility glyphs, and five text-free light/grain masks tracked by a deterministic local manifest
 - Standalone privacy and 404 pages

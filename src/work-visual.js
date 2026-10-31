@@ -336,7 +336,7 @@ export function initWorkVisual(canvas, stage, {
     }
 
     function canAnimate() {
-      return !reducedMotion && stageVisible && !document.hidden && contextAvailable && !disposed;
+      return !reducedMotion && stageVisible && !canvas.hidden && !document.hidden && contextAvailable && !disposed;
     }
 
     function notifyActivity() {
@@ -350,7 +350,7 @@ export function initWorkVisual(canvas, stage, {
       let renderState = "ready";
       if (!contextAvailable) renderState = "fallback";
       else if (reducedMotion) renderState = "static";
-      else if (!stageVisible || document.hidden) renderState = "paused";
+      else if (!stageVisible || canvas.hidden || document.hidden) renderState = "paused";
       stage.dataset.workVisualState = renderState;
       updateStageCopy(stage, activeState, renderState);
       notifyActivity();
@@ -622,6 +622,15 @@ export function initWorkVisual(canvas, stage, {
 
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(stage);
+    const viewObserver = new MutationObserver(() => {
+      syncRenderState();
+      if (!canvas.hidden) {
+        resize();
+        renderFrame(performance.now(), false);
+      }
+      requestFrame();
+    });
+    viewObserver.observe(canvas, { attributes: true, attributeFilter: ["hidden"] });
     const visibilityObserver = new IntersectionObserver(
       ([entry]) => {
         stageVisible = entry.isIntersecting;
@@ -651,6 +660,7 @@ export function initWorkVisual(canvas, stage, {
       activityState = true;
       notifyActivity();
       resizeObserver.disconnect();
+      viewObserver.disconnect();
       visibilityObserver.disconnect();
       canvas.removeEventListener("keydown", handleKeyboard);
       canvas.removeEventListener("webglcontextlost", handleContextLost);

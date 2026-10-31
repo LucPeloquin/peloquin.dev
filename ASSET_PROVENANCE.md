@@ -4,6 +4,8 @@
 
 - `public/images/jean-luc.webp` is an optimized derivative of the portrait already tracked in this repository as `images/luc.jpg`.
 - `public/images/jean-luc-current.webp` is an optimized derivative of `images/image.png`.
+- `public/images/projects/vct-fantasy.webp` is a browser capture of the unmodified Rules & Pricing page from [LucPeloquin/VALORANTfantasy](https://github.com/LucPeloquin/VALORANTfantasy/tree/f9f1a25e8278883903fd4fa1b9ce361603ac997d), run locally with automatic external data sync disabled. It shows the implemented interface, not live competition data.
+- `public/images/projects/broadcast-vision.webp` is an optimized derivative of [`image.png` in LucPeloquin/VCT-UI](https://github.com/LucPeloquin/VCT-UI/blob/bfa891fed0f2bb0f0312b3c061339b963f06226b/image.png). It is presented as an annotated broadcast research frame, not a claim of live model output. Broadcast/game imagery and marks belong to their respective owners.
 - `public/logo-flat.png` is the square logo supplied for this redesign and is used as the flat header mark.
 - `assets/source/tour-de-force-inverted.png` is the authoritative 512×512 inverted mark supplied for the engraved plaque. Its alpha channel is the sole source of the generated logo geometry.
 - `public/logo-inverted.svg`, `public/models/tour-de-force-plaque.glb`, and `src/generated/logo-ascii.js` are deterministic derivatives generated from that alpha mask by `scripts/logo-model.mjs`. The SVG is the loading and failure fallback, the GLB contains the machined plaque geometry, and the ASCII rendition is used by the startup screen.

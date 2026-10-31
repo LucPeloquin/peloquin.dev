@@ -61,7 +61,11 @@ const projects = [
     kicker: "Full-stack product · 2026",
     title: "VCT Fantasy",
     description:
-      "A multi-page fantasy product for professional VALORANT: authentication, constrained roster building, player projections, public teams, leaderboards, generated share cards, admin tooling, and scheduled VLR data sync.",
+      "A fantasy platform for VALORANT fans to build a five-player roster, follow player projections, and compete on leaderboards. I built the account system, roster rules, public team pages, and scheduled stats sync.",
+    focus: "Keeping roster budgets, team limits, and player roles consistent while match statistics update.",
+    image: "./images/projects/vct-fantasy.webp",
+    imageAlt: "VCT Fantasy rules page showing five-player roster limits, pricing tiers, and the player valuation formula.",
+    caption: "Roster rules & pricing · local build",
     tags: ["PHP", "SQL", "Data sync", "Product systems"],
     href: "https://github.com/LucPeloquin/VALORANTfantasy",
   },
@@ -69,7 +73,11 @@ const projects = [
     kicker: "Computer vision · Evolving R&D",
     title: "Broadcast Vision",
     description:
-      "An evolving vision system that converts esports broadcasts into structured match data. It began with screen capture, OCR, fuzzy matching, and weapon templates, then moved toward YOLO-based detection for scores, timers, player panels, agents, and the minimap.",
+      "A research project that turns VALORANT broadcast footage into structured match data. I started with screen capture, OCR, and template matching, then explored YOLO-based detection for scores, timers, player panels, and the minimap.",
+    focus: "Locating useful information in a busy broadcast overlay before extracting and matching it.",
+    image: "./images/projects/broadcast-vision.webp",
+    imageAlt: "Annotated VALORANT broadcast frame with numbered boxes around scores, timers, player panels, and other HUD elements.",
+    caption: "Annotated broadcast frame · project research",
     tags: ["Python", "YOLOv8", "OpenCV", "OCR"],
     href: "https://github.com/LucPeloquin/VCT-UI",
   },
@@ -77,7 +85,8 @@ const projects = [
     kicker: "Adaptive image processing · 2024",
     title: "Fashion Enhancer",
     description:
-      "A desktop and batch-processing pipeline that inspects each fashion image before choosing its enhancement path: denoising, Lanczos upscaling, LAB and CLAHE corrections, sharpening, shadow recovery, segmentation, background removal, and final quality assessment.",
+      "A desktop and batch-processing tool that chooses an enhancement path for each fashion image. It combines noise reduction, upscaling, color correction, sharpening, and background removal with a final quality assessment.",
+    focus: "Adapting the processing steps to each image instead of applying one preset to an entire batch.",
     tags: ["Python", "OpenCV", "U2Net", "Parallel processing"],
     href: "https://github.com/LucPeloquin/Automatic-Enhancement-of-Fashion-Imagery",
   },
@@ -85,7 +94,8 @@ const projects = [
     kicker: "Experimental interface · 2026",
     title: "Portfolio OS",
     description:
-      "An interactive portfolio treated as a complete interface system: a dual-screen firmware metaphor, boot sequence, physical-style controls, sound, touch and keyboard navigation, motion, state management, deterministic asset tooling, and automated tests.",
+      "An experimental portfolio built around a dual-screen console interface. I connected the boot sequence, physical-style controls, sound, and touch and keyboard navigation through a shared application state.",
+    focus: "Making several input methods feel consistent across a complete interface, with reproducible assets and automated tests.",
     tags: ["TypeScript", "Next.js", "Motion", "Web audio"],
     href: "https://github.com/LucPeloquin/flick-owens-dotdev",
   },
@@ -93,7 +103,8 @@ const projects = [
     kicker: "Browser utility · 2025",
     title: "Quick Save",
     description:
-      "A focused Manifest V3 extension for saving images, links, video, and audio with Alt-click or a context-menu action. It includes configurable download folders, immediate visual feedback, and no external data service.",
+      "A browser extension that saves images, links, video, and audio with Alt-click or a context-menu action. Configurable folders and immediate feedback keep the download workflow quick, without an external data service.",
+    focus: "Reducing a repeated browser task to one action while keeping the result visible.",
     tags: ["JavaScript", "Chrome APIs", "Manifest V3", "Privacy"],
     href: "https://github.com/LucPeloquin/InstaDL",
   },
@@ -101,7 +112,8 @@ const projects = [
     kicker: "Business in development · Marketplace automation",
     title: "Gardeau",
     description:
-      "A business I’m building to help people find the resale listings they care about. Gardeau brings US and Japanese marketplaces into one monitoring workflow: saved searches, price and size filters, duplicate detection, and timely Discord or Telegram alerts. A Go backend, SQLite storage, browser automation, and a web dashboard power the product as it develops.",
+      "A marketplace-monitoring product I’m developing for resale shoppers. It brings US and Japanese listings into saved searches, filters by price and size, removes duplicates, and sends matches to Discord or Telegram.",
+    focus: "Turning repeated marketplace searches into one monitoring workflow. The product is in development; contact me to discuss it.",
     tags: ["Go", "SQLite", "Browser automation", "Notifications"],
   },
 ];
@@ -359,6 +371,12 @@ const projectPosters = [...document.querySelectorAll("[data-project-poster]")];
 const projectTitle = document.querySelector("[data-project-title]");
 const projectKicker = document.querySelector("[data-project-kicker]");
 const projectDescription = document.querySelector("[data-project-description]");
+const projectFocus = document.querySelector("[data-project-focus]");
+const projectInquiry = document.querySelector("[data-project-inquiry]");
+const projectEvidence = document.querySelector("[data-project-evidence]");
+const projectImage = document.querySelector("[data-project-image]");
+const projectCaption = document.querySelector("[data-project-caption]");
+const projectViewToggle = document.querySelector("[data-project-view-toggle]");
 const projectTags = document.querySelector("[data-project-tags]");
 const projectLink = document.querySelector("[data-project-link]");
 const projectCurrent = document.querySelector("[data-project-current]");
@@ -370,12 +388,35 @@ let activeProject = 0;
 let workVisualController;
 let workVisualLoading = false;
 
+function setProjectView(showStudy) {
+  const hasImage = Boolean(projects[activeProject].image);
+  const showImage = hasImage && !showStudy;
+  workVisualStage.dataset.projectView = showImage ? "image" : "study";
+  projectEvidence.hidden = !showImage;
+  workVisualCanvas.hidden = showImage;
+  projectViewToggle.hidden = !hasImage;
+  projectViewToggle.setAttribute("aria-pressed", String(hasImage && showStudy));
+  projectViewToggle.textContent = showImage ? "Explore 3D study" : "View project image";
+}
+
 function renderProject(index, { focus = false } = {}) {
   activeProject = (index + projects.length) % projects.length;
   const project = projects[activeProject];
   projectKicker.textContent = project.kicker;
   projectTitle.textContent = project.title;
   projectDescription.textContent = project.description;
+  projectFocus.textContent = project.focus;
+  projectInquiry.hidden = Boolean(project.href);
+  if (project.image) {
+    projectImage.src = project.image;
+    projectImage.alt = project.imageAlt;
+    projectCaption.textContent = project.caption;
+  } else {
+    projectImage.removeAttribute("src");
+    projectImage.alt = "";
+    projectCaption.textContent = "";
+  }
+  setProjectView(false);
   projectTags.replaceChildren(
     ...project.tags.map((tag) => {
       const item = document.createElement("li");
@@ -405,8 +446,25 @@ function renderProject(index, { focus = false } = {}) {
 
   const activeTab = projectTabs[activeProject];
   projectPanel?.setAttribute("aria-labelledby", activeTab?.id ?? "");
-  activeTab?.scrollIntoView({ behavior: prefersReducedMotion.matches ? "auto" : "smooth", block: "nearest", inline: "center" });
+  if (activeTab && projectTabs[0]?.parentElement) {
+    const tabList = activeTab.parentElement;
+    if (tabList.scrollWidth > tabList.clientWidth) {
+      tabList.scrollTo({ left: activeTab.offsetLeft - tabList.offsetLeft, behavior: prefersReducedMotion.matches ? "auto" : "smooth" });
+    }
+  }
   if (focus) activeTab?.focus();
+}
+
+projectViewToggle?.addEventListener("click", () => {
+  setProjectView(workVisualStage.dataset.projectView !== "study");
+});
+
+// Populate the initial image without changing scroll position or the active section.
+if (projectImage && projectViewToggle) {
+  projectImage.src = projects[0].image;
+  projectImage.alt = projects[0].imageAlt;
+  projectCaption.textContent = projects[0].caption;
+  setProjectView(false);
 }
 
 projectTabs.forEach((tab, index) => {

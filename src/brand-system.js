@@ -4,7 +4,7 @@ const sectionTreatments = new Map([
   ["top", { pattern: null, glyph: "reticle" }],
   ["about", { pattern: null, glyph: "horizon-sphere" }],
   ["work", { pattern: null, glyph: "corner-brackets" }],
-  ["principles", { pattern: "grain-purple", glyph: "orbital-loops" }],
+  ["principles", { pattern: null, glyph: "orbital-loops" }],
   ["profile", { pattern: null, glyph: ["segmented-cross", "plus-marker"] }],
   ["closing", { pattern: null, glyph: "inward-chevrons" }],
 ]);

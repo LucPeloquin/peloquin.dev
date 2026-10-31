@@ -749,7 +749,7 @@ html.booting body {
   z-index: 2;
   padding: 0 var(--gutter) 0.32em;
   width: 100%;
-  font-size: clamp(4rem, 6.3vw, 7.25rem);
+  font-size: clamp(3rem, 5vw, 6rem);
   font-weight: 410;
   letter-spacing: -0.085em;
   line-height: 0.77;
@@ -1669,7 +1669,7 @@ html.booting body {
 .project-panel {
   display: grid;
   grid-template-columns: minmax(300px, 0.75fr) minmax(390px, 1.25fr);
-  grid-template-rows: minmax(650px, 72vw) 62px;
+  grid-template-rows: minmax(720px, auto) 62px;
 }
 
 .project-copy {
@@ -1681,8 +1681,8 @@ html.booting body {
 }
 
 .project-copy h3 {
-  margin-top: clamp(1.5rem, 7vw, 7rem);
-  font-size: clamp(3.4rem, 6vw, 7rem);
+  margin-top: clamp(1rem, 3vw, 3rem);
+  font-size: clamp(2.75rem, 4.6vw, 5.25rem);
   font-weight: 420;
   letter-spacing: -0.085em;
   line-height: 0.87;
@@ -1710,6 +1710,88 @@ html.booting body {
 
 .project-link {
   margin-top: auto;
+}
+
+.project-link[hidden] { display: none; }
+
+button.project-link {
+  width: 100%;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-focus {
+  display: grid;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--soft-line);
+}
+
+.project-focus > p:last-child {
+  max-width: 42ch;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.project-evidence {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: clamp(1rem, 2vw, 2rem);
+  background: var(--work-stage-background);
+}
+
+.project-evidence[hidden],
+.project-view-toggle[hidden],
+.work-visual-canvas[hidden] { display: none; }
+
+.project-evidence img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100% - 100px);
+  object-fit: contain;
+  border: 1px solid var(--soft-line);
+}
+
+.project-evidence figcaption {
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.67rem;
+  line-height: 1.5;
+}
+
+.project-view-toggle {
+  position: absolute;
+  z-index: 5;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.project-view-toggle:hover { background: var(--signal); color: #131313; }
+
+.project-poster[data-project-view="image"] .work-visual-chrome,
+.project-poster[data-project-view="image"] .work-visual-fallback { visibility: hidden; }
+
+.project-poster:has(.project-view-toggle:not([hidden])) .work-visual-chrome p:last-child {
+  justify-content: flex-start;
+  max-width: 55%;
+}
+
+.project-poster:has(.project-view-toggle:not([hidden])) .work-visual-chrome p:last-child span:not(:first-child) {
+  display: none;
 }
 
 .project-poster {
@@ -2206,7 +2288,7 @@ html.booting body {
 
 .principle-slide {
   display: flex;
-  min-height: 660px;
+  min-height: 540px;
   flex-direction: column;
   opacity: 0;
   transform: translateY(18px);
