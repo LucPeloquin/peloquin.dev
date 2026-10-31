@@ -547,12 +547,13 @@ body[data-brand-system] .capability-copy li {
 /* Selected Work */
 
 body[data-brand-system] .work-masthead {
-  grid-template-rows: 220px auto;
+  grid-template-rows: minmax(220px, auto) auto;
   background-image: none;
 }
 
 body[data-brand-system] .work-masthead h2 {
   font-variation-settings: "wght" 560;
+  line-height: 1;
 }
 
 body[data-brand-system] .work-halftone {
@@ -851,7 +852,6 @@ body[data-brand-system] .principle-slide h2 {
 }
 
 body[data-brand-system] .section-heading-grid h2,
-body[data-brand-system] .work-masthead h2,
 body[data-brand-system] .profile-masthead h2 {
   line-height: 0.88;
 }
@@ -1065,7 +1065,7 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .work-masthead {
-    grid-template-rows: 140px auto;
+    grid-template-rows: minmax(140px, auto) auto;
   }
 
   body[data-brand-system] .work-masthead h2 {
