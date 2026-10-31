@@ -81,7 +81,7 @@ const projects = [
   },
   {
     visualIndex: 6,
-    kicker: "Persistent Local AI",
+    kicker: "AI Vision",
     title: "Vagabot",
     description:
       "A persistent local AI companion to Gardeau. It combines local translation and visual matching with saved marketplace watches and Discord alerts, supporting the research and monitoring behind the product.",
@@ -93,7 +93,7 @@ const projects = [
     defaultView: "study",
     studyLabel: "View waveform",
     imageLabel: "View pipeline diagram",
-    kicker: "Team project · December 2023",
+    kicker: "Senior Design · December 2023",
     title: "Automatic Music Transcription",
     description:
       "A team project we completed in December 2023 to turn audio into musical notation. We combined MT3 and ScoreTransformer processing with a JUCE interface for selecting files and handling MusicXML and MIDI output.",
@@ -115,7 +115,7 @@ const projects = [
   },
   {
     visualIndex: 3,
-    kicker: "Experimental interface · 2026",
+    kicker: "Web App · 2026",
     title: "Portfolio OS",
     description:
       "An experimental portfolio built around a dual-screen console interface. I connected the boot sequence, physical-style controls, sound, and touch and keyboard navigation through a shared application state.",
@@ -135,7 +135,7 @@ const projects = [
   },
   {
     visualIndex: 0,
-    kicker: "Full-stack product · 2026",
+    kicker: "Web App · 2026",
     title: "VCT Fantasy",
     description:
       "A fantasy platform for VALORANT fans to build a five-player roster, follow player projections, and compete on leaderboards. I built the account system, roster rules, public team pages, and scheduled stats sync.",
