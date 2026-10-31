@@ -41,7 +41,6 @@ import {
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
-import { createBikerJacket } from "./work-jacket.js";
 import {
   buildWorkVisualStates,
   FIELD_COLUMNS,
@@ -158,7 +157,6 @@ export function initWorkVisual(canvas, stage, {
   let environmentTexture;
   let environmentScene;
   let pmremGenerator;
-  let jacketVisual;
 
   try {
     renderer = new WebGLRenderer({
@@ -183,8 +181,6 @@ export function initWorkVisual(canvas, stage, {
 
     const world = new Group();
     scene.add(world);
-    jacketVisual = createBikerJacket(theme);
-    world.add(jacketVisual.group);
 
     const palette = clonePalette(theme);
     const paletteFrom = clonePalette(theme);
@@ -393,10 +389,6 @@ export function initWorkVisual(canvas, stage, {
     }
 
     function writeSceneBuffers() {
-      const showingJacket = activeState.id === "archive-fashion-upscaler";
-      jacketVisual.group.visible = showingJacket;
-      coreLight.visible = !showingJacket;
-      points.visible = topologyLines.visible = fieldLines.visible = instances.visible = !showingJacket;
       writeTopologyBuffers();
       writeFieldBuffer();
       writeInstanceBuffer();
@@ -542,7 +534,6 @@ export function initWorkVisual(canvas, stage, {
 
     function setTheme(nextTheme) {
       const normalized = nextTheme === "dark" ? "dark" : "light";
-      jacketVisual.setTheme(normalized);
       copyPalette(paletteFrom, palette);
       copyPalette(paletteTo, clonePalette(normalized));
       themeTransitionStart = reducedMotion ? -Infinity : performance.now();
@@ -663,7 +654,6 @@ export function initWorkVisual(canvas, stage, {
       fieldMaterial.dispose();
       instanceGeometry.dispose();
       instanceMaterial.dispose();
-      jacketVisual.dispose();
       environmentTexture.dispose();
       pmremGenerator.dispose();
       environmentScene.dispose();
@@ -672,7 +662,6 @@ export function initWorkVisual(canvas, stage, {
 
     return { setProject, setTheme, resetCamera, dispose };
   } catch (error) {
-    jacketVisual?.dispose();
     environmentTexture?.dispose();
     pmremGenerator?.dispose();
     environmentScene?.dispose();

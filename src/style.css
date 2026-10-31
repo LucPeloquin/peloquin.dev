@@ -3180,7 +3180,7 @@ a.contact-row:hover { background: var(--signal); color: #181818; }
   .scroll-progress span { transition: none; }
 }
 
-/* Local-agent fallback and the jacket silhouette remain available without WebGL. */
+/* The local-agent fallback remains available without WebGL. */
 .poster-vagabot { background: var(--work-stage-background); }
 .agent-core, .agent-memory, .agent-orbit { position: absolute; display: block; }
 .agent-core { inset: 36% 35%; border: 8px solid #555d57; border-radius: 10px; background: #222b25; box-shadow: inset 0 0 0 4px #c5b174, 0 16px 25px #0003; }
@@ -3189,10 +3189,6 @@ a.contact-row:hover { background: var(--signal); color: #181818; }
 .memory-one { top: 20%; left: 15%; }
 .memory-two { top: 31%; right: 8%; }
 .memory-three { bottom: 20%; left: 23%; }
-.garment i { clip-path: polygon(34% 0, 43% 10%, 57% 10%, 66% 0, 86% 12%, 100% 85%, 83% 90%, 75% 40%, 74% 100%, 26% 100%, 25% 40%, 17% 90%, 0 85%, 14% 12%); }
-.garment-after i { background: linear-gradient(100deg, #15191b, #41464a 45%, #171b1d 60%); }
-.garment i::before { position: absolute; top: 23%; bottom: 6%; left: 51%; width: 2px; background: #c4c9cc; content: ""; transform: rotate(-12deg); }
-.garment i::after { position: absolute; top: 6%; left: 26%; width: 48%; height: 35%; background: #62676a; clip-path: polygon(18% 0, 48% 25%, 82% 0, 100% 30%, 63% 100%, 50% 41%, 29% 95%, 0 28%); content: ""; }
 
 @media (max-width: 480px) {
   .toolbox-grid { grid-template-columns: 1fr; }

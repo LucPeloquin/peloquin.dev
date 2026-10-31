@@ -266,8 +266,8 @@ function createFashionState() {
 
   return {
     id: "archive-fashion-upscaler",
-    label: "Archive Fashion Upscaler black leather biker jacket with asymmetric lapels, silver zips, and a waist belt",
-    camera: { position: [2.7, 1.3, 12.5], target: [0, 0.15, 0.15], fov: 32 },
+    label: "Archive Fashion Upscaler segmented cloth field",
+    camera: { position: [7.8, 3.4, 11.5], target: [0, 0, 0], fov: 34 },
     topology,
     field,
     instances,
