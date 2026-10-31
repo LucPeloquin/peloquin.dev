@@ -42,21 +42,17 @@
   --brand-purple: #6f4acc;
   --brand-white: #ffffff;
   --brand-black: #131313;
-  --brand-grid: rgba(19, 19, 19, 0.12);
   --brand-glow: rgba(197, 177, 116, 0.42);
   --brand-section-gap: clamp(4rem, 9vw, 10rem);
 }
 
 :root[data-theme="dark"] {
-  --brand-grid: rgba(255, 255, 255, 0.12);
   --brand-glow: rgba(197, 177, 116, 0.28);
 }
 
 body[data-brand-system] {
   font-family: var(--sans);
   font-variation-settings: "wght" 430;
-  background-image: linear-gradient(var(--brand-grid) 1px, transparent 1px);
-  background-size: 100% 9rem;
 }
 
 body[data-brand-system] .utility-text,
@@ -286,11 +282,6 @@ body[data-brand-system] .boot-screen-frame {
   border-color: rgba(255, 255, 255, 0.58);
 }
 
-body[data-brand-system] .boot-screen-frame::before,
-body[data-brand-system] .boot-screen-frame::after {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 body[data-brand-system] .boot-screen-topline,
 body[data-brand-system] .boot-screen-footer {
   border-color: rgba(255, 255, 255, 0.2);
@@ -317,10 +308,6 @@ body[data-brand-system] .boot-screen-progress span {
 }
 
 /* Hero */
-
-body[data-brand-system] .hero-grid {
-  background-image: linear-gradient(90deg, transparent 0 24.9%, var(--brand-grid) 25% 25.1%, transparent 25.1% 49.9%, var(--brand-grid) 50% 50.1%, transparent 50.1% 74.9%, var(--brand-grid) 75% 75.1%, transparent 75.1%);
-}
 
 body[data-brand-system] .hero-name {
   background: color-mix(in srgb, var(--paper) 84%, transparent);
@@ -499,10 +486,6 @@ body[data-brand-system] .section-heading-grid h2 {
 
 /* Capability panels */
 
-body[data-brand-system] .capability-list {
-  background-image: linear-gradient(90deg, transparent 0 49.9%, var(--brand-grid) 50% 50.1%, transparent 50.1%);
-}
-
 body[data-brand-system] .capability {
   position: relative;
 }
@@ -652,15 +635,6 @@ body[data-brand-system] .project-copy h3 {
 body[data-brand-system] .project-tags li,
 body[data-brand-system] .skill-grid span {
   border-color: color-mix(in srgb, var(--brand-gold) 62%, var(--soft-line));
-}
-
-body[data-brand-system] .project-poster::before {
-  background-image:
-    linear-gradient(var(--work-stage-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--work-stage-grid) 1px, transparent 1px);
-  background-position: 0 0, 0 0;
-  background-size: 12.5% 12.5%, 12.5% 12.5%;
-  opacity: 0.28;
 }
 
 body[data-brand-system] .project-poster::after {

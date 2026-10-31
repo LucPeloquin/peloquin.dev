@@ -176,18 +176,6 @@ html.booting body {
   transition: clip-path 520ms var(--ease), opacity 420ms ease;
 }
 
-.js .boot-screen::before {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(90deg, rgba(241, 241, 235, 0.08) 1px, transparent 1px),
-    linear-gradient(rgba(241, 241, 235, 0.08) 1px, transparent 1px);
-  background-size: 25% 100%, 100% 25%;
-  content: "";
-  opacity: 0.38;
-  pointer-events: none;
-}
-
 .boot-screen-frame {
   position: absolute;
   inset: clamp(0.65rem, 1.5vw, 1.35rem);
@@ -195,29 +183,6 @@ html.booting body {
   overflow: hidden;
   border: 1px solid rgba(241, 241, 235, 0.64);
   place-items: center;
-}
-
-.boot-screen-frame::before,
-.boot-screen-frame::after {
-  position: absolute;
-  z-index: 0;
-  background: rgba(241, 241, 235, 0.11);
-  content: "";
-  pointer-events: none;
-}
-
-.boot-screen-frame::before {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-}
-
-.boot-screen-frame::after {
-  top: 50%;
-  right: 0;
-  left: 0;
-  height: 1px;
 }
 
 .boot-screen-topline,
@@ -901,11 +866,6 @@ html.booting body {
   grid-template-rows: auto 1fr auto auto;
   overflow: hidden;
   border-right: 1px solid var(--line);
-  background:
-    linear-gradient(var(--soft-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--soft-line) 1px, transparent 1px);
-  background-position: -1px -1px;
-  background-size: clamp(42px, 5vw, 76px) clamp(42px, 5vw, 76px);
 }
 
 .about-index::before {
@@ -1176,13 +1136,6 @@ html.booting body {
   font-family: var(--mono);
   font-size: 0.7rem;
   text-transform: uppercase;
-}
-
-.visual-product {
-  background-image:
-    linear-gradient(var(--soft-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--soft-line) 1px, transparent 1px);
-  background-size: 48px 48px;
 }
 
 .visual-product .node {
@@ -1799,7 +1752,6 @@ button.project-link {
 
 .project-poster {
   --work-stage-background: #d9d9d5;
-  --work-stage-grid: rgba(35, 35, 35, 0.1);
   --work-stage-chrome: rgba(35, 35, 35, 0.72);
   position: relative;
   isolation: isolate;
@@ -1813,7 +1765,6 @@ button.project-link {
 
 :root[data-theme="dark"] .project-poster {
   --work-stage-background: #252925;
-  --work-stage-grid: rgba(241, 241, 235, 0.09);
   --work-stage-chrome: rgba(241, 241, 235, 0.72);
   background:
     radial-gradient(circle at 72% 22%, rgba(208, 170, 89, 0.1), transparent 30%),
@@ -1821,21 +1772,12 @@ button.project-link {
     var(--work-stage-background);
 }
 
-.project-poster::before,
 .project-poster::after {
   position: absolute;
   z-index: 1;
   inset: 0;
   content: "";
   pointer-events: none;
-}
-
-.project-poster::before {
-  background-image:
-    linear-gradient(var(--work-stage-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--work-stage-grid) 1px, transparent 1px);
-  background-size: 12.5% 12.5%;
-  opacity: 0.55;
 }
 
 .project-poster::after {
@@ -1940,11 +1882,6 @@ button.project-link {
   visibility: hidden;
   opacity: 0;
   transition: opacity 420ms ease, visibility 0s linear 420ms;
-}
-
-.project-poster[data-work-visual-state="fallback"]::before,
-.project-poster[data-work-visual-state="loading"]::before {
-  opacity: 0;
 }
 
 .poster {
