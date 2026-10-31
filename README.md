@@ -8,11 +8,11 @@ A responsive personal portfolio for Jean-Luc Peloquin, built as a precise editor
 - Terminal-style startup screen with a deterministic 64×40 ASCII rendition of that same authoritative logo mask
 - Enhanced silver/graphite 3D relief of the supplied eye mark behind the full hero name
 - One lazy-loaded Three.js capability renderer that scissor-renders four original automation, vision, data, and interface scenes through a shared WebGL context
-- One lazy-loaded Three.js Selected Work canvas with seven deterministic project scenes, smooth transitions between all seven scenes, orbit/zoom controls, adaptive themes, reduced-motion rendering, and CSS fallbacks
+- One lazy-loaded Three.js Selected Work canvas with eight deterministic project scenes, smooth transitions between all eight scenes, orbit/zoom controls, adaptive themes, reduced-motion rendering, and CSS fallbacks
 - Live 20-week public GitHub push-activity view with an accessible, network-safe fallback
 - Responsive light/dark editorial layout with a live Las Vegas clock
 - Accessible mobile navigation and contact dialogs with native focus trapping and Escape handling
-- Eight projects, including a team music-transcription entry with an original illustrative audio/MIDI/notation diagram and image-only rendering
+- Eight projects, including a team music-transcription entry with an original illustrative audio/MIDI/notation diagram and a morphing illustrative waveform
 - Employer-attributed career highlights and a dedicated Experience section with corrected chronology, visible outcomes, and native detail expanders
 - Personal background, grouped technical toolbox, and expandable academic recognition
 - On-site résumé viewer at `/resume.html`, with the original PDF hosted at `/documents/jean-luc-peloquin-resume.pdf` and a rendered mobile preview
@@ -72,7 +72,7 @@ src/main.js             Page interactions and UI state
 src/artifact.js         GLB loading, lighting, and plaque interaction
 src/capability-visuals.js  Shared four-scene Three.js capability renderer
 src/work-visual.js      Shared Three.js renderer, controls, morphing, and lifecycle
-src/work-visual-states.js  Deterministic seven-scene procedural definitions
+src/work-visual-states.js  Deterministic eight-scene procedural definitions
 scripts/logo-model.mjs  Deterministic alpha-to-ASCII/SVG/GLB generator and validator
 scripts/vct22-assets.mjs  Deterministic local font/glyph/light-mask manifest generator and validator
 scripts/check-work-visuals.mjs  Procedural scene and attribution validator

@@ -89,6 +89,10 @@ const projects = [
     tags: ["Rust", "TypeScript", "PostgreSQL", "Local inference"],
   },
   {
+    visualIndex: 7,
+    defaultView: "study",
+    studyLabel: "View waveform",
+    imageLabel: "View pipeline diagram",
     kicker: "Team project · December 2023",
     title: "Automatic Music Transcription",
     description:
@@ -424,7 +428,9 @@ function setProjectView(showStudy) {
   workVisualCanvas.hidden = showImage;
   projectViewToggle.hidden = !hasImage || !hasStudy;
   projectViewToggle.setAttribute("aria-pressed", String(hasImage && hasStudy && showStudy));
-  projectViewToggle.textContent = showImage ? "Explore 3D study" : "View project image";
+  projectViewToggle.textContent = showImage
+    ? project.studyLabel ?? "Explore 3D study"
+    : project.imageLabel ?? "View project image";
 }
 
 function renderProject(index, { focus = false } = {}) {
@@ -445,7 +451,7 @@ function renderProject(index, { focus = false } = {}) {
     projectImage.alt = "";
     projectCaption.textContent = "";
   }
-  setProjectView(false);
+  setProjectView(project.defaultView === "study");
   projectTags.replaceChildren(
     ...project.tags.map((tag) => {
       const item = document.createElement("li");

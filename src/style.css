@@ -3207,3 +3207,9 @@ a.contact-row:hover { background: var(--signal); color: #181818; }
   .resume-mobile-preview { display: block; }
   .resume-viewer { padding: 0; border: 0; background: #fff; }
 }
+
+/* Illustrative waveform fallback for loading, reduced capability, or context loss. */
+.poster-waveform { display: flex; align-items: center; justify-content: center; gap: clamp(3px, .55vw, 8px); padding: 10%; background: var(--work-stage-background); }
+.poster-waveform::before { position: absolute; top: 50%; right: 10%; left: 10%; height: 1px; background: var(--gold); opacity: .35; content: ""; }
+.poster-waveform i { flex: 1; height: var(--amplitude); border-radius: 3px; background: var(--gold); }
+.poster-waveform i:nth-child(5n) { background: #8c8990; }

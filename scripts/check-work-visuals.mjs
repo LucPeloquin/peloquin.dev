@@ -11,7 +11,7 @@ import {
   WORK_VISUAL_SOURCE_COMMIT,
 } from "../src/work-visual-states.js";
 
-const expectedIds = ["vct-fantasy", "valorant-barracks-vision", "archive-fashion-upscaler", "portfolio-os", "quick-save", "gardeau", "vagabot"];
+const expectedIds = ["vct-fantasy", "valorant-barracks-vision", "archive-fashion-upscaler", "portfolio-os", "quick-save", "gardeau", "vagabot", "music-transcription"];
 
 function assertFiniteBuffer(buffer, label) {
   assert.ok(ArrayBuffer.isView(buffer), `${label} must be a typed array.`);

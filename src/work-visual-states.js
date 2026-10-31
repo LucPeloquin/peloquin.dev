@@ -489,6 +489,47 @@ function createVagabotState() {
   return { id: "vagabot", label: "Vagabot local AI inference core connected to persistent memory and recurring watch jobs", camera: { position: [8.5, 6.5, 10.8], target: [0, 0.1, 0], fov: 34 }, topology, field, instances };
 }
 
+function createMusicState() {
+  const topology = new Float32Array(POINT_COUNT * 3);
+  const field = new Float32Array(FIELD_POINT_COUNT * 3);
+  const instances = createInstanceLayer();
+  // An illustrative signal, generated locally rather than from a recording.
+  const envelope = (t) => Math.pow(Math.sin(t * Math.PI), 0.7)
+    * (0.38 + 0.62 * Math.pow(Math.sin(t * Math.PI * 3.5 + 0.35), 2));
+  const signal = (t) => envelope(t)
+    * (Math.sin(t * TAU * 5) * 1.25 + Math.sin(t * TAU * 11 + 0.5) * 0.35);
+
+  for (let index = 0; index < POINT_COUNT; index += 1) {
+    const t = (index % 60) / 59;
+    const layer = Math.floor(index / 60);
+    setVector(topology, index, (t - 0.5) * 8.2, signal(t), (layer - 1.5) * 0.2);
+  }
+  for (let row = 0; row < FIELD_ROWS; row += 1) {
+    const depth = row / (FIELD_ROWS - 1) - 0.5;
+    for (let column = 0; column < FIELD_COLUMNS; column += 1) {
+      const t = column / (FIELD_COLUMNS - 1);
+      setVector(field, row * FIELD_COLUMNS + column,
+        (t - 0.5) * 8.2, signal(t) * (1 - Math.abs(depth) * 0.3), depth * 1.5);
+    }
+  }
+  for (let index = 0; index < INSTANCE_COUNT; index += 1) {
+    const t = index / (INSTANCE_COUNT - 1);
+    setInstance(instances, index, {
+      position: [(t - 0.5) * 8.2, 0, -0.65],
+      scale: [0.14, 0.14 + envelope(t) * 3.8, 0.22],
+      tone: index % 5 === 0 ? 2 : 1,
+    });
+  }
+  return {
+    id: "music-transcription",
+    label: "Automatic Music Transcription illustrative audio waveform with layered signal traces and amplitude bars",
+    camera: { position: [3.5, 2, 17], target: [0, 0, 0], fov: 36 },
+    topology,
+    field,
+    instances,
+  };
+}
+
 export function buildWorkVisualStates() {
   return [
     createFantasyState(),
@@ -498,5 +539,6 @@ export function buildWorkVisualStates() {
     createQuickSaveState(),
     createGardeauState(),
     createVagabotState(),
+    createMusicState(),
   ];
 }
