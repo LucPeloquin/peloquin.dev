@@ -3,7 +3,7 @@ const BRAND_ROOT = "/brand/vct22";
 const sectionTreatments = new Map([
   ["top", { pattern: null, glyph: "reticle" }],
   ["about", { pattern: null, glyph: "horizon-sphere" }],
-  ["work", { pattern: null, glyph: "corner-brackets" }],
+  ["work", { pattern: null, glyph: [] }],
   ["principles", { pattern: null, glyph: "orbital-loops" }],
   ["profile", { pattern: null, glyph: ["segmented-cross", "plus-marker"] }],
   ["closing", { pattern: null, glyph: "inward-chevrons" }],

@@ -12,7 +12,7 @@ A responsive personal portfolio for Jean-Luc Peloquin, built as a precise editor
 - Live 20-week public GitHub push-activity view with an accessible, network-safe fallback
 - Responsive light/dark editorial layout with a live Las Vegas clock
 - Accessible mobile navigation and contact dialogs with native focus trapping and Escape handling
-- Work-first navigation, concise project build notes, real VCT Fantasy and Broadcast Vision images, optional 3D studies, and a user-pausable principles carousel
+- Work-first navigation, concise project build notes, a fictional VCT Fantasy roster preview and a VALORANT Barracks Vision research image, optional 3D studies, and a user-pausable principles carousel
 - Self-hosted open-source fonts, optimized WebP portraits, and deterministic ASCII/SVG/GLB logo assets
 - Self-hosted VCT22-inspired display/semimono typography, eight utility glyphs, and five text-free light/grain masks tracked by a deterministic local manifest
 - Standalone privacy and 404 pages

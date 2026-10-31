@@ -58,20 +58,9 @@ if (bootScreen) bootFrameId = requestAnimationFrame(animateBootProgress);
 
 const projects = [
   {
-    kicker: "Full-stack product · 2026",
-    title: "VCT Fantasy",
-    description:
-      "A fantasy platform for VALORANT fans to build a five-player roster, follow player projections, and compete on leaderboards. I built the account system, roster rules, public team pages, and scheduled stats sync.",
-    focus: "Keeping roster budgets, team limits, and player roles consistent while match statistics update.",
-    image: "./images/projects/vct-fantasy.webp",
-    imageAlt: "VCT Fantasy rules page showing five-player roster limits, pricing tiers, and the player valuation formula.",
-    caption: "Roster rules & pricing · local build",
-    tags: ["PHP", "SQL", "Data sync", "Product systems"],
-    href: "https://github.com/LucPeloquin/VALORANTfantasy",
-  },
-  {
-    kicker: "Computer vision · Evolving R&D",
-    title: "Broadcast Vision",
+    visualIndex: 1,
+    kicker: "Computer Vision",
+    title: "VALORANT Barracks Vision",
     description:
       "A research project that turns VALORANT broadcast footage into structured match data. I started with screen capture, OCR, and template matching, then explored YOLO-based detection for scores, timers, player panels, and the minimap.",
     focus: "Locating useful information in a busy broadcast overlay before extracting and matching it.",
@@ -82,6 +71,7 @@ const projects = [
     href: "https://github.com/LucPeloquin/VCT-UI",
   },
   {
+    visualIndex: 2,
     kicker: "Adaptive image processing · 2024",
     title: "Fashion Enhancer",
     description:
@@ -91,6 +81,7 @@ const projects = [
     href: "https://github.com/LucPeloquin/Automatic-Enhancement-of-Fashion-Imagery",
   },
   {
+    visualIndex: 3,
     kicker: "Experimental interface · 2026",
     title: "Portfolio OS",
     description:
@@ -100,6 +91,7 @@ const projects = [
     href: "https://github.com/LucPeloquin/flick-owens-dotdev",
   },
   {
+    visualIndex: 4,
     kicker: "Browser utility · 2025",
     title: "Quick Save",
     description:
@@ -109,12 +101,26 @@ const projects = [
     href: "https://github.com/LucPeloquin/InstaDL",
   },
   {
+    visualIndex: 5,
     kicker: "Business in development · Marketplace automation",
     title: "Gardeau",
     description:
       "A marketplace-monitoring product I’m developing for resale shoppers. It brings US and Japanese listings into saved searches, filters by price and size, removes duplicates, and sends matches to Discord or Telegram.",
     focus: "Turning repeated marketplace searches into one monitoring workflow. The product is in development; contact me to discuss it.",
     tags: ["Go", "SQLite", "Browser automation", "Notifications"],
+  },
+  {
+    visualIndex: 0,
+    kicker: "Full-stack product · 2026",
+    title: "VCT Fantasy",
+    description:
+      "A fantasy platform for VALORANT fans to build a five-player roster, follow player projections, and compete on leaderboards. I built the account system, roster rules, public team pages, and scheduled stats sync.",
+    focus: "Keeping roster budgets, team limits, and player roles consistent while match statistics update.",
+    image: "./images/projects/vct-fantasy-roster.svg",
+    imageAlt: "VCT Fantasy roster preview showing five fictional players with silhouette portraits, roles, prices, and projected points.",
+    caption: "Fantasy roster preview · fictional player data",
+    tags: ["PHP", "SQL", "Data sync", "Product systems"],
+    href: "https://github.com/LucPeloquin/VALORANTfantasy",
   },
 ];
 
@@ -436,12 +442,12 @@ function renderProject(index, { focus = false } = {}) {
   });
 
   projectPosters.forEach((poster, posterIndex) => {
-    const selected = posterIndex === activeProject;
+    const selected = posterIndex === project.visualIndex;
     poster.hidden = !selected;
     poster.classList.toggle("is-active", selected);
   });
 
-  workVisualController?.setProject(activeProject);
+  workVisualController?.setProject(project.visualIndex);
   brandSystem.setActiveSection("work");
 
   const activeTab = projectTabs[activeProject];
@@ -487,7 +493,7 @@ async function loadWorkVisual() {
   try {
     const { initWorkVisual } = await import("./work-visual.js");
     workVisualController = initWorkVisual(workVisualCanvas, workVisualStage, {
-      initialProject: activeProject,
+      initialProject: projects[activeProject].visualIndex,
       reducedMotion: prefersReducedMotion.matches,
       theme: currentTheme(),
     });

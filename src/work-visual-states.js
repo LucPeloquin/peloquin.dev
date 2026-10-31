@@ -202,8 +202,8 @@ function createVisionState() {
   }
 
   return {
-    id: "broadcast-vision",
-    label: "Broadcast Vision camera tracking field",
+    id: "valorant-barracks-vision",
+    label: "VALORANT Barracks Vision camera tracking field",
     camera: { position: [7.5, 4.7, 11.8], target: [0, 0, -0.45], fov: 33 },
     topology,
     field,

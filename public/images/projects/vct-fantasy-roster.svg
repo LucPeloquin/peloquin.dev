@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+<title id="title">VCT Fantasy — fictional roster preview</title>
+<desc id="desc">A five-player VALORANT fantasy team builder. Every player is represented by an original faceless silhouette, a fictional player number, a role, a price, and demonstration statistics.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#152821"/><stop offset="1" stop-color="#09120f"/></linearGradient>
+ <linearGradient id="portrait" x2="0" y2="1"><stop stop-color="#28473b"/><stop offset="1" stop-color="#101e18"/></linearGradient>
+ <linearGradient id="jersey" x2="0" y2="1"><stop stop-color="#537765"/><stop offset="1" stop-color="#1c3027"/></linearGradient>
+ <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#7cc8a0" stroke-opacity=".08"/></pattern>
+ <g id="silhouette">
+  <path d="M37 230 43 178Q48 152 81 145L98 137V121Q82 108 82 82Q82 48 112 45Q144 46 144 82Q144 108 128 121V137L145 145Q178 152 183 178L190 230Z" fill="url(#jersey)" stroke="#73977f" stroke-opacity=".45" stroke-width="2"/>
+  <ellipse cx="113" cy="82" rx="31" ry="39" fill="#172c22"/>
+  <path d="M97 136 113 151 129 136M69 164 82 218M157 164 145 218" fill="none" stroke="#91b49e" stroke-opacity=".35" stroke-width="2"/>
+  <path d="m103 179 10 10 11-10-11 27Z" fill="#b7d7c2" fill-opacity=".35"/>
+ </g>
+</defs>
+<rect width="1600" height="1050" rx="18" fill="url(#bg)"/>
+<rect width="1600" height="1050" rx="18" fill="url(#grid)"/>
+<g font-family="Arial, Helvetica, sans-serif">
+ <path d="M0 94H1600" stroke="#3d5147"/>
+ <path d="m48 30 15 31 17-31h13L63 77 35 30Z" fill="#99e2b6"/>
+ <text x="110" y="61" font-size="29" font-weight="700" fill="#eaf4ee">VCT <tspan fill="#99e2b6">FANTASY</tspan></text>
+ <g font-size="21" fill="#9ab0a3"><text x="510" y="58" fill="#eaf4ee">My roster</text><text x="675" y="58">Player market</text><text x="878" y="58">Leaderboard</text></g>
+ <path d="M510 93h93" stroke="#99e2b6" stroke-width="3"/>
+ <rect x="1285" y="27" width="267" height="42" rx="21" fill="#20392c" stroke="#3b5c49"/>
+ <circle cx="1311" cy="48" r="5" fill="#99e2b6"/><text x="1330" y="55" font-size="17" fill="#c4d9cc" letter-spacing="1">MATCHDAY 01 · DRAFT</text>
+ <text x="48" y="146" font-size="17" fill="#99e2b6" letter-spacing="3">VALORANT / FANTASY ROSTER</text>
+ <text x="45" y="218" font-size="61" font-weight="700" letter-spacing="-2" fill="#f1f6f3">Build your five.</text>
+ <text x="49" y="260" font-size="22" fill="#a2b8aa">Five players. One budget. Make every pick count.</text>
+ <rect x="1322" y="169" width="230" height="59" rx="6" fill="#a6e7bf"/>
+ <text x="1437" y="207" text-anchor="middle" font-size="22" font-weight="700" fill="#0d2417">Save roster ↗</text>
+
+<rect x="48" y="304" width="480" height="126" rx="8" fill="#12231b" stroke="#344d3e"/><text x="72" y="337" font-size="16" fill="#90ad9a" letter-spacing="2">ROSTER SLOTS</text><text x="72" y="385" font-size="36" font-weight="700" fill="#eff6f1">5 / 5</text><text x="318" y="383" font-size="18" fill="#9fbdab">All roles covered</text>
+<rect x="560" y="304" width="480" height="126" rx="8" fill="#12231b" stroke="#344d3e"/><text x="584" y="337" font-size="16" fill="#90ad9a" letter-spacing="2">TOTAL SPEND</text><text x="584" y="385" font-size="36" font-weight="700" fill="#eff6f1">$980,000</text><text x="830" y="383" font-size="18" fill="#9fbdab">$1,000,000 budget</text>
+<rect x="1072" y="304" width="480" height="126" rx="8" fill="#12231b" stroke="#344d3e"/><text x="1096" y="337" font-size="16" fill="#90ad9a" letter-spacing="2">BUDGET REMAINING</text><text x="1096" y="385" font-size="36" font-weight="700" fill="#eff6f1">$20,000</text><text x="1342" y="383" font-size="18" fill="#9fbdab">Within the cap</text>
+<text x="48" y="476" font-size="23" font-weight="700" fill="#eef5f0">Starting lineup</text><text x="1552" y="476" text-anchor="end" font-size="18" fill="#91af9c">Max. 2 players per team</text>
+<g transform="translate(48 500)">
+ <rect width="280" height="438" rx="9" fill="#12231b" stroke="#3e5848"/>
+ <path d="M10 0H270Q280 0 280 10V244H0V10Q0 0 10 0" fill="url(#portrait)"/>
+ <path d="m0 156 280-120M0 217 280 97" stroke="#6aa283" stroke-opacity=".13" stroke-width="38"/>
+ <text x="18" y="29" font-size="14" fill="#b5d3c0" letter-spacing="2">DUELIST</text>
+ <text x="258" y="67" text-anchor="end" font-size="63" fill="#75a68b" fill-opacity=".22" font-weight="700">01</text>
+ <use href="#silhouette" transform="translate(11 14) scale(1.15)"/>
+ <path d="M0 244H280" stroke="#6b997d"/>
+ <text x="20" y="282" font-size="26" font-weight="700" fill="#eff6f1">PLAYER_01</text>
+ <text x="20" y="310" font-size="15" fill="#8ca895" letter-spacing="2">SQUAD A</text>
+ <path d="M20 332H260" stroke="#334c3d"/>
+ <text x="20" y="361" font-size="14" fill="#8ca895">PRICE</text><text x="260" y="361" text-anchor="end" font-size="14" fill="#8ca895">PROJ. PTS</text>
+ <text x="20" y="397" font-size="27" font-weight="700" fill="#e9f4ed">$240,000</text><text x="260" y="397" text-anchor="end" font-size="27" font-weight="700" fill="#a6e7bf">48.6</text>
+ </g>
+<g transform="translate(354 500)">
+ <rect width="280" height="438" rx="9" fill="#12231b" stroke="#3e5848"/>
+ <path d="M10 0H270Q280 0 280 10V244H0V10Q0 0 10 0" fill="url(#portrait)"/>
+ <path d="m0 156 280-120M0 217 280 97" stroke="#6aa283" stroke-opacity=".13" stroke-width="38"/>
+ <text x="18" y="29" font-size="14" fill="#b5d3c0" letter-spacing="2">CONTROLLER</text>
+ <text x="258" y="67" text-anchor="end" font-size="63" fill="#75a68b" fill-opacity=".22" font-weight="700">02</text>
+ <use href="#silhouette" transform="translate(11 14) scale(1.15)"/>
+ <path d="M0 244H280" stroke="#6b997d"/>
+ <text x="20" y="282" font-size="26" font-weight="700" fill="#eff6f1">PLAYER_02</text>
+ <text x="20" y="310" font-size="15" fill="#8ca895" letter-spacing="2">SQUAD B</text>
+ <path d="M20 332H260" stroke="#334c3d"/>
+ <text x="20" y="361" font-size="14" fill="#8ca895">PRICE</text><text x="260" y="361" text-anchor="end" font-size="14" fill="#8ca895">PROJ. PTS</text>
+ <text x="20" y="397" font-size="27" font-weight="700" fill="#e9f4ed">$210,000</text><text x="260" y="397" text-anchor="end" font-size="27" font-weight="700" fill="#a6e7bf">44.2</text>
+ </g>
+<g transform="translate(660 500)">
+ <rect width="280" height="438" rx="9" fill="#12231b" stroke="#3e5848"/>
+ <path d="M10 0H270Q280 0 280 10V244H0V10Q0 0 10 0" fill="url(#portrait)"/>
+ <path d="m0 156 280-120M0 217 280 97" stroke="#6aa283" stroke-opacity=".13" stroke-width="38"/>
+ <text x="18" y="29" font-size="14" fill="#b5d3c0" letter-spacing="2">INITIATOR</text>
+ <text x="258" y="67" text-anchor="end" font-size="63" fill="#75a68b" fill-opacity=".22" font-weight="700">03</text>
+ <use href="#silhouette" transform="translate(11 14) scale(1.15)"/>
+ <path d="M0 244H280" stroke="#6b997d"/>
+ <text x="20" y="282" font-size="26" font-weight="700" fill="#eff6f1">PLAYER_03</text>
+ <text x="20" y="310" font-size="15" fill="#8ca895" letter-spacing="2">SQUAD C</text>
+ <path d="M20 332H260" stroke="#334c3d"/>
+ <text x="20" y="361" font-size="14" fill="#8ca895">PRICE</text><text x="260" y="361" text-anchor="end" font-size="14" fill="#8ca895">PROJ. PTS</text>
+ <text x="20" y="397" font-size="27" font-weight="700" fill="#e9f4ed">$195,000</text><text x="260" y="397" text-anchor="end" font-size="27" font-weight="700" fill="#a6e7bf">42.1</text>
+ </g>
+<g transform="translate(966 500)">
+ <rect width="280" height="438" rx="9" fill="#12231b" stroke="#3e5848"/>
+ <path d="M10 0H270Q280 0 280 10V244H0V10Q0 0 10 0" fill="url(#portrait)"/>
+ <path d="m0 156 280-120M0 217 280 97" stroke="#6aa283" stroke-opacity=".13" stroke-width="38"/>
+ <text x="18" y="29" font-size="14" fill="#b5d3c0" letter-spacing="2">SENTINEL</text>
+ <text x="258" y="67" text-anchor="end" font-size="63" fill="#75a68b" fill-opacity=".22" font-weight="700">04</text>
+ <use href="#silhouette" transform="translate(11 14) scale(1.15)"/>
+ <path d="M0 244H280" stroke="#6b997d"/>
+ <text x="20" y="282" font-size="26" font-weight="700" fill="#eff6f1">PLAYER_04</text>
+ <text x="20" y="310" font-size="15" fill="#8ca895" letter-spacing="2">SQUAD D</text>
+ <path d="M20 332H260" stroke="#334c3d"/>
+ <text x="20" y="361" font-size="14" fill="#8ca895">PRICE</text><text x="260" y="361" text-anchor="end" font-size="14" fill="#8ca895">PROJ. PTS</text>
+ <text x="20" y="397" font-size="27" font-weight="700" fill="#e9f4ed">$180,000</text><text x="260" y="397" text-anchor="end" font-size="27" font-weight="700" fill="#a6e7bf">39.8</text>
+ </g>
+<g transform="translate(1272 500)">
+ <rect width="280" height="438" rx="9" fill="#12231b" stroke="#3e5848"/>
+ <path d="M10 0H270Q280 0 280 10V244H0V10Q0 0 10 0" fill="url(#portrait)"/>
+ <path d="m0 156 280-120M0 217 280 97" stroke="#6aa283" stroke-opacity=".13" stroke-width="38"/>
+ <text x="18" y="29" font-size="14" fill="#b5d3c0" letter-spacing="2">FLEX</text>
+ <text x="258" y="67" text-anchor="end" font-size="63" fill="#75a68b" fill-opacity=".22" font-weight="700">05</text>
+ <use href="#silhouette" transform="translate(11 14) scale(1.15)"/>
+ <path d="M0 244H280" stroke="#6b997d"/>
+ <text x="20" y="282" font-size="26" font-weight="700" fill="#eff6f1">PLAYER_05</text>
+ <text x="20" y="310" font-size="15" fill="#8ca895" letter-spacing="2">SQUAD E</text>
+ <path d="M20 332H260" stroke="#334c3d"/>
+ <text x="20" y="361" font-size="14" fill="#8ca895">PRICE</text><text x="260" y="361" text-anchor="end" font-size="14" fill="#8ca895">PROJ. PTS</text>
+ <text x="20" y="397" font-size="27" font-weight="700" fill="#e9f4ed">$155,000</text><text x="260" y="397" text-anchor="end" font-size="27" font-weight="700" fill="#a6e7bf">35.5</text>
+ </g>
+<circle cx="59" cy="983" r="10" fill="#a6e7bf"/><path d="m54 983 4 4 7-8" fill="none" stroke="#10271a" stroke-width="2"/><text x="81" y="990" font-size="20" fill="#b7d3c1">Roster valid</text><text x="276" y="990" font-size="18" fill="#799c87">5 players selected · Budget and team limits met</text><text x="1552" y="990" text-anchor="end" font-size="15" fill="#8ca895" letter-spacing="1">PREVIEW / FICTIONAL PLAYER DATA</text>
+</g><rect x=".5" y=".5" width="1599" height="1049" rx="18" fill="none" stroke="#486350"/></svg>
