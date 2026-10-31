@@ -15,6 +15,7 @@ A responsive personal portfolio for Jean-Luc Peloquin, built as a precise editor
 - Eight projects, including a team music-transcription entry with an original illustrative audio/MIDI/notation diagram and image-only rendering
 - Employer-attributed career highlights and a dedicated Experience section with corrected chronology, visible outcomes, and native detail expanders
 - Personal background, grouped technical toolbox, and expandable academic recognition
+- On-site résumé viewer at `/resume.html`, with the original PDF hosted at `/documents/jean-luc-peloquin-resume.pdf` and a rendered mobile preview
 - Work-first navigation, concise project build notes, a fictional VCT Fantasy roster preview and a VALORANT Barracks Vision research image, optional 3D studies, and a user-pausable principles carousel
 - Self-hosted open-source fonts, optimized WebP portraits, and deterministic ASCII/SVG/GLB logo assets
 - Self-hosted VCT22-inspired display/semimono typography, eight utility glyphs, and five text-free light/grain masks tracked by a deterministic local manifest

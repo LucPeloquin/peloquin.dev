@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="View and download Jean-Luc Peloquin’s résumé: software engineering, automation, systems integration, and applied AI." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href="https://peloquin.dev/resume.html" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/brand-system.css" />
+    <title>Résumé — Jean-Luc Peloquin</title>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("jl-theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = savedTheme || (systemDark ? "dark" : "light");
+      } catch (_) {}
+    </script>
+  </head>
+  <body data-brand-system>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="legal-header">
+      <a class="brand-mark" href="./" aria-label="Return to Jean-Luc Peloquin’s portfolio">
+        <img src="./logo-flat.png" width="360" height="360" alt="" />
+      </a>
+      <a href="./#experience">← Experience</a>
+      <button class="theme-toggle icon-button" type="button" data-theme-toggle aria-label="Switch theme">
+        <span class="theme-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </header>
+
+    <main class="resume-page" id="main">
+      <div class="resume-heading">
+        <div>
+          <p class="utility-text">Jean-Luc Peloquin / Professional record</p>
+          <h1>Résumé</h1>
+        </div>
+        <p>Software engineering, automation, systems integration, and applied AI.</p>
+      </div>
+      <div class="resume-toolbar">
+        <p class="utility-text">PDF · 1 page</p>
+        <div class="document-actions">
+          <a href="./documents/jean-luc-peloquin-resume.pdf" target="_blank" rel="noopener" aria-label="Open résumé PDF (opens in a new tab)">Open PDF <span aria-hidden="true">↗</span></a>
+          <a href="./documents/jean-luc-peloquin-resume.pdf" download="Jean-Luc-Peloquin-Resume.pdf">Download PDF <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <p class="resume-help">Open the PDF to zoom, search, or print. You can also read <a class="inline-text-link" href="./#experience">my experience</a> and <a class="inline-text-link" href="./#profile">background and skills</a> as text.</p>
+      <div class="resume-viewer">
+        <object class="resume-pdf" data="./documents/jean-luc-peloquin-resume.pdf#view=FitH" type="application/pdf" aria-label="Jean-Luc Peloquin’s one-page résumé">
+          <img src="./documents/jean-luc-peloquin-resume.webp" width="1855" height="2400" alt="Preview of Jean-Luc Peloquin’s résumé. Use the links above to open the PDF or read experience, projects, skills, and education as text." />
+        </object>
+        <a class="resume-mobile-preview" href="./documents/jean-luc-peloquin-resume.pdf" aria-label="Open Jean-Luc Peloquin’s résumé PDF for a closer view">
+          <img src="./documents/jean-luc-peloquin-resume.webp" width="1855" height="2400" alt="Jean-Luc Peloquin’s résumé, including experience, projects, technical skills, and education." />
+        </a>
+      </div>
+    </main>
+
+    <footer class="legal-footer">
+      <a href="./#experience">← Back to experience</a>
+      <a href="mailto:lucpeloquin77@gmail.com">Email Jean-Luc ↗</a>
+    </footer>
+    <script type="module" src="/src/resume.js"></script>
+  </body>
+</html>

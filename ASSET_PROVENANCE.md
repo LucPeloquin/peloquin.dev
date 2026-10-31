@@ -2,6 +2,7 @@
 
 ## First-party material
 
+- `public/documents/jean-luc-peloquin-resume.pdf` is the user-supplied résumé, published unchanged. `public/documents/jean-luc-peloquin-resume.webp` is a rendered preview of its single page for mobile viewing and browsers without an embedded PDF viewer.
 - `public/images/jean-luc.webp` is an optimized derivative of the portrait already tracked in this repository as `images/luc.jpg`.
 - `public/images/jean-luc-current.webp` is an optimized derivative of `images/image.png`.
 - `public/images/projects/vct-fantasy-roster.svg` is an original interface mockup authored for the portfolio. All five player identities, silhouettes, prices, and projections are fictional demonstration data; it is labeled as a preview rather than a capture of live competition. No real player likeness or third-party portrait is used.

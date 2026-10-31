@@ -14,6 +14,7 @@ export default defineConfig({
       input: {
         main: fromRoot("./index.html"),
         privacy: fromRoot("./privacy.html"),
+        resume: fromRoot("./resume.html"),
         "404": fromRoot("./404.html"),
       },
       output: {},
