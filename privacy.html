@@ -1,18 +1,17 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Privacy details for Jean-Luc Peloquin's portfolio." />
-    <meta name="theme-color" content="#f7f7f3" />
+    <meta name="theme-color" content="#131313" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <title>Privacy — Jean-Luc Peloquin</title>
     <script>
       document.documentElement.classList.add("js");
       try {
         const savedTheme = localStorage.getItem("jl-theme");
-        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.dataset.theme = savedTheme || (systemDark ? "dark" : "light");
+        document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
       } catch (_) {}
     </script>
   </head>

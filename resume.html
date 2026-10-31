@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="View and download Jean-Luc Peloquin’s résumé: software engineering, automation, systems integration, and applied AI." />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#131313" />
     <link rel="canonical" href="https://peloquin.dev/resume.html" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/src/style.css" />
@@ -13,8 +13,7 @@
     <script>
       try {
         const savedTheme = localStorage.getItem("jl-theme");
-        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.dataset.theme = savedTheme || (systemDark ? "dark" : "light");
+        document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
       } catch (_) {}
     </script>
   </head>
