@@ -96,12 +96,12 @@ const projects = [
     kicker: "Senior Design · December 2023",
     title: "Automatic Music Transcription",
     description:
-      "A team project we completed in December 2023 to turn audio into musical notation. We combined MT3 and ScoreTransformer processing with a JUCE interface for selecting files and handling MusicXML and MIDI output.",
-    focus: "We collaborated on the application as a team, connecting audio processing, model output, and a usable transcription workflow.",
+      "My senior capstone project for Fall 2023 to turn audio into musical notation. The team combined MT3 and ScoreTransformer processing with a JUCE interface for handling file types and producing MusicXML and MIDI output.",
+    focus: "Our team focused on implementing and building on academic research in automatic music transcription.",
     image: "./images/projects/music-transcription.svg",
     imageAlt: "Illustrative team-project pipeline: audio input passes through MT3 to MIDI, then ScoreTransformer to MusicXML notation, with a JUCE interface for files and output.",
     caption: "Audio → MIDI → notation · illustrative pipeline",
-    tags: ["Python", "TensorFlow", "NumPy / Librosa", "C++ / JUCE", "MusicXML / MIDI"],
+    tags: ["Python", "Machine Learning", "TensorFlow", "NumPy / Librosa", "C++ / JUCE", "MusicXML / MIDI"],
   },
   {
     visualIndex: 2,
@@ -118,7 +118,7 @@ const projects = [
     kicker: "Web App · 2026",
     title: "Portfolio OS",
     description:
-      "An experimental portfolio built around a dual-screen console interface. I connected the boot sequence, physical-style controls, sound, and touch and keyboard navigation through a shared application state.",
+      "An experimental portfolio inspired by the Nintendo DS, a game console from my childhood. Its dual-screen interface connects a boot sequence, physical-style controls, sound, and touch and keyboard navigation through shared application state.",
     focus: "Making several input methods feel consistent across a complete interface, with reproducible assets and automated tests.",
     tags: ["TypeScript", "Next.js", "Motion", "Web audio"],
     href: "https://github.com/LucPeloquin/flick-owens-dotdev",
@@ -138,8 +138,8 @@ const projects = [
     kicker: "Web App · 2026",
     title: "VCT Fantasy",
     description:
-      "A fantasy platform for VALORANT fans to build a five-player roster, follow player projections, and compete on leaderboards. I built the account system, roster rules, public team pages, and scheduled stats sync.",
-    focus: "Keeping roster budgets, team limits, and player roles consistent while match statistics update.",
+      "A fantasy platform for VALORANT fans to build a five-player roster, follow player projections, and compete on leaderboards. Features include an account system, roster rules, public team pages, and scheduled stats sync.",
+    focus: "Creating a VALORANT fantasy experience for fans, inspired by traditional American fantasy sports.",
     image: "./images/projects/vct-fantasy-roster.svg",
     imageAlt: "VCT Fantasy roster preview showing five fictional players with silhouette portraits, roles, prices, and projected points.",
     caption: "Fantasy roster preview · fictional player data",

@@ -876,19 +876,6 @@ html.booting body {
   border-right: 1px solid var(--line);
 }
 
-.about-index::before {
-  position: absolute;
-  top: 18%;
-  right: -0.08em;
-  color: rgba(var(--ink-rgb), 0.055);
-  content: "JL/01";
-  font-family: var(--mono);
-  font-size: clamp(6rem, 13vw, 13rem);
-  letter-spacing: -0.12em;
-  line-height: 1;
-  pointer-events: none;
-}
-
 .about-index .section-label {
   position: relative;
   z-index: 1;
@@ -2350,7 +2337,7 @@ button.project-link {
 .employment-affiliates { max-width: 30ch; margin: -.3rem 0 1.2rem; font-size: 1.1rem; line-height: 1.4; }
 .employment-title { margin-bottom: 1.1rem; font-weight: 600; line-height: 1.4; }
 .employment-dates { font-size: .9rem; line-height: 1.7; }
-.employment-status, .employment-location { margin-top: .7rem; font-size: .8rem; line-height: 1.6; color: var(--muted); }
+.employment-status { margin-top: .7rem; font-size: .8rem; line-height: 1.6; color: var(--muted); }
 .employment-summary { max-width: 62ch; font-size: clamp(1.12rem, 1.6vw, 1.45rem); line-height: 1.45; }
 .employment-highlights, .employment-detail-list { display: grid; gap: 1rem; margin: 1.5rem 0; padding-left: 1.2rem; list-style: disc; line-height: 1.6; }
 .employment-highlights strong { font-weight: 650; }
@@ -2427,12 +2414,11 @@ button.project-link {
   height: 100%;
   object-fit: cover;
   object-position: 50% 33%;
-  filter: grayscale(1) contrast(1.02);
-  transition: filter 450ms ease, transform 800ms var(--ease);
+  filter: none;
+  transition: transform 800ms var(--ease);
 }
 
 .profile-photo:hover img {
-  filter: grayscale(0.2) contrast(1.02);
   transform: scale(1.015);
 }
 
