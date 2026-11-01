@@ -385,13 +385,10 @@ body[data-brand-system] .hero-signal .tech-loop {
   border-top-color: rgba(19, 19, 19, 0.48);
 }
 
-body[data-brand-system] .hero-signal .tech-loop span:nth-child(4n) {
-  color: var(--brand-red);
-}
-
-body[data-brand-system] .hero-signal .tech-loop span:nth-child(5n) {
-  color: var(--brand-purple);
-}
+/* Related practice areas keep their colors throughout the full ticker loop. */
+body[data-brand-system] .tech-loop [data-practice-family="systems"] { color: var(--brand-black); }
+body[data-brand-system] .tech-loop [data-practice-family="ai"] { color: #512999; }
+body[data-brand-system] .tech-loop [data-practice-family="data"] { color: #801b1b; }
 
 /* Editorial section rhythm */
 
@@ -982,11 +979,6 @@ body[data-brand-system] .hero-surname p {
   body[data-brand-system] .signal-statement {
     font-size: clamp(1.22rem, 5.7vw, 1.45rem);
     line-height: 1.32;
-  }
-
-  body[data-brand-system] .tech-loop > div {
-    gap: 1.35rem;
-    padding-block: 0.9rem 0;
   }
 
   body[data-brand-system] .about-index {

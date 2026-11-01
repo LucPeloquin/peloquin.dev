@@ -1,5 +1,10 @@
 # Asset provenance
 
+## Contact icons
+
+- `public/images/icons/mail.svg` is an original envelope illustration authored for the portfolio in its gold palette.
+- `public/images/icons/linkedin.svg` and `github.svg` are recolored derivatives of the matching [Bootstrap Icons v1.11.3 SVGs](https://github.com/twbs/icons/tree/v1.11.3/icons), distributed under MIT. The license is retained beside the assets and in `THIRD_PARTY_NOTICES.md`. The service names and marks belong to their respective owners.
+
 ## First-party material
 
 - `public/documents/jean-luc-peloquin-resume.pdf` is the user-supplied résumé, published unchanged. `public/documents/jean-luc-peloquin-resume.webp` is a rendered preview of its single page for mobile viewing and browsers without an embedded PDF viewer.
