@@ -95,7 +95,6 @@
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#about">About</a>
-        <a href="#principles">Approach</a>
         <a href="#profile">About Me</a>
       </nav>
 
@@ -347,7 +346,6 @@
 
       <section class="experience section-rule" id="experience" aria-labelledby="experience-heading">
         <div class="experience-intro" data-reveal>
-          <p class="utility-text">Professional record / 2024—now</p>
           <h2 id="experience-heading">Experience</h2>
           <p>Technical support, backend engineering, automation, and applied AI. I build around the people using a system, the teams maintaining it, and the business outcomes it needs to deliver.</p>
         </div>
@@ -653,52 +651,6 @@
         </div>
       </section>
 
-      <section class="principles section-rule" id="principles" aria-labelledby="principles-heading">
-        <div class="principles-sidebar">
-          <div class="section-label">
-            <span class="label-square" aria-hidden="true"></span>
-            <span id="principles-heading">Working principles</span>
-          </div>
-          <div class="principle-controls">
-            <button type="button" aria-label="Previous principle" data-note-prev>←</button>
-            <button type="button" aria-label="Pause principles" aria-pressed="false" data-note-toggle>Pause</button>
-            <button type="button" aria-label="Next principle" data-note-next>→</button>
-          </div>
-          <div class="portrait-frame">
-            <img src="./images/jean-luc-current.webp" width="600" height="600" loading="lazy" alt="Jean-Luc Peloquin" />
-            <div class="halftone portrait-halftone" aria-hidden="true"></div>
-          </div>
-        </div>
-
-        <div class="principle-stage" data-reveal>
-          <article class="principle-slide is-active" data-note-slide="0">
-            <p class="principle-mark" aria-hidden="true">⌁</p>
-            <h2>Look closely. Then begin.</h2>
-            <p>The interesting part is often in what gets overlooked: a noisy image, an awkward handoff, a habit no one thinks to question. I start there.</p>
-            <div class="principle-meta"><span>Principle</span><strong>Evidence before defaults</strong></div>
-          </article>
-          <article class="principle-slide" data-note-slide="1" hidden>
-            <p class="principle-mark" aria-hidden="true">⌁</p>
-            <h2>Give the idea a form of its own.</h2>
-            <p>A gesture, a sound, the pause before a response—small choices shape how something is understood. I want those choices to belong to the work.</p>
-            <div class="principle-meta"><span>Principle</span><strong>Form carries meaning</strong></div>
-          </article>
-          <article class="principle-slide" data-note-slide="2" hidden>
-            <p class="principle-mark" aria-hidden="true">⌁</p>
-            <h2>Make it real. Stay with it.</h2>
-            <p>An idea changes when someone uses it. That’s where the next draft begins: watching, listening, and returning to the details with a better question.</p>
-            <div class="principle-meta"><span>Principle</span><strong>One step at a time</strong></div>
-          </article>
-          <p class="principle-count utility-text"><span data-note-current>01</span> — 03</p>
-        </div>
-
-        <aside class="principle-context">
-          <p>Focus</p><strong>Clarity</strong>
-          <p>Method</p><strong>Iteration</strong>
-          <p>Standard</p><strong>Useful detail</strong>
-        </aside>
-      </section>
-
       <section class="profile section-rule" id="profile" aria-labelledby="profile-heading">
         <div class="profile-masthead">
           <h2 id="profile-heading" data-reveal>About Me</h2>
@@ -718,9 +670,19 @@
               Outside work, I enjoy competitive gaming, underground music, and time with my two corgis.
             </p>
           </div>
-          <figure class="profile-photo" data-reveal>
-            <img src="./images/jean-luc.webp" width="1400" height="1400" loading="lazy" alt="Portrait of Jean-Luc Peloquin in a navy suit" />
-            <figcaption class="utility-text">Jean-Luc Peloquin · Software engineer</figcaption>
+          <figure class="profile-photo" data-reveal aria-label="Photos of Jean-Luc Peloquin">
+            <div class="profile-photo-track" data-profile-photo-track tabindex="0" aria-label="Portrait gallery. Use the left and right arrow keys to change photo.">
+              <img data-profile-photo src="./images/jean-luc.webp" width="1400" height="1400" loading="lazy" alt="Portrait of Jean-Luc Peloquin in a navy suit" />
+              <img data-profile-photo src="./images/jean-luc-current.webp" width="600" height="600" loading="lazy" alt="Portrait of Jean-Luc Peloquin in a dark button-up shirt" />
+            </div>
+            <figcaption class="utility-text">
+              <span>Jean-Luc Peloquin · Software engineer</span>
+              <div class="profile-photo-controls" data-profile-photo-controls hidden>
+                <button type="button" data-profile-photo-prev aria-label="Previous portrait">←</button>
+                <span data-profile-photo-current aria-live="polite" aria-atomic="true">1 / 2</span>
+                <button type="button" data-profile-photo-next aria-label="Next portrait">→</button>
+              </div>
+            </figcaption>
           </figure>
           <div class="profile-details" data-reveal>
             <article>
@@ -796,9 +758,8 @@
         <a href="#work" data-menu-link><span>01</span>Work</a>
         <a href="#experience" data-menu-link><span>02</span>Experience</a>
         <a href="#about" data-menu-link><span>03</span>About</a>
-        <a href="#principles" data-menu-link><span>04</span>Approach</a>
-        <a href="#profile" data-menu-link><span>05</span>About Me</a>
-        <button type="button" data-contact-open data-menu-link><span>06</span>Contact</button>
+        <a href="#profile" data-menu-link><span>04</span>About Me</a>
+        <button type="button" data-contact-open data-menu-link><span>05</span>Contact</button>
       </nav>
       <div class="menu-footer">
         <time data-clock data-zone="America/Los_Angeles"><span data-clock-time>--:--</span> <span data-clock-label>LAS VEGAS</span></time>

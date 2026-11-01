@@ -567,69 +567,44 @@ window.addEventListener("pagehide", (event) => {
   }
 });
 
-const noteSlides = [...document.querySelectorAll("[data-note-slide]")];
-const noteCurrent = document.querySelector("[data-note-current]");
-const noteToggle = document.querySelector("[data-note-toggle]");
-const principlesSection = document.querySelector("#principles");
-let activeNote = 0;
-let noteTimer;
-let notePaused = false;
-let noteInView = false;
+// Manual photo gallery: buttons, arrow keys, and native touch scrolling.
+const profilePhotoTrack = document.querySelector("[data-profile-photo-track]");
+const profilePhotos = [...document.querySelectorAll("[data-profile-photo]")];
+const profilePhotoCounter = document.querySelector("[data-profile-photo-current]");
+let activeProfilePhoto = 0;
+let profilePhotoScrollTimer;
 
-function renderNote(index) {
-  activeNote = (index + noteSlides.length) % noteSlides.length;
-  noteSlides.forEach((slide, slideIndex) => {
-    const selected = slideIndex === activeNote;
-    slide.hidden = !selected;
-    slide.classList.toggle("is-active", selected);
+if (profilePhotoTrack && profilePhotos.length > 1) {
+  document.querySelector("[data-profile-photo-controls]").hidden = false;
+  const updatePhotoCounter = () => {
+    profilePhotoCounter.textContent = `${activeProfilePhoto + 1} / ${profilePhotos.length}`;
+  };
+  const showProfilePhoto = (index) => {
+    activeProfilePhoto = (index + profilePhotos.length) % profilePhotos.length;
+    profilePhotoTrack.scrollTo({
+      left: activeProfilePhoto * profilePhotoTrack.clientWidth,
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+    });
+    updatePhotoCounter();
+  };
+  document.querySelector("[data-profile-photo-prev]").addEventListener("click", () => showProfilePhoto(activeProfilePhoto - 1));
+  document.querySelector("[data-profile-photo-next]").addEventListener("click", () => showProfilePhoto(activeProfilePhoto + 1));
+  profilePhotoTrack.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    showProfilePhoto(event.key === "Home" ? 0 : event.key === "End" ? profilePhotos.length - 1 : activeProfilePhoto + (event.key === "ArrowRight" ? 1 : -1));
   });
-  noteCurrent.textContent = String(activeNote + 1).padStart(2, "0");
-}
-
-function startNoteTimer() {
-  window.clearInterval(noteTimer);
-  if (prefersReducedMotion.matches || notePaused) return;
-  noteTimer = window.setInterval(() => renderNote(activeNote + 1), 6500);
-}
-
-function syncNoteToggle() {
-  if (!noteToggle) return;
-  noteToggle.textContent = notePaused ? "Resume" : "Pause";
-  noteToggle.setAttribute("aria-label", `${notePaused ? "Resume" : "Pause"} principles carousel`);
-  noteToggle.setAttribute("aria-pressed", String(notePaused));
-}
-
-function pauseNotes() {
-  notePaused = true;
-  window.clearInterval(noteTimer);
-  syncNoteToggle();
-}
-
-function moveNote(direction) {
-  pauseNotes();
-  renderNote(activeNote + direction);
-}
-
-document.querySelector("[data-note-prev]")?.addEventListener("click", () => moveNote(-1));
-document.querySelector("[data-note-next]")?.addEventListener("click", () => moveNote(1));
-noteToggle?.addEventListener("click", () => {
-  notePaused = !notePaused;
-  syncNoteToggle();
-  if (notePaused) window.clearInterval(noteTimer);
-  else if (noteInView) startNoteTimer();
-});
-syncNoteToggle();
-
-if (principlesSection && "IntersectionObserver" in window) {
-  const noteObserver = new IntersectionObserver(
-    ([entry]) => {
-      noteInView = entry.isIntersecting;
-      if (noteInView) startNoteTimer();
-      else window.clearInterval(noteTimer);
-    },
-    { threshold: 0.25 },
-  );
-  noteObserver.observe(principlesSection);
+  profilePhotoTrack.addEventListener("scroll", () => {
+    window.clearTimeout(profilePhotoScrollTimer);
+    profilePhotoScrollTimer = window.setTimeout(() => {
+      activeProfilePhoto = Math.max(0, Math.min(profilePhotos.length - 1,
+        Math.round(profilePhotoTrack.scrollLeft / Math.max(1, profilePhotoTrack.clientWidth))));
+      updatePhotoCounter();
+    }, 150);
+  }, { passive: true });
+  window.addEventListener("resize", () => {
+    profilePhotoTrack.scrollTo({ left: activeProfilePhoto * profilePhotoTrack.clientWidth, behavior: "auto" });
+  }, { passive: true });
 }
 
 const artifactCanvas = document.querySelector("#artifact-canvas");

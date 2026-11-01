@@ -60,7 +60,6 @@ body[data-brand-system] .section-label,
 body[data-brand-system] .eyebrow,
 body[data-brand-system] .project-tags,
 body[data-brand-system] .capability-copy li,
-body[data-brand-system] .principle-meta,
 body[data-brand-system] .skill-grid,
 body[data-brand-system] .site-footer nav,
 body[data-brand-system] .footer-links {
@@ -391,7 +390,6 @@ body[data-brand-system] .tech-loop [data-practice-family="data"] { color: #801b1
 
 body[data-brand-system] .about-lede { min-height: 480px; }
 body[data-brand-system] .section-heading-grid { min-height: 230px; }
-body[data-brand-system] .principles { min-height: 600px; }
 body[data-brand-system] .profile-masthead { min-height: 260px; }
 
 body[data-brand-system] .section-label {
@@ -414,7 +412,6 @@ body[data-brand-system] .about-index {
 body[data-brand-system] .about-index-statement,
 body[data-brand-system] .lede-copy h2,
 body[data-brand-system] .section-heading-grid h2,
-body[data-brand-system] .principle-slide h2,
 body[data-brand-system] .profile-masthead h2,
 body[data-brand-system] .profile-masthead > p {
   font-variation-settings: "wght" 500;
@@ -610,25 +607,7 @@ body[data-brand-system] .project-poster::after {
   border-color: rgba(197, 177, 116, 0.28);
 }
 
-/* Principles / profile / close */
-
-body[data-brand-system] .principles {
-  background-image: linear-gradient(135deg, color-mix(in srgb, var(--brand-purple) 6%, transparent), transparent 56%);
-}
-
-body[data-brand-system] .principle-context {
-  background-color: var(--brand-black);
-  background-image: none;
-}
-
-body[data-brand-system] .principle-slide h2 {
-  max-width: 13ch;
-  font-variation-settings: "wght" 560;
-}
-
-body[data-brand-system] .principle-mark {
-  color: var(--brand-gold);
-}
+/* Profile / close */
 
 body[data-brand-system] .profile-masthead {
   background-image: none;
@@ -728,7 +707,6 @@ body[data-brand-system] .project-link:focus-visible {
 
   body[data-brand-system] .about-lede,
   body[data-brand-system] .section-heading-grid,
-  body[data-brand-system] .principles,
   body[data-brand-system] .profile-masthead {
     min-height: 0;
   }
@@ -802,7 +780,6 @@ body[data-brand-system] .section-heading-grid h2,
 body[data-brand-system] .capability-copy h3,
 body[data-brand-system] .work-masthead h2,
 body[data-brand-system] .project-copy h3,
-body[data-brand-system] .principle-slide h2,
 body[data-brand-system] .profile-masthead h2,
 body[data-brand-system] .profile-masthead > p,
 body[data-brand-system] .closing-cta span {
@@ -820,8 +797,7 @@ body[data-brand-system] .hero-surname p {
 body[data-brand-system] .about-index-statement,
 body[data-brand-system] .lede-copy h2,
 body[data-brand-system] .capability-copy h3,
-body[data-brand-system] .project-copy h3,
-body[data-brand-system] .principle-slide h2 {
+body[data-brand-system] .project-copy h3 {
   line-height: 1.04;
 }
 
@@ -849,7 +825,6 @@ body[data-brand-system] .site-footer > p:first-child {
 body[data-brand-system] .lede-copy > p,
 body[data-brand-system] .capability-copy > p,
 body[data-brand-system] .project-copy > p:not(.utility-text),
-body[data-brand-system] .principle-slide > p:not(.principle-mark),
 body[data-brand-system] .profile-story p,
 body[data-brand-system] .profile-details article > p:not(.utility-text),
 body[data-brand-system] .legal-copy section > p:last-child {
@@ -866,7 +841,6 @@ body[data-brand-system] .section-label,
 body[data-brand-system] .eyebrow,
 body[data-brand-system] .project-tags,
 body[data-brand-system] .capability-copy li,
-body[data-brand-system] .principle-meta,
 body[data-brand-system] .skill-grid,
 body[data-brand-system] .site-footer nav,
 body[data-brand-system] .footer-links {
@@ -1067,28 +1041,6 @@ body[data-brand-system] .hero-surname p {
 
   body[data-brand-system] .project-link {
     margin-top: 1.25rem;
-  }
-
-  body[data-brand-system] .principles-sidebar {
-    grid-template-rows: 105px 56px 220px;
-  }
-
-  body[data-brand-system] .principle-stage {
-    min-height: 430px;
-    padding: 1.5rem var(--gutter);
-  }
-
-  body[data-brand-system] .principle-slide {
-    min-height: 380px;
-  }
-
-  body[data-brand-system] .principle-slide h2 {
-    margin-top: 1.75rem;
-    font-size: clamp(2.45rem, 10.6vw, 3.2rem);
-  }
-
-  body[data-brand-system] .principle-slide > p:not(.principle-mark) {
-    margin-top: 1.5rem;
   }
 
   body[data-brand-system] .profile-masthead {
