@@ -6,7 +6,7 @@ const sectionTreatments = new Map([
   ["about", { pattern: null, glyph: "horizon-sphere" }],
   ["work", { pattern: null, glyph: [] }],
   ["experience", { pattern: null, glyph: [] }],
-  ["profile", { pattern: null, glyph: ["segmented-cross", "plus-marker"] }],
+  ["profile", { pattern: null, glyph: ["segmented-cross"] }],
   ["closing", { pattern: null, glyph: "inward-chevrons" }],
 ]);
 

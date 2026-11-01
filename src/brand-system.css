@@ -536,11 +536,12 @@ body[data-brand-system] .capability-copy li {
 /* Selected Work */
 
 body[data-brand-system] .work-masthead {
-  grid-template-rows: minmax(185px, auto) auto;
+  /* Keep the established header height independent of the title's scale. */
+  grid-template-rows: minmax(clamp(185px, 15.8vw, 280px), auto) auto;
 }
 
 body[data-brand-system] .work-masthead h2 {
-  font-size: clamp(6rem, 12.5vw, 13.5rem);
+  font-size: clamp(4rem, 8vw, 8rem);
   font-variation-settings: "wght" 560;
   line-height: 1;
 }
@@ -1026,7 +1027,7 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .work-masthead h2 {
-    font-size: clamp(3.9rem, 17vw, 5rem);
+    font-size: clamp(3.2rem, 14vw, 4.2rem);
   }
 
   body[data-brand-system] .work-index button {
