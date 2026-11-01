@@ -2355,7 +2355,8 @@ button.project-link {
 .employment-detail-list { margin-top: .5rem; }
 .employment-tools { display: flex; flex-wrap: wrap; gap: .45rem; padding-top: .5rem; list-style: none; }
 .employment-tools li { padding: .45rem .6rem; border: 1px solid var(--soft-line); font-family: var(--mono); font-size: .62rem; line-height: 1.5; }
-.academic-recognition { margin-top: 1.5rem; }
+.academic-recognition { margin-top: 1.5rem; border-top: 1px solid var(--soft-line); }
+.academic-recognition h4 { padding: 1.1rem 0; font-size: .9rem; font-weight: 500; }
 .recognition-list { display: grid; gap: 1rem; padding: .4rem 0 .8rem; list-style: none; }
 .recognition-list li { display: grid; gap: .25rem; font-size: .85rem; line-height: 1.5; }
 .recognition-list strong { font-weight: 550; }
