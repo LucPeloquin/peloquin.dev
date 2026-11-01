@@ -2571,12 +2571,14 @@ dialog::backdrop {
   font-size: 1.7rem;
 }
 
-.contact-drawer > h2 {
-  padding: 1rem var(--gutter);
-  border-bottom: 1px solid var(--line);
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 430;
-  letter-spacing: -.07em;
+.contact-topline h2 {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  padding-inline: var(--gutter);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: normal;
 }
 
 .contact-row {
