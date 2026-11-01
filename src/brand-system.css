@@ -628,6 +628,7 @@ body[data-brand-system] .profile-masthead {
 }
 
 body[data-brand-system] .profile-masthead h2 {
+  font-size: clamp(3.5rem, 8vw, 8.5rem);
   background-color: transparent;
   backdrop-filter: blur(4px);
 }
@@ -1062,10 +1063,10 @@ body[data-brand-system] .hero-surname p {
   }
 
   body[data-brand-system] .profile-masthead h2 {
-    min-height: 130px;
+    min-height: 110px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
-    font-size: clamp(4.5rem, 21vw, 5.7rem);
+    font-size: clamp(3rem, 13vw, 3.8rem);
   }
 
   body[data-brand-system] .profile-masthead > p {
