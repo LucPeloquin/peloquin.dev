@@ -223,19 +223,16 @@ body[data-brand-system] .desktop-nav a::before {
 }
 
 body[data-brand-system] .desktop-nav a::after {
-  bottom: 10px;
-  background: var(--brand-gold);
+  display: none;
 }
 
+body[data-brand-system] .desktop-nav a:hover,
 body[data-brand-system] .desktop-nav a[data-brand-active="true"] {
-  padding-inline: 0.48rem;
-  border-right: 1px solid var(--brand-gold);
-  border-left: 1px solid var(--brand-gold);
-  color: var(--brand-gold);
+  color: var(--gold-text);
 }
 
 body[data-brand-system] .desktop-nav a[data-brand-active="true"]::before {
-  color: var(--brand-gold);
+  color: var(--gold-text);
 }
 
 body[data-brand-system] .header-clock,
