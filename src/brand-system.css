@@ -441,7 +441,16 @@ body[data-brand-system] .about-index-footer {
   color: var(--brand-black);
 }
 
-body[data-brand-system] .section-heading-grid {
+/* A shared purple wash connects the main section headers. */
+body[data-brand-system] :is(
+  .career-highlights-heading,
+  .work-masthead,
+  .experience-intro,
+  .lede-copy,
+  .section-heading-grid,
+  .profile-masthead,
+  .toolbox-heading
+) {
   background-image: linear-gradient(135deg, color-mix(in srgb, var(--brand-purple) 7%, transparent), transparent 42%);
 }
 
@@ -528,7 +537,6 @@ body[data-brand-system] .capability-copy li {
 
 body[data-brand-system] .work-masthead {
   grid-template-rows: minmax(185px, auto) auto;
-  background-image: none;
 }
 
 body[data-brand-system] .work-masthead h2 {
@@ -615,13 +623,12 @@ body[data-brand-system] .project-poster::after {
 /* Profile / close */
 
 body[data-brand-system] .profile-masthead {
-  background-image: none;
   background-position: center;
   background-size: cover;
 }
 
 body[data-brand-system] .profile-masthead h2 {
-  background-color: color-mix(in srgb, var(--paper) 86%, transparent);
+  background-color: transparent;
   backdrop-filter: blur(4px);
 }
 
